@@ -8,6 +8,7 @@
   "starter-name": "gatsby-starter-minimal-blog",
   "scripts": {
     "build": "gatsby build",
+    "build:incremental": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build",
     "develop": "gatsby develop",
     "develop:cypress": "CYPRESS_SUPPORT=y yarn develop",
     "build:cypress": "CYPRESS_SUPPORT=y yarn build",
