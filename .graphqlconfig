@@ -1,0 +1,16 @@
+{
+  "name": "GatsbyJS GraphQL Schema",
+  "schemaPath": "schema.graphql",
+  "excludes": ["packages/backend/exports"],
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "http://localhost:8000/___graphql",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": false
+      }
+    }
+  }
+}

@@ -1,9 +1,12 @@
-import * as React from 'react';
+import React from "react"
 
-import './index.scss';
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
-export default function Index() {
-  return (
-    <p>Main page...</p>
-  );
-}
+const IndexPage = () => (
+  <Layout>
+    <SEO title="Home"/>
+  </Layout>
+)
+
+export default IndexPage

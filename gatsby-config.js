@@ -1,12 +1,7 @@
-require(`dotenv`).config({
-  path: `.env`,
-})
-
-const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
-
 module.exports = {
   siteMetadata: {
     title: `Catherine Jauffret`,
+    description: `Collages de Catherine Jauffret.`,
     siteUrl: `https://catherinejauffret.com`,
     author: `Bertrand Fritsch`
   },
@@ -17,18 +12,18 @@ module.exports = {
         siteUrl: `https://catherinejauffret.com`,
       },
     },
+    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://catherinejauffret.com',
-        sitemap: 'https://catherinejauffret.com/sitemap.xml',
         env: {
           development: {
             policy: [{ userAgent: '*', disallow: ['/'] }]
@@ -40,16 +35,8 @@ module.exports = {
       }
     },
     `gatsby-plugin-sass`,
-    `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-typescript`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/images`,
-        name: `images`,
-      },
-    },
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -67,15 +54,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-netlify`,
-    shouldAnalyseBundle && {
-      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
-      options: {
-        analyzerMode: `static`,
-        reportFilename: `_bundle.html`,
-        openAnalyzer: false,
-      },
-    },
-  ].filter(Boolean),
+    `gatsby-plugin-offline`
+  ],
 }
