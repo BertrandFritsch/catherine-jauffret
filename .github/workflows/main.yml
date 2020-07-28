@@ -19,19 +19,19 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
-    - name: Install dependencies
-      run: 'yarn install --immutable'
-    - name: Gatsby Cache Folder
-      uses: actions/cache@v1
-      with:
-        key: gatsby-cache-folder
-        path: .cache
-    - name: Gatsby Public Folder
-      uses: actions/cache@v1
-      with:
-        key: gatsby-public-folder
-        path: public
-    - name: Build app
-      run: 'yarn run build:incremental'
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: 'yarn install --immutable'
+      - name: Gatsby Cache Folder
+        uses: actions/cache@v1
+        with:
+          key: gatsby-cache-folder
+          path: .cache
+      - name: Gatsby Public Folder
+        uses: actions/cache@v1
+        with:
+          key: gatsby-public-folder
+          path: public
+      - name: Build app
+        run: 'yarn run build:incremental'
