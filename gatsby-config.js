@@ -12,6 +12,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://catherinejauffret.com`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS_ID,
@@ -33,8 +39,10 @@ module.exports = {
         }
       }
     },
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -49,8 +57,8 @@ module.exports = {
         short_name: `Catherine Jauffret`,
         description: `Collages de Catherine Jauffret.`,
         start_url: `/`,
-        background_color: `#fff`,
-        theme_color: `#6B46C1`,
+        background_color: `#000`,
+        theme_color: `#fff`,
         display: `standalone`,
         icons: [
           {
