@@ -9,29 +9,41 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://catherinejauffret.com`,
-      },
+        siteUrl: `https://catherinejauffret.com`
+      }
     },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+        path: `${ __dirname }/src/images`
+      }
     },
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: 'https://catherinejauffret.com',
+        host: "https://catherinejauffret.com",
         env: {
           development: {
-            policy: [{ userAgent: '*', disallow: ['/'] }]
+            policy: [{ userAgent: "*", disallow: ["/"] }]
           },
           production: {
-            policy: [{ userAgent: '*', allow: '/' }]
+            policy: [{ userAgent: "*", allow: "/" }]
           }
         }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts-v2`,
+      options: {
+        fonts: [
+          {
+            family: `Quicksand`,
+            variable: true,
+            weights: ["300..700"]
+          }
+        ]
       }
     },
     `gatsby-plugin-sass`,
@@ -49,11 +61,11 @@ module.exports = {
         display: `standalone`,
         icons: [
           {
-            src: `/favicon.ico`,
-          },
-        ],
-      },
+            src: `/favicon.ico`
+          }
+        ]
+      }
     },
     `gatsby-plugin-offline`
-  ],
+  ]
 }

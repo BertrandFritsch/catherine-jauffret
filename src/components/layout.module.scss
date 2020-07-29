@@ -1,0 +1,25 @@
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: #CCCCCC;
+}
+
+.header {
+  flex: none;
+}
+
+.main {
+  flex: auto;
+  overflow: auto;
+}
+
+.footer {
+  flex: none;
+}
