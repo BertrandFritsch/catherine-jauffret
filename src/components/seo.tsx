@@ -14,7 +14,6 @@ interface Props {
 }
 
 const defaultProps: Partial<Props> = {
-  description: '',
   lang: 'fr',
   meta: []
 };
@@ -30,7 +29,7 @@ interface SeoSiteQuery {
   }
 }
 
-export default function SEO({ description, lang, meta, title, author, keywords, image, url }: Props) {
+export default function SEO({ description, lang, meta, title, author, image, url }: Props) {
   const { site } = useStaticQuery<SeoSiteQuery>(
     graphql`
       query SEOSite {
@@ -46,19 +45,19 @@ export default function SEO({ description, lang, meta, title, author, keywords, 
     `
   );
 
-  const metaTitle = title ? `${title} | ${site.siteMetadata.title}` : site.siteMetadata.title;
+  const metaTitle = title ? `${ title } | ${ site.siteMetadata.title }` : site.siteMetadata.title;
   const metaDescription = description || site.siteMetadata.description;
   const metaAuthor = author || site.siteMetadata.author;
   const metaUrl = url || site.siteMetadata.siteUrl;
-  const metaKeywords = ['Collages', 'Dé-collages'];
+  const metaKeywords = [ 'Collages', 'Dé-collages' ];
 
   return (
     <Helmet
-      htmlAttributes={{
+      htmlAttributes={ {
         lang
-      }}
-      title={title ? `${title} | ${site.siteMetadata.title}` : site.siteMetadata.title}
-      meta={[
+      } }
+      title={ title ? `${ title } | ${ site.siteMetadata.title }` : site.siteMetadata.title }
+      meta={ [
         {
           name: `description`,
           content: metaDescription
@@ -107,7 +106,7 @@ export default function SEO({ description, lang, meta, title, author, keywords, 
             content: metaKeywords.join(', ')
           }
         : []
-      )}
+      ) }
     />
   );
 }
