@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import * as React from 'react';
 import classNames from 'classnames';
 
@@ -13,6 +14,12 @@ const Header = ({ className, siteTitle }: Props) => (
     className={ classNames(headerStyles.header, className) }
   >
     <h1>{ siteTitle }</h1>
+    <h2>Dé-coupage</h2>
+    <ul className={ headerStyles.menu }>
+      <li><Link to='/'>Présentation</Link></li>
+      <li><Link to='/'>Collages</Link></li>
+      <li><Link to='/'>Curriculum vitae</Link></li>
+    </ul>
   </header>
 );
 
