@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${ process.env.NODE_ENV }`
+});
+
 module.exports = {
   siteMetadata: {
     title: `Catherine Jauffret`,
@@ -47,6 +51,32 @@ module.exports = {
       }
     },
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        downloadLocal: true
+      }
+    },
+    {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        fileName: `./graphqlTypes.ts`,
+        documentPaths: [
+          './.yarn/unplugged/gatsby-transformer-sharp*/**/*.js',
+          './src/**/*.{ts,tsx}'
+        ],
+        codegenConfig: {
+          avoidOptionals: true,
+          skipTypename: true,
+          maybeValue: 'T | undefined',
+          namingConvention: {
+            enumValues: 'keep'
+          }
+        }
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

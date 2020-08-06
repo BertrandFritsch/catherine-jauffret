@@ -1,0 +1,22 @@
+
+.section {
+  max-width: 680px;
+  margin: auto;
+
+  h5 {
+    text-align: right;
+  }
+
+  p {
+    font-size: .875rem;
+    line-height: 1.55;
+    //text-align: justify;
+  }
+}
+
+.image-placeholder {
+  display: inline-block;
+  width: 302px;
+  float: left;
+  margin: 0 2rem 1rem 0;
+}

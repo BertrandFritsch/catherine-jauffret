@@ -1,7 +1,6 @@
 {
   "name": "GatsbyJS GraphQL Schema",
   "schemaPath": "schema.graphql",
-  "excludes": ["packages/backend/exports"],
   "extensions": {
     "endpoints": {
       "Default GraphQL Endpoint": {

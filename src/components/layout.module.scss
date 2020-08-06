@@ -2,13 +2,13 @@
 
 body {
   font-family: 'Quicksand', sans-serif;
+  background-color: $base-color;
 }
 
 .container {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: $base-color;
   color: darken($text-color, 20%);
 }
 

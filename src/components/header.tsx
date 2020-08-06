@@ -9,22 +9,22 @@ interface Props {
   siteTitle: string
 }
 
-const Header = ({ className, siteTitle }: Props) => (
-  <header
-    className={ classNames(headerStyles.header, className) }
-  >
-    <h1>{ siteTitle }</h1>
-    <h2>Dé-coupage</h2>
-    <ul className={ headerStyles.menu }>
-      <li><Link to='/'>Présentation</Link></li>
-      <li><Link to='/'>Collages</Link></li>
-      <li><Link to='/'>Curriculum vitae</Link></li>
-    </ul>
-  </header>
-);
+export default function Header({ className, siteTitle }: Props) {
+  return (
+    <header
+      className={ classNames(headerStyles.header, className) }
+    >
+      <h1>{ siteTitle }</h1>
+      <h2>Dé-coupage</h2>
+      <ul className={ headerStyles.menu }>
+        <li><Link to='/'>Présentation</Link></li>
+        <li><Link to='/'>Collages</Link></li>
+        <li><Link to='/'>Curriculum vitae</Link></li>
+      </ul>
+    </header>
+  );
+}
 
 Header.defaultProps = {
   siteTitle: ``
 };
-
-export default Header;
