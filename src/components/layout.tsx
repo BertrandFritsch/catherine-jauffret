@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { SiteTitleQuery } from '../../graphqlTypes';
 import { ANNU } from '../helpers';
+import Footer from './footer';
 import Header from './header';
 
 import 'normalize.css';
@@ -17,18 +18,22 @@ export default function Layout({ children }: Props) {
       site {
         siteMetadata {
           title
+          socialMedias {
+            facebook
+          }
         }
       }
     }
   `);
 
-  ANNU(data.site);
+  ANNU(data.site?.siteMetadata?.socialMedias);
+  ANNU(data.site.siteMetadata.socialMedias.facebook);
 
   return (
     <div className={ layoutStyles.container }>
       <Header className={ layoutStyles.header } siteTitle={ data.site.siteMetadata?.title } />
       <main className={ layoutStyles.main }>{ children }</main>
-      <footer className={ layoutStyles.footer } />
+      <Footer className={ layoutStyles.footer } socialMedias={ { facebook: data.site.siteMetadata.socialMedias.facebook } } />
     </div>
   );
 };

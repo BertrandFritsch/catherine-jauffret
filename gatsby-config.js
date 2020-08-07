@@ -7,7 +7,10 @@ module.exports = {
     title: `Catherine Jauffret`,
     description: `Collages de Catherine Jauffret.`,
     siteUrl: `https://catherinejauffret.com`,
-    author: `Bertrand Fritsch`
+    author: `Bertrand Fritsch`,
+    socialMedias: {
+      facebook: `https://www.facebook.com/catherine.jauffret1`
+    }
   },
   plugins: [
     {
@@ -96,6 +99,7 @@ module.exports = {
         ]
       }
     },
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`
   ]
 }
