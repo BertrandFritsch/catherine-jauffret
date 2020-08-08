@@ -10,7 +10,21 @@
   p {
     font-size: .875rem;
     line-height: 1.55;
-    //text-align: justify;
+  }
+
+  blockquote {
+    font-family: 'Lora', sans-serif;
+    font-weight: 400;
+    color: #888;
+    font-style: italic;
+    margin: 2rem 0;
+  }
+
+  h4 {
+    font-family: 'Lora', sans-serif;
+    font-weight: 400;
+    color: #888;
+    font-style: italic;
   }
 }
 

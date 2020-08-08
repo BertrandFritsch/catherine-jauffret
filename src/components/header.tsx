@@ -19,7 +19,7 @@ export default function Header({ className, siteTitle }: Props) {
       <ul className={ headerStyles.menu }>
         <li><Link to='/presentation' activeClassName={ headerStyles.activePage }>Présentation</Link></li>
         <li><Link to='/' activeClassName={ headerStyles.activePage }>Collages</Link></li>
-        <li><Link to='/' activeClassName={ headerStyles.activePage }>Curriculum vitae</Link></li>
+        <li><Link to='/cv' activeClassName={ headerStyles.activePage }>Curriculum vitae</Link></li>
       </ul>
     </header>
   );

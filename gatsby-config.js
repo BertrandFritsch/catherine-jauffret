@@ -49,6 +49,11 @@ module.exports = {
             family: `Quicksand`,
             variable: true,
             weights: ["300..700"]
+          },
+          {
+            family: `Lora`,
+            variable: true,
+            weights: ["400..500", "400..500"]
           }
         ]
       }
