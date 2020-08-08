@@ -14,12 +14,12 @@ export default function Header({ className, siteTitle }: Props) {
     <header
       className={ classNames(headerStyles.header, className) }
     >
-      <h1>{ siteTitle }</h1>
+      <h1><Link to='/'>{ siteTitle }</Link></h1>
       <h2>Dé-coupage</h2>
       <ul className={ headerStyles.menu }>
-        <li><Link to='/'>Présentation</Link></li>
-        <li><Link to='/'>Collages</Link></li>
-        <li><Link to='/'>Curriculum vitae</Link></li>
+        <li><Link to='/presentation' activeClassName={ headerStyles.activePage }>Présentation</Link></li>
+        <li><Link to='/' activeClassName={ headerStyles.activePage }>Collages</Link></li>
+        <li><Link to='/' activeClassName={ headerStyles.activePage }>Curriculum vitae</Link></li>
       </ul>
     </header>
   );

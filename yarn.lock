@@ -5297,7 +5297,7 @@ __metadata:
     "@types/react-helmet": ^6.1.0
     classnames: ^2.2.6
     dotenv: ^8.2.0
-    gatsby: ^2.24.34
+    gatsby: ^2.24.36
     gatsby-image: ^2.4.14
     gatsby-plugin-canonical-urls: ^2.3.10
     gatsby-plugin-google-fonts-v2: ^0.0.6
@@ -9119,9 +9119,9 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"gatsby-cli@npm:^2.12.78":
-  version: 2.12.78
-  resolution: "gatsby-cli@npm:2.12.78"
+"gatsby-cli@npm:^2.12.79":
+  version: 2.12.79
+  resolution: "gatsby-cli@npm:2.12.79"
   dependencies:
     "@babel/code-frame": ^7.10.3
     "@hapi/joi": ^15.1.1
@@ -9137,7 +9137,7 @@ fsevents@~2.1.2:
     fs-exists-cached: ^1.0.0
     fs-extra: ^8.1.0
     gatsby-core-utils: ^1.3.15
-    gatsby-recipes: ^0.2.8
+    gatsby-recipes: ^0.2.9
     gatsby-telemetry: ^1.3.26
     hosted-git-info: ^3.0.4
     ink: ^2.7.1
@@ -9164,7 +9164,7 @@ fsevents@~2.1.2:
     yurnalist: ^1.1.2
   bin:
     gatsby: cli.js
-  checksum: b0caa293067d80e6e3e26b684d631cc48602b776db4554480c50513d97c513ebafc86b601d3a42a3d24a5f86fd39345b7f573c842ba58eced0abe8391aff6e25
+  checksum: 92eb6bea9c427014b79981a35889a45feb3fd4e6b68735aa78fcc01a805d7313f269d50b512df2001df4b4d145fe39eb34951f5b45dc740729e42d44535227f6
   languageName: node
   linkType: hard
 
@@ -9508,9 +9508,9 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"gatsby-recipes@npm:^0.2.8":
-  version: 0.2.8
-  resolution: "gatsby-recipes@npm:0.2.8"
+"gatsby-recipes@npm:^0.2.9":
+  version: 0.2.9
+  resolution: "gatsby-recipes@npm:0.2.9"
   dependencies:
     "@babel/core": ^7.9.6
     "@babel/generator": ^7.9.6
@@ -9594,7 +9594,7 @@ fsevents@~2.1.2:
     yup: ^0.27.0
   peerDependencies:
     react: ^16.12.0
-  checksum: efc5c76d9906cd466e522fe7f4fdcd585f1255db4d90f70118caea9582cae1822539631919e9f037fe065912643f073ce0f76011031f93233401faa27e79b442
+  checksum: 9382d034b1162c6e7c06c5cce3c88003e7ac0a9e99549e8f1f8c1e3f648f2015600f80cc226dac917edd013bd477141e9a34e61b78d0cdf4480e66c92273ed55
   languageName: node
   linkType: hard
 
@@ -9691,9 +9691,9 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"gatsby@npm:^2.24.34":
-  version: 2.24.34
-  resolution: "gatsby@npm:2.24.34"
+"gatsby@npm:^2.24.36":
+  version: 2.24.36
+  resolution: "gatsby@npm:2.24.36"
   dependencies:
     "@babel/code-frame": ^7.10.3
     "@babel/core": ^7.10.3
@@ -9756,7 +9756,7 @@ fsevents@~2.1.2:
     find-cache-dir: ^3.3.1
     fs-exists-cached: 1.0.0
     fs-extra: ^8.1.0
-    gatsby-cli: ^2.12.78
+    gatsby-cli: ^2.12.79
     gatsby-core-utils: ^1.3.15
     gatsby-graphiql-explorer: ^0.4.12
     gatsby-legacy-polyfills: ^0.0.2
@@ -9842,7 +9842,7 @@ fsevents@~2.1.2:
     react-dom: ^16.4.2
   bin:
     gatsby: ./cli.js
-  checksum: de7246a3083e91766629cc9978259325d5de57a0c4143af3d08fd3c0c7f2aa99ccb7f254737b0a79682d0a9db743af127bfe3314f62ad21d27e9de96e1edbb9f
+  checksum: 9b7c3b42e02def116fc775fbc08652ffb30fdfef218f9476a1889849ad097dff03c9fb24a18ea4c175e3f0176ed1c9ccaa747a9f9340d2204c26ebc5d04b63eb
   languageName: node
   linkType: hard
 
