@@ -1436,7 +1436,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/is-prop-valid@npm:0.8.8, @emotion/is-prop-valid@npm:^0.8.1":
+"@emotion/is-prop-valid@npm:0.8.8, @emotion/is-prop-valid@npm:^0.8.1, @emotion/is-prop-valid@npm:^0.8.2":
   version: 0.8.8
   resolution: "@emotion/is-prop-valid@npm:0.8.8"
   dependencies:
@@ -2483,6 +2483,26 @@ __metadata:
     webpack-plugin-serve:
       optional: true
   checksum: a8adb37c553a8e4d767265dc8bf1e982bc6773c17a68fb0c7a4437db1626ea9dd78740869a324281c8a0424b44565fde036cf85be82a744880d243e1f846ec16
+  languageName: node
+  linkType: hard
+
+"@popmotion/easing@npm:^1.0.1, @popmotion/easing@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@popmotion/easing@npm:1.0.2"
+  checksum: f073547c00fd543a91f95e85c4ca5a507bddc23055a9681484cb89dee2637a1991db4dbaabaa54bb350c04e884b3e62535d30456753450b905b85d5e08de9c1c
+  languageName: node
+  linkType: hard
+
+"@popmotion/popcorn@npm:^0.4.2":
+  version: 0.4.4
+  resolution: "@popmotion/popcorn@npm:0.4.4"
+  dependencies:
+    "@popmotion/easing": ^1.0.1
+    framesync: ^4.0.1
+    hey-listen: ^1.0.8
+    style-value-types: ^3.1.7
+    tslib: ^1.10.0
+  checksum: 316b066a116c9a8a8d208b9c5e9b10a8f3cf20f6b6c63fa01055a5474c1af645c5e6f2bd54d5fe85c3b73967cf1ee798cdade8c95b4186c2e09247c175c743a1
   languageName: node
   linkType: hard
 
@@ -5297,6 +5317,7 @@ __metadata:
     "@types/react-helmet": ^6.1.0
     classnames: ^2.2.6
     dotenv: ^8.2.0
+    framer-motion: ^2.3.0
     gatsby: ^2.24.36
     gatsby-image: ^2.4.14
     gatsby-plugin-canonical-urls: ^2.3.10
@@ -8951,6 +8972,38 @@ __metadata:
   languageName: node
   linkType: hard
 
+"framer-motion@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "framer-motion@npm:2.3.0"
+  dependencies:
+    "@emotion/is-prop-valid": ^0.8.2
+    "@popmotion/easing": ^1.0.2
+    "@popmotion/popcorn": ^0.4.2
+    framesync: ^4.0.4
+    hey-listen: ^1.0.8
+    popmotion: 9.0.0-beta-8
+    style-value-types: ^3.1.9
+    tslib: ^1.10.0
+  peerDependencies:
+    react: ^16.8
+    react-dom: ^16.8
+  dependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+  checksum: aa75b50b0b92684233d20f6b2cf80999458b754acb552793ded179effb4bb82f0f88d3f65dcf6d563c3094d90f31c884ef7f6bba43a7acfa7a76eedd4488e192
+  languageName: node
+  linkType: hard
+
+"framesync@npm:^4.0.1, framesync@npm:^4.0.4":
+  version: 4.0.4
+  resolution: "framesync@npm:4.0.4"
+  dependencies:
+    hey-listen: ^1.0.8
+    tslib: ^1.10.0
+  checksum: 2a422e0da2a899b051476649135f903551ddbc3ad257f33ee8e280e9603c31c550dfaf2d5bce8c8847e8a1daf36691f82f7ba17e84fd35935060f029efff39d1
+  languageName: node
+  linkType: hard
+
 "fresh@npm:0.5.2":
   version: 0.5.2
   resolution: "fresh@npm:0.5.2"
@@ -10708,6 +10761,13 @@ fsevents@~2.1.2:
   version: 0.0.1
   resolution: "hex2rgba@npm:0.0.1"
   checksum: 3a46a201193a84948ea9e409727f4349dc72c897649e5f6fb96cd3a36b5f95fbfced88af720253e9e48d65fd9755b2b8067ddc584d0b6babfb3003848240a1bc
+  languageName: node
+  linkType: hard
+
+"hey-listen@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "hey-listen@npm:1.0.8"
+  checksum: b9a3ed8d4851735d221a8c2ecf06fba598b0240d18e7ad46780e00af1d62471a40c65d5c6ec48b004fc86d96056cf7e3599d3ef8ee77a31df3cb9f4ce69721ce
   languageName: node
   linkType: hard
 
@@ -15207,6 +15267,20 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"popmotion@npm:9.0.0-beta-8":
+  version: 9.0.0-beta-8
+  resolution: "popmotion@npm:9.0.0-beta-8"
+  dependencies:
+    "@popmotion/easing": ^1.0.1
+    "@popmotion/popcorn": ^0.4.2
+    framesync: ^4.0.4
+    hey-listen: ^1.0.8
+    style-value-types: ^3.1.6
+    tslib: ^1.10.0
+  checksum: b5dcdeae79e4f9a615128bc6693bf944d78e1df054f99dd30d32e041843172a2a371707c97aad96d4060193a527718275ca6dd8a722c8b2cf01c191a78f69ac3
+  languageName: node
+  linkType: hard
+
 "portfinder@npm:^1.0.26":
   version: 1.0.27
   resolution: "portfinder@npm:1.0.27"
@@ -18589,6 +18663,16 @@ fsevents@~2.1.2:
   dependencies:
     inline-style-parser: 0.1.1
   checksum: 869b30171c2c0d1ed1928e86c3644d691d96277e484fdafaa99df3ad3b1e11e0fcfc2ac2def4e3dd068df49995de585918dbda2ff833b5691bc8206d1cda37ad
+  languageName: node
+  linkType: hard
+
+"style-value-types@npm:^3.1.6, style-value-types@npm:^3.1.7, style-value-types@npm:^3.1.9":
+  version: 3.1.9
+  resolution: "style-value-types@npm:3.1.9"
+  dependencies:
+    hey-listen: ^1.0.8
+    tslib: ^1.10.0
+  checksum: d49e6447576690fc6d8337c554c4d4b26b765e62bf91975494069db1320166e146fa255f1c6c0a7580e085db3dd42c43a2983405345eece57a1ffb1c6c3e39e0
   languageName: node
   linkType: hard
 

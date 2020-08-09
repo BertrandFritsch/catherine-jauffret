@@ -82,6 +82,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:8.2.0"
       ],
       [
+        "framer-motion",
+        "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.3.0"
+      ],
+      [
         "gatsby",
         "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.24.36"
       ],
@@ -190,6 +194,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-helmet", "npm:6.1.0"],
             ["classnames", "npm:2.2.6"],
             ["dotenv", "npm:8.2.0"],
+            ["framer-motion", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.3.0"],
             ["gatsby", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.24.36"],
             ["gatsby-image", "npm:2.4.14"],
             ["gatsby-plugin-canonical-urls", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.3.10"],
@@ -4148,6 +4153,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@popmotion/easing", [
+        ["npm:1.0.2", {
+          "packageLocation": "./.yarn/cache/@popmotion-easing-npm-1.0.2-aa43f2135f-f073547c00.zip/node_modules/@popmotion/easing/",
+          "packageDependencies": [
+            ["@popmotion/easing", "npm:1.0.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@popmotion/popcorn", [
+        ["npm:0.4.4", {
+          "packageLocation": "./.yarn/cache/@popmotion-popcorn-npm-0.4.4-85a81c96da-316b066a11.zip/node_modules/@popmotion/popcorn/",
+          "packageDependencies": [
+            ["@popmotion/popcorn", "npm:0.4.4"],
+            ["@popmotion/easing", "npm:1.0.2"],
+            ["framesync", "npm:4.0.4"],
+            ["hey-listen", "npm:1.0.8"],
+            ["style-value-types", "npm:3.1.9"],
+            ["tslib", "npm:1.13.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@reach/alert", [
         ["virtual:314107c9cb08c0918d68d7ba8fce7871865b1895dd250953bda324cfa4edda6d114d8a93d68098a0c150bd751b4162cab7e75cbdbac82d9e90f60e3469dc8498#npm:0.10.3", {
           "packageLocation": "./.yarn/$$virtual/@reach-alert-virtual-a3afc583af/0/cache/@reach-alert-npm-0.10.3-ccb5e47a78-a1bf7465d7.zip/node_modules/@reach/alert/",
@@ -7433,6 +7461,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-helmet", "npm:6.1.0"],
             ["classnames", "npm:2.2.6"],
             ["dotenv", "npm:8.2.0"],
+            ["framer-motion", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.3.0"],
             ["gatsby", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.24.36"],
             ["gatsby-image", "npm:2.4.14"],
             ["gatsby-plugin-canonical-urls", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.3.10"],
@@ -11468,6 +11497,40 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["framer-motion", [
+        ["virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.3.0", {
+          "packageLocation": "./.yarn/$$virtual/framer-motion-virtual-4e395d54e3/0/cache/framer-motion-npm-2.3.0-18b778a8b6-aa75b50b0b.zip/node_modules/framer-motion/",
+          "packageDependencies": [
+            ["framer-motion", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.3.0"],
+            ["@emotion/is-prop-valid", "npm:0.8.8"],
+            ["@popmotion/easing", "npm:1.0.2"],
+            ["@popmotion/popcorn", "npm:0.4.4"],
+            ["framesync", "npm:4.0.4"],
+            ["hey-listen", "npm:1.0.8"],
+            ["popmotion", "npm:9.0.0-beta-8"],
+            ["react", "npm:16.13.1"],
+            ["react-dom", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:16.13.1"],
+            ["style-value-types", "npm:3.1.9"],
+            ["tslib", "npm:1.13.0"]
+          ],
+          "packagePeers": [
+            "react",
+            "react-dom"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["framesync", [
+        ["npm:4.0.4", {
+          "packageLocation": "./.yarn/cache/framesync-npm-4.0.4-5270ecbb98-2a422e0da2.zip/node_modules/framesync/",
+          "packageDependencies": [
+            ["framesync", "npm:4.0.4"],
+            ["hey-listen", "npm:1.0.8"],
+            ["tslib", "npm:1.13.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["fresh", [
         ["npm:0.5.2", {
           "packageLocation": "./.yarn/cache/fresh-npm-0.5.2-ad2bb4c0a2-2f76c8505d.zip/node_modules/fresh/",
@@ -13414,6 +13477,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/hex2rgba-npm-0.0.1-c7aaf24ebd-3a46a20119.zip/node_modules/hex2rgba/",
           "packageDependencies": [
             ["hex2rgba", "npm:0.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["hey-listen", [
+        ["npm:1.0.8", {
+          "packageLocation": "./.yarn/cache/hey-listen-npm-1.0.8-adb7dae9da-b9a3ed8d48.zip/node_modules/hey-listen/",
+          "packageDependencies": [
+            ["hey-listen", "npm:1.0.8"]
           ],
           "linkType": "HARD",
         }]
@@ -18409,6 +18481,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["popmotion", [
+        ["npm:9.0.0-beta-8", {
+          "packageLocation": "./.yarn/cache/popmotion-npm-9.0.0-beta-8-97dc6195e2-b5dcdeae79.zip/node_modules/popmotion/",
+          "packageDependencies": [
+            ["popmotion", "npm:9.0.0-beta-8"],
+            ["@popmotion/easing", "npm:1.0.2"],
+            ["@popmotion/popcorn", "npm:0.4.4"],
+            ["framesync", "npm:4.0.4"],
+            ["hey-listen", "npm:1.0.8"],
+            ["style-value-types", "npm:3.1.9"],
+            ["tslib", "npm:1.13.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["portfinder", [
         ["npm:1.0.27", {
           "packageLocation": "./.yarn/cache/portfinder-npm-1.0.27-caa225c226-dfecedbaf8.zip/node_modules/portfinder/",
@@ -22087,6 +22174,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["style-to-object", "npm:0.3.0"],
             ["inline-style-parser", "npm:0.1.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["style-value-types", [
+        ["npm:3.1.9", {
+          "packageLocation": "./.yarn/cache/style-value-types-npm-3.1.9-a3db40a467-d49e644757.zip/node_modules/style-value-types/",
+          "packageDependencies": [
+            ["style-value-types", "npm:3.1.9"],
+            ["hey-listen", "npm:1.0.8"],
+            ["tslib", "npm:1.13.0"]
           ],
           "linkType": "HARD",
         }]

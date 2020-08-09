@@ -35,7 +35,7 @@ export default function IndexPage() {
 
   return (
     <Layout>
-      <SEO title='Accueil' />
+      <SEO title='Présentation' />
       <section className={ indexStyles.section }>
         <Img className={ indexStyles.imagePlaceholder }
              fixed={ data.contentfulPresentation.image.localFile.childImageSharp.fixed }

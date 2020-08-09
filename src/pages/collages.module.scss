@@ -1,0 +1,73 @@
+@import '../components/variables';
+
+.container {
+  display: flex;
+}
+
+.collages {
+  flex: none;
+}
+
+.spacer {
+  flex: 1 0 2rem;
+}
+
+.year {
+  text-align: right;
+  border-bottom: 1px solid;
+  padding: 0 0 .5rem;
+}
+
+.nodes {
+  padding: 1rem;
+  display: grid;
+  grid-gap: 2rem;
+  justify-content: start;
+  align-content: start;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(3, 320px);
+}
+
+.node {
+  background-color: lighten($base-color, 10%);
+
+  h2 {
+    padding: 1rem;
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 300;
+  }
+}
+
+.link-collage {
+  color: inherit;
+}
+
+.collage {
+  position: relative;
+}
+
+.collage-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 1rem;
+  font-size: .85rem;
+  text-align: right;
+
+  opacity: 0;
+  background: linear-gradient(0deg,lighten($base-color, 15%),transparent 6.25rem,transparent);
+
+  p {
+    margin: 0;
+  }
+}
+
+.tag {
+  &:not(:last-of-type) {
+    margin: 0 .5rem 0 0;
+  }
+}

@@ -518,6 +518,382 @@ export type ContentfulAssetSysFilterInput = {
   revision: Maybe<IntQueryOperatorInput>;
 };
 
+export type ContentfulCollage = Node & {
+  id: Scalars['ID'];
+  parent: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  title: Maybe<Scalars['String']>;
+  slug: Maybe<Scalars['String']>;
+  tags: Maybe<Scalars['String']>;
+  date: Maybe<Scalars['Date']>;
+  collage: Maybe<ContentfulAsset>;
+  spaceId: Maybe<Scalars['String']>;
+  contentful_id: Maybe<Scalars['String']>;
+  createdAt: Maybe<Scalars['Date']>;
+  updatedAt: Maybe<Scalars['Date']>;
+  sys: Maybe<ContentfulCollageSys>;
+  node_locale: Maybe<Scalars['String']>;
+};
+
+
+export type ContentfulCollageDateArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
+};
+
+
+export type ContentfulCollageCreatedAtArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
+};
+
+
+export type ContentfulCollageUpdatedAtArgs = {
+  formatString: Maybe<Scalars['String']>;
+  fromNow: Maybe<Scalars['Boolean']>;
+  difference: Maybe<Scalars['String']>;
+  locale: Maybe<Scalars['String']>;
+};
+
+export type ContentfulCollageConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<ContentfulCollageEdge>;
+  nodes: Array<ContentfulCollage>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<ContentfulCollageGroupConnection>;
+};
+
+
+export type ContentfulCollageConnectionDistinctArgs = {
+  field: ContentfulCollageFieldsEnum;
+};
+
+
+export type ContentfulCollageConnectionGroupArgs = {
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+  field: ContentfulCollageFieldsEnum;
+};
+
+export type ContentfulCollageEdge = {
+  next: Maybe<ContentfulCollage>;
+  node: ContentfulCollage;
+  previous: Maybe<ContentfulCollage>;
+};
+
+export type ContentfulCollageFieldsEnum = 
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type'
+  | 'title'
+  | 'slug'
+  | 'tags'
+  | 'date'
+  | 'collage___id'
+  | 'collage___parent___id'
+  | 'collage___parent___parent___id'
+  | 'collage___parent___parent___children'
+  | 'collage___parent___children'
+  | 'collage___parent___children___id'
+  | 'collage___parent___children___children'
+  | 'collage___parent___internal___content'
+  | 'collage___parent___internal___contentDigest'
+  | 'collage___parent___internal___description'
+  | 'collage___parent___internal___fieldOwners'
+  | 'collage___parent___internal___ignoreType'
+  | 'collage___parent___internal___mediaType'
+  | 'collage___parent___internal___owner'
+  | 'collage___parent___internal___type'
+  | 'collage___children'
+  | 'collage___children___id'
+  | 'collage___children___parent___id'
+  | 'collage___children___parent___children'
+  | 'collage___children___children'
+  | 'collage___children___children___id'
+  | 'collage___children___children___children'
+  | 'collage___children___internal___content'
+  | 'collage___children___internal___contentDigest'
+  | 'collage___children___internal___description'
+  | 'collage___children___internal___fieldOwners'
+  | 'collage___children___internal___ignoreType'
+  | 'collage___children___internal___mediaType'
+  | 'collage___children___internal___owner'
+  | 'collage___children___internal___type'
+  | 'collage___internal___content'
+  | 'collage___internal___contentDigest'
+  | 'collage___internal___description'
+  | 'collage___internal___fieldOwners'
+  | 'collage___internal___ignoreType'
+  | 'collage___internal___mediaType'
+  | 'collage___internal___owner'
+  | 'collage___internal___type'
+  | 'collage___contentful_id'
+  | 'collage___spaceId'
+  | 'collage___createdAt'
+  | 'collage___updatedAt'
+  | 'collage___file___url'
+  | 'collage___file___details___size'
+  | 'collage___file___fileName'
+  | 'collage___file___contentType'
+  | 'collage___title'
+  | 'collage___description'
+  | 'collage___node_locale'
+  | 'collage___sys___revision'
+  | 'collage___localFile___sourceInstanceName'
+  | 'collage___localFile___absolutePath'
+  | 'collage___localFile___relativePath'
+  | 'collage___localFile___extension'
+  | 'collage___localFile___size'
+  | 'collage___localFile___prettySize'
+  | 'collage___localFile___modifiedTime'
+  | 'collage___localFile___accessTime'
+  | 'collage___localFile___changeTime'
+  | 'collage___localFile___birthTime'
+  | 'collage___localFile___root'
+  | 'collage___localFile___dir'
+  | 'collage___localFile___base'
+  | 'collage___localFile___ext'
+  | 'collage___localFile___name'
+  | 'collage___localFile___relativeDirectory'
+  | 'collage___localFile___dev'
+  | 'collage___localFile___mode'
+  | 'collage___localFile___nlink'
+  | 'collage___localFile___uid'
+  | 'collage___localFile___gid'
+  | 'collage___localFile___rdev'
+  | 'collage___localFile___ino'
+  | 'collage___localFile___atimeMs'
+  | 'collage___localFile___mtimeMs'
+  | 'collage___localFile___ctimeMs'
+  | 'collage___localFile___atime'
+  | 'collage___localFile___mtime'
+  | 'collage___localFile___ctime'
+  | 'collage___localFile___birthtime'
+  | 'collage___localFile___birthtimeMs'
+  | 'collage___localFile___blksize'
+  | 'collage___localFile___blocks'
+  | 'collage___localFile___url'
+  | 'collage___localFile___publicURL'
+  | 'collage___localFile___childImageSharp___id'
+  | 'collage___localFile___childImageSharp___children'
+  | 'collage___localFile___id'
+  | 'collage___localFile___parent___id'
+  | 'collage___localFile___parent___children'
+  | 'collage___localFile___children'
+  | 'collage___localFile___children___id'
+  | 'collage___localFile___children___children'
+  | 'collage___localFile___internal___content'
+  | 'collage___localFile___internal___contentDigest'
+  | 'collage___localFile___internal___description'
+  | 'collage___localFile___internal___fieldOwners'
+  | 'collage___localFile___internal___ignoreType'
+  | 'collage___localFile___internal___mediaType'
+  | 'collage___localFile___internal___owner'
+  | 'collage___localFile___internal___type'
+  | 'collage___fixed___base64'
+  | 'collage___fixed___tracedSVG'
+  | 'collage___fixed___aspectRatio'
+  | 'collage___fixed___width'
+  | 'collage___fixed___height'
+  | 'collage___fixed___src'
+  | 'collage___fixed___srcSet'
+  | 'collage___fixed___srcWebp'
+  | 'collage___fixed___srcSetWebp'
+  | 'collage___resolutions___base64'
+  | 'collage___resolutions___tracedSVG'
+  | 'collage___resolutions___aspectRatio'
+  | 'collage___resolutions___width'
+  | 'collage___resolutions___height'
+  | 'collage___resolutions___src'
+  | 'collage___resolutions___srcSet'
+  | 'collage___resolutions___srcWebp'
+  | 'collage___resolutions___srcSetWebp'
+  | 'collage___fluid___base64'
+  | 'collage___fluid___tracedSVG'
+  | 'collage___fluid___aspectRatio'
+  | 'collage___fluid___src'
+  | 'collage___fluid___srcSet'
+  | 'collage___fluid___srcWebp'
+  | 'collage___fluid___srcSetWebp'
+  | 'collage___fluid___sizes'
+  | 'collage___sizes___base64'
+  | 'collage___sizes___tracedSVG'
+  | 'collage___sizes___aspectRatio'
+  | 'collage___sizes___src'
+  | 'collage___sizes___srcSet'
+  | 'collage___sizes___srcWebp'
+  | 'collage___sizes___srcSetWebp'
+  | 'collage___sizes___sizes'
+  | 'collage___resize___base64'
+  | 'collage___resize___tracedSVG'
+  | 'collage___resize___src'
+  | 'collage___resize___width'
+  | 'collage___resize___height'
+  | 'collage___resize___aspectRatio'
+  | 'spaceId'
+  | 'contentful_id'
+  | 'createdAt'
+  | 'updatedAt'
+  | 'sys___revision'
+  | 'sys___contentType___sys___type'
+  | 'sys___contentType___sys___linkType'
+  | 'sys___contentType___sys___id'
+  | 'sys___contentType___sys___contentful_id'
+  | 'node_locale';
+
+export type ContentfulCollageFilterInput = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  slug: Maybe<StringQueryOperatorInput>;
+  tags: Maybe<StringQueryOperatorInput>;
+  date: Maybe<DateQueryOperatorInput>;
+  collage: Maybe<ContentfulAssetFilterInput>;
+  spaceId: Maybe<StringQueryOperatorInput>;
+  contentful_id: Maybe<StringQueryOperatorInput>;
+  createdAt: Maybe<DateQueryOperatorInput>;
+  updatedAt: Maybe<DateQueryOperatorInput>;
+  sys: Maybe<ContentfulCollageSysFilterInput>;
+  node_locale: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulCollageGroupConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<ContentfulCollageEdge>;
+  nodes: Array<ContentfulCollage>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue: Maybe<Scalars['String']>;
+};
+
+export type ContentfulCollageSortInput = {
+  fields: Maybe<Array<Maybe<ContentfulCollageFieldsEnum>>>;
+  order: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type ContentfulCollageSys = {
+  revision: Maybe<Scalars['Int']>;
+  contentType: Maybe<ContentfulCollageSysContentType>;
+};
+
+export type ContentfulCollageSysContentType = {
+  sys: Maybe<ContentfulCollageSysContentTypeSys>;
+};
+
+export type ContentfulCollageSysContentTypeFilterInput = {
+  sys: Maybe<ContentfulCollageSysContentTypeSysFilterInput>;
+};
+
+export type ContentfulCollageSysContentTypeSys = {
+  type: Maybe<Scalars['String']>;
+  linkType: Maybe<Scalars['String']>;
+  id: Maybe<Scalars['String']>;
+  contentful_id: Maybe<Scalars['String']>;
+};
+
+export type ContentfulCollageSysContentTypeSysFilterInput = {
+  type: Maybe<StringQueryOperatorInput>;
+  linkType: Maybe<StringQueryOperatorInput>;
+  id: Maybe<StringQueryOperatorInput>;
+  contentful_id: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulCollageSysFilterInput = {
+  revision: Maybe<IntQueryOperatorInput>;
+  contentType: Maybe<ContentfulCollageSysContentTypeFilterInput>;
+};
+
 export type ContentfulContentType = Node & {
   id: Scalars['ID'];
   parent: Maybe<Node>;
@@ -4103,10 +4479,12 @@ export type Query = {
   allSite: SiteConnection;
   imageSharp: Maybe<ImageSharp>;
   allImageSharp: ImageSharpConnection;
-  contentfulCvTextRichTextNode: Maybe<ContentfulCvTextRichTextNode>;
-  allContentfulCvTextRichTextNode: ContentfulCvTextRichTextNodeConnection;
   contentfulAsset: Maybe<ContentfulAsset>;
   allContentfulAsset: ContentfulAssetConnection;
+  contentfulCollage: Maybe<ContentfulCollage>;
+  allContentfulCollage: ContentfulCollageConnection;
+  contentfulCvTextRichTextNode: Maybe<ContentfulCvTextRichTextNode>;
+  allContentfulCvTextRichTextNode: ContentfulCvTextRichTextNodeConnection;
   contentfulCv: Maybe<ContentfulCv>;
   allContentfulCv: ContentfulCvConnection;
   contentfulPresentationTextRichTextNode: Maybe<ContentfulPresentationTextRichTextNode>;
@@ -4238,6 +4616,7 @@ export type QuerySitePageArgs = {
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
+  context: Maybe<SitePageContextFilterInput>;
   pluginCreator: Maybe<SitePluginFilterInput>;
   pluginCreatorId: Maybe<StringQueryOperatorInput>;
   componentPath: Maybe<StringQueryOperatorInput>;
@@ -4296,26 +4675,6 @@ export type QueryAllImageSharpArgs = {
 };
 
 
-export type QueryContentfulCvTextRichTextNodeArgs = {
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
-  content: Maybe<ContentfulCvTextRichTextNodeContentFilterListInput>;
-  nodeType: Maybe<StringQueryOperatorInput>;
-  text: Maybe<StringQueryOperatorInput>;
-  json: Maybe<JsonQueryOperatorInput>;
-};
-
-
-export type QueryAllContentfulCvTextRichTextNodeArgs = {
-  filter: Maybe<ContentfulCvTextRichTextNodeFilterInput>;
-  sort: Maybe<ContentfulCvTextRichTextNodeSortInput>;
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-};
-
-
 export type QueryContentfulAssetArgs = {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
@@ -4342,6 +4701,53 @@ export type QueryContentfulAssetArgs = {
 export type QueryAllContentfulAssetArgs = {
   filter: Maybe<ContentfulAssetFilterInput>;
   sort: Maybe<ContentfulAssetSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryContentfulCollageArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  title: Maybe<StringQueryOperatorInput>;
+  slug: Maybe<StringQueryOperatorInput>;
+  tags: Maybe<StringQueryOperatorInput>;
+  date: Maybe<DateQueryOperatorInput>;
+  collage: Maybe<ContentfulAssetFilterInput>;
+  spaceId: Maybe<StringQueryOperatorInput>;
+  contentful_id: Maybe<StringQueryOperatorInput>;
+  createdAt: Maybe<DateQueryOperatorInput>;
+  updatedAt: Maybe<DateQueryOperatorInput>;
+  sys: Maybe<ContentfulCollageSysFilterInput>;
+  node_locale: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllContentfulCollageArgs = {
+  filter: Maybe<ContentfulCollageFilterInput>;
+  sort: Maybe<ContentfulCollageSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryContentfulCvTextRichTextNodeArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  content: Maybe<ContentfulCvTextRichTextNodeContentFilterListInput>;
+  nodeType: Maybe<StringQueryOperatorInput>;
+  text: Maybe<StringQueryOperatorInput>;
+  json: Maybe<JsonQueryOperatorInput>;
+};
+
+
+export type QueryAllContentfulCvTextRichTextNodeArgs = {
+  filter: Maybe<ContentfulCvTextRichTextNodeFilterInput>;
+  sort: Maybe<ContentfulCvTextRichTextNodeSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -4861,6 +5267,7 @@ export type SitePage = Node & {
   children: Array<Node>;
   internal: Internal;
   isCreatedByStatefulCreatePages: Maybe<Scalars['Boolean']>;
+  context: Maybe<SitePageContext>;
   pluginCreator: Maybe<SitePlugin>;
   pluginCreatorId: Maybe<Scalars['String']>;
   componentPath: Maybe<Scalars['String']>;
@@ -4885,6 +5292,14 @@ export type SitePageConnectionGroupArgs = {
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
   field: SitePageFieldsEnum;
+};
+
+export type SitePageContext = {
+  slug: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextFilterInput = {
+  slug: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -4986,6 +5401,7 @@ export type SitePageFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
+  | 'context___slug'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
@@ -5090,6 +5506,7 @@ export type SitePageFilterInput = {
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>;
+  context: Maybe<SitePageContextFilterInput>;
   pluginCreator: Maybe<SitePluginFilterInput>;
   pluginCreatorId: Maybe<StringQueryOperatorInput>;
   componentPath: Maybe<StringQueryOperatorInput>;
@@ -5656,6 +6073,14 @@ export type SeoSiteQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type SeoSiteQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'author' | 'title' | 'siteUrl' | 'description'>> }> };
 
+export type CollagesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type CollagesQuery = { allContentfulCollage: { nodes: Array<(
+      Pick<ContentfulCollage, 'slug' | 'title' | 'tags' | 'date'>
+      & { collage: Maybe<{ localFile: Maybe<{ childImageSharp: Maybe<{ fixed: Maybe<GatsbyImageSharpFixed_WithWebpFragment> }> }> }> }
+    )> } };
+
 export type CvQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -5678,4 +6103,14 @@ export type PresentationQueryVariables = Exact<{ [key: string]: never; }>;
 export type PresentationQuery = { contentfulPresentation: Maybe<(
     Pick<ContentfulPresentation, 'title' | 'author'>
     & { image: Maybe<{ localFile: Maybe<{ childImageSharp: Maybe<{ fixed: Maybe<GatsbyImageSharpFixed_WithWebpFragment> }> }> }>, text: Maybe<Pick<ContentfulPresentationTextRichTextNode, 'json'>> }
+  )> };
+
+export type CollageQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type CollageQuery = { contentfulCollage: Maybe<(
+    Pick<ContentfulCollage, 'title' | 'tags' | 'date'>
+    & { collage: Maybe<{ localFile: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluid_WithWebpFragment> }> }> }> }
   )> };

@@ -30,7 +30,6 @@
   justify-content: center;
   align-items: center;
   list-style: none;
-  margin: 2rem 0;
   font-weight: bolder;
 
   a {
@@ -39,12 +38,12 @@
     text-transform: uppercase;
     margin: 0 1rem;
 
-    &:hover, &.active-page {
+    &:hover {
       color: $text-color;
     }
 
     &.active-page {
-      border-bottom: solid 2px $text-color;
+      border-bottom: solid 2px;
     }
   }
 }

@@ -26,6 +26,7 @@ export default function Footer({ className, socialMedias }: Props) {
           </a>
         </li>
       </ul>
+      <p className={ footerStyles.copyright }>Copyright &copy; { new Date().getFullYear() } - Catherine Jauffret</p>
     </footer>
   );
 }
