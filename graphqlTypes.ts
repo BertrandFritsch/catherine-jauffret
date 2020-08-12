@@ -6112,5 +6112,8 @@ export type CollageQueryVariables = Exact<{
 
 export type CollageQuery = { contentfulCollage: Maybe<(
     Pick<ContentfulCollage, 'title' | 'tags' | 'date'>
-    & { collage: Maybe<{ localFile: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluid_WithWebpFragment> }> }> }> }
+    & { collage: Maybe<{ localFile: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<(
+            GatsbyImageSharpFluid_WithWebpFragment
+            & GatsbyImageSharpFluidLimitPresentationSizeFragment
+          )> }> }> }> }
   )> };

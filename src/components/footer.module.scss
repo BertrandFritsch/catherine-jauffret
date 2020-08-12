@@ -1,8 +1,28 @@
 @import 'variables';
 
 .footer {
-  margin: 1rem;
+  box-sizing: border-box;
+  padding: 1rem;
   font-size: .75rem;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > * {
+    margin: .5rem 0 0;
+
+    &:last-child {
+      margin: .5rem 0;
+    }
+  }
 }
 
 .social-link {
@@ -10,10 +30,7 @@
   font-size: 1.5rem;
 }
 
-.copyright {
-  text-align: center;
-}
-
-.tag {
-
+.separator {
+  align-self: stretch;
+  border-top: 1px solid;
 }

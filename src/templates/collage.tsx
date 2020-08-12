@@ -10,15 +10,16 @@ import * as collageStyles from './collage.module.scss';
 
 export const query = graphql`
   query Collage($slug: String!) {
-    contentfulCollage(slug: { eq: $slug}) {
+    contentfulCollage(slug: { eq: $slug }) {
       title
       tags
       date
       collage {
         localFile {
           childImageSharp {
-            fluid(quality: 100){
+            fluid(maxWidth: 1920, sizes: "(max-width: 1920px) 100vw, 1920px", quality: 100) {
               ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }
@@ -35,25 +36,19 @@ export default function Collage({ data }: Props) {
   ANNU(data.contentfulCollage?.collage?.localFile?.childImageSharp?.fluid);
   ANNU(data.contentfulCollage?.tags);
 
+  const collageDetails = (
+    <h2>{ data.contentfulCollage.title }</h2>
+  );
+
   return (
-    <Layout>
+    <Layout overlay additionalOverlayContent={ collageDetails }>
       <SEO title={ data.contentfulCollage.title } />
-        <section>
-          <h2>{ data.contentfulCollage.title }</h2>
-          <Img className={ collageStyles.collagePlaceholder }
-               fluid={ data.contentfulCollage.collage.localFile.childImageSharp.fluid }
-          />
-          <div>
-            <span>{
-              data.contentfulCollage.tags.trim().split(/\s+/).map(
-                tag => (
-                  <span key={ tag } className={ collageStyles.tag }>{ tag }</span>
-                )
-              )
-            }</span>
-            <span>{ new Date(data.contentfulCollage.date).toLocaleDateString() }</span>
-          </div>
-        </section>
+      <section className={ collageStyles.section }>
+        <Img fluid={ data.contentfulCollage.collage.localFile.childImageSharp.fluid }
+             style={ { flex: 'auto', maxHeight: '100%' } }
+             imgStyle={ { objectFit: 'contain' } }
+        />
+      </section>
     </Layout>
   );
 }

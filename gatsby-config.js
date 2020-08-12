@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Catherine Jauffret`,
-    description: `Collages de Catherine Jauffret.`,
+    description: `Collages de Catherine Jauffret`,
     siteUrl: `https://catherinejauffret.com`,
     author: `Bertrand Fritsch`,
     socialMedias: {
@@ -92,7 +92,7 @@ module.exports = {
       options: {
         name: `Collages de Catherine Jauffret`,
         short_name: `Catherine Jauffret`,
-        description: `Collages de Catherine Jauffret.`,
+        description: `Collages de Catherine Jauffret`,
         start_url: `/`,
         background_color: `#000`,
         theme_color: `#fff`,

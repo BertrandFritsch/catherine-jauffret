@@ -1,17 +1,5 @@
 @import '../components/variables';
 
-.container {
-  display: flex;
-}
-
-.collages {
-  flex: none;
-}
-
-.spacer {
-  flex: 1 0 2rem;
-}
-
 .year {
   text-align: right;
   border-bottom: 1px solid;
@@ -59,7 +47,7 @@
   text-align: right;
 
   opacity: 0;
-  background: linear-gradient(0deg,lighten($base-color, 15%),transparent 6.25rem,transparent);
+  background: $overlay-background-bottom;
 
   p {
     margin: 0;

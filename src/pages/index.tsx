@@ -3,7 +3,6 @@ import * as React from 'react';
 import { HomepageQuery } from '../../graphqlTypes';
 import Img from 'gatsby-image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { ANNU } from '../helpers';
@@ -17,7 +16,7 @@ export default function IndexPage() {
         image {
           localFile {
             childImageSharp {
-              fixed(width: 400, quality: 100){
+              fixed(width: 400, quality: 100) {
                 ...GatsbyImageSharpFixed_withWebp
               }
             }

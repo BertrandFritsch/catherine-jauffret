@@ -1,12 +1,25 @@
 @import 'variables';
 
 .header {
-  margin: 1rem;
+  margin: 12.25rem 0 0; // height of fixed header
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: $root-background-color;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
 
   h1 {
-    text-align: center;
-    line-height: 6rem;
     font-size: 3rem;
+    padding: 1.5rem 0;
     text-transform: uppercase;
     margin: 0;
     color: $text-color;
@@ -19,9 +32,29 @@
   h2 {
     font-family: 'Lora', sans-serif;
     font-weight: 400;
-    text-align: center;
     margin: 0;
     font-style: italic;
+  }
+
+  ul {
+    margin: 1.5rem 0;
+  }
+
+  &.collapsed {
+    flex-direction: row;
+    justify-content: center;
+    background-color: darken($root-background-color, 2%);
+    box-shadow: 0 1px 30px -20px lighten($root-background-color, 30%);
+
+    h1 {
+      font-size: 2rem;
+      padding: 1rem 0;
+    }
+
+    h2 {
+      visibility: hidden;
+      width: 0;
+    }
   }
 }
 
@@ -31,6 +64,7 @@
   align-items: center;
   list-style: none;
   font-weight: bolder;
+  padding: 0;
 
   a {
     text-decoration: none;
