@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
 import classNames from 'classnames';
-import { motion, useViewportScroll } from 'framer-motion';
+import { motion, useViewportScroll, Variants } from 'framer-motion';
 
 import * as headerStyles from './header.module.scss';
 import variables from './variables.scss';
@@ -15,13 +15,15 @@ const defaultProps: Partial<Props> = {
   siteTitle: ``
 };
 
-const headerVariants = {
+const headerVariants: Variants = {
   overlayInitial: {
     opacity: 0,
+    pointerEvents: 'none'
   },
 
   overlayHover: {
     opacity: 1,
+    pointerEvents: 'auto',
     background: variables.overlayBackgroundTop
   }
 }

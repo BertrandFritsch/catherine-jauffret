@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import * as React from 'react';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 import * as footerStyles from './footer.module.scss';
 import * as headerStyles from './header.module.scss';
@@ -17,13 +17,15 @@ interface Props {
   additionalContent?: React.ReactNode;
 }
 
-const footerVariants = {
+const footerVariants: Variants = {
   overlayInitial: {
-    opacity: 0
+    opacity: 0,
+    pointerEvents: 'none'
   },
 
   overlayHover: {
     opacity: 1,
+    pointerEvents: 'auto',
     background: variables.overlayBackgroundBottom
   }
 };

@@ -5,21 +5,20 @@
     "./typings/*"
   ],
   "compilerOptions": {
-    "target": "es5",
-    "module": "es2020",
+    "target": "ESNext",
+    "module": "ESNext",
+    "jsx": "preserve",
     "moduleResolution": "node",
-    "isolatedModules": false,
-    "lib": [
-      "esnext",
-      "dom"
-    ],
-    "jsx": "react",
-    "sourceMap": true,
     "strict": true,
+    "noEmit": true,
+    "isolatedModules": false,
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
     "noImplicitAny": true,
+    "sourceMap": true,
     "preserveConstEnums": true,
     "allowJs": false,
-    "downlevelIteration": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": false,
+    "skipLibCheck": false
   }
 }
