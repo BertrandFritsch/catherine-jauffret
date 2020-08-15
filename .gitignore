@@ -71,4 +71,7 @@ public
 !.yarn/plugins/
 !.yarn/versions/
 !.yarn/sdks/
+
+# others
 /schema.graphql
+collages/
