@@ -87,7 +87,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "framer-motion",
-        "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.4.1"
+        "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.4.2"
       ],
       [
         "gatsby",
@@ -199,7 +199,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-helmet", "npm:6.1.0"],
             ["classnames", "npm:2.2.6"],
             ["dotenv", "npm:8.2.0"],
-            ["framer-motion", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.4.1"],
+            ["framer-motion", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.4.2"],
             ["gatsby", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.24.47"],
             ["gatsby-image", "npm:2.4.16"],
             ["gatsby-plugin-canonical-urls", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.3.10"],
@@ -7473,7 +7473,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-helmet", "npm:6.1.0"],
             ["classnames", "npm:2.2.6"],
             ["dotenv", "npm:8.2.0"],
-            ["framer-motion", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.4.1"],
+            ["framer-motion", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.4.2"],
             ["gatsby", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.24.47"],
             ["gatsby-image", "npm:2.4.16"],
             ["gatsby-plugin-canonical-urls", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.3.10"],
@@ -11510,10 +11510,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["framer-motion", [
-        ["virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.4.1", {
-          "packageLocation": "./.yarn/$$virtual/framer-motion-virtual-b85b51c69f/0/cache/framer-motion-npm-2.4.1-9f732adc56-95b2ecf143.zip/node_modules/framer-motion/",
+        ["virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.4.2", {
+          "packageLocation": "./.yarn/$$virtual/framer-motion-virtual-c327603e77/0/cache/framer-motion-npm-2.4.2-5fda8bafec-5f35c2439e.zip/node_modules/framer-motion/",
           "packageDependencies": [
-            ["framer-motion", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.4.1"],
+            ["framer-motion", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.4.2"],
             ["@emotion/is-prop-valid", "npm:0.8.8"],
             ["@popmotion/easing", "npm:1.0.2"],
             ["@popmotion/popcorn", "npm:0.4.4"],

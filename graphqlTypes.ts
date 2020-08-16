@@ -525,7 +525,6 @@ export type ContentfulCollage = Node & {
   internal: Internal;
   title: Maybe<Scalars['String']>;
   slug: Maybe<Scalars['String']>;
-  tags: Maybe<Scalars['String']>;
   date: Maybe<Scalars['Date']>;
   collage: Maybe<ContentfulAsset>;
   spaceId: Maybe<Scalars['String']>;
@@ -676,7 +675,6 @@ export type ContentfulCollageFieldsEnum =
   | 'internal___type'
   | 'title'
   | 'slug'
-  | 'tags'
   | 'date'
   | 'collage___id'
   | 'collage___parent___id'
@@ -837,7 +835,6 @@ export type ContentfulCollageFilterInput = {
   internal: Maybe<InternalFilterInput>;
   title: Maybe<StringQueryOperatorInput>;
   slug: Maybe<StringQueryOperatorInput>;
-  tags: Maybe<StringQueryOperatorInput>;
   date: Maybe<DateQueryOperatorInput>;
   collage: Maybe<ContentfulAssetFilterInput>;
   spaceId: Maybe<StringQueryOperatorInput>;
@@ -4713,7 +4710,6 @@ export type QueryContentfulCollageArgs = {
   internal: Maybe<InternalFilterInput>;
   title: Maybe<StringQueryOperatorInput>;
   slug: Maybe<StringQueryOperatorInput>;
-  tags: Maybe<StringQueryOperatorInput>;
   date: Maybe<DateQueryOperatorInput>;
   collage: Maybe<ContentfulAssetFilterInput>;
   spaceId: Maybe<StringQueryOperatorInput>;
@@ -6077,7 +6073,7 @@ export type CollagesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type CollagesQuery = { allContentfulCollage: { nodes: Array<(
-      Pick<ContentfulCollage, 'slug' | 'title' | 'tags' | 'date'>
+      Pick<ContentfulCollage, 'slug' | 'title' | 'date'>
       & { collage: Maybe<{ localFile: Maybe<{ childImageSharp: Maybe<{ fixed: Maybe<GatsbyImageSharpFixed_WithWebpFragment> }> }> }> }
     )> } };
 
@@ -6111,7 +6107,7 @@ export type CollageQueryVariables = Exact<{
 
 
 export type CollageQuery = { contentfulCollage: Maybe<(
-    Pick<ContentfulCollage, 'title' | 'tags' | 'date'>
+    Pick<ContentfulCollage, 'title' | 'date'>
     & { collage: Maybe<{ localFile: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<(
             GatsbyImageSharpFluid_WithWebpFragment
             & GatsbyImageSharpFluidLimitPresentationSizeFragment

@@ -17,7 +17,6 @@ export default function Collages() {
         nodes {
           slug
           title
-          tags
           date
           collage {
             localFile {

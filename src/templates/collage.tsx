@@ -12,7 +12,6 @@ export const query = graphql`
   query Collage($slug: String!) {
     contentfulCollage(slug: { eq: $slug }) {
       title
-      tags
       date
       collage {
         localFile {
@@ -34,7 +33,6 @@ interface Props {
 
 export default function Collage({ data }: Props) {
   ANNU(data.contentfulCollage?.collage?.localFile?.childImageSharp?.fluid);
-  ANNU(data.contentfulCollage?.tags);
 
   const collageDetails = (
     <h2>{ data.contentfulCollage.title }</h2>

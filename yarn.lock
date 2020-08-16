@@ -5324,7 +5324,7 @@ __metadata:
     "@types/react-helmet": ^6.1.0
     classnames: ^2.2.6
     dotenv: ^8.2.0
-    framer-motion: ^2.4.1
+    framer-motion: ^2.4.2
     gatsby: ^2.24.47
     gatsby-image: ^2.4.16
     gatsby-plugin-canonical-urls: ^2.3.10
@@ -8979,9 +8979,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^2.4.1":
-  version: 2.4.1
-  resolution: "framer-motion@npm:2.4.1"
+"framer-motion@npm:^2.4.2":
+  version: 2.4.2
+  resolution: "framer-motion@npm:2.4.2"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     "@popmotion/easing": ^1.0.2
@@ -8997,7 +8997,7 @@ __metadata:
   dependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  checksum: 95b2ecf14398d708e3ceacd4b376c7d6284327f3bc60e489a7b4dfb22fe6d213fbcc5339dc6d1d76c5618b606a042dbe9584cc9d0d6d6f54541e149a243a41ed
+  checksum: 5f35c2439e185ab1eadc16dd5e4f5adbc48298aeee6701ff4283f546ce2566eab264acdc3961aa57c181658da76e1395b1c3e53b2f5771d78ee03e76ac2f36a2
   languageName: node
   linkType: hard
 
