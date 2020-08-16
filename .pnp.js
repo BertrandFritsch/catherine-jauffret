@@ -158,10 +158,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:8.0.1"
       ],
       [
-        "prettier",
-        "npm:2.0.5"
-      ],
-      [
         "react",
         "npm:16.13.1"
       ],
@@ -217,7 +213,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-transformer-sharp", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.5.13"],
             ["node-sass", "npm:4.14.1"],
             ["normalize.css", "npm:8.0.1"],
-            ["prettier", "npm:2.0.5"],
             ["react", "npm:16.13.1"],
             ["react-dom", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:16.13.1"],
             ["react-helmet", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:6.1.0"],
@@ -7491,7 +7486,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-transformer-sharp", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.5.13"],
             ["node-sass", "npm:4.14.1"],
             ["normalize.css", "npm:8.0.1"],
-            ["prettier", "npm:2.0.5"],
             ["react", "npm:16.13.1"],
             ["react-dom", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:16.13.1"],
             ["react-helmet", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:6.1.0"],
