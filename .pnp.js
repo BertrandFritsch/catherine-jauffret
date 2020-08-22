@@ -50,6 +50,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:0.1.11"
       ],
       [
+        "@material-ui/core",
+        "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:4.11.0"
+      ],
+      [
+        "@material-ui/icons",
+        "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:4.9.1"
+      ],
+      [
         "@types/classnames",
         "npm:2.2.10"
       ],
@@ -86,8 +94,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:8.2.0"
       ],
       [
+        "final-form",
+        "npm:4.20.1"
+      ],
+      [
         "framer-motion",
-        "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.4.2"
+        "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.5.5"
       ],
       [
         "gatsby",
@@ -166,12 +178,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:16.13.1"
       ],
       [
+        "react-final-form",
+        "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:6.5.1"
+      ],
+      [
         "react-helmet",
         "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:6.1.0"
       ],
       [
         "typescript",
-        "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"
+        "patch:typescript@npm%3A4.0.2#builtin<compat/typescript>::version=4.0.2&hash=5b02a2"
       ]
     ],
     "locationBlacklistData": [
@@ -186,6 +202,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@fortawesome/fontawesome-svg-core", "npm:1.2.30"],
             ["@fortawesome/free-brands-svg-icons", "npm:5.14.0"],
             ["@fortawesome/react-fontawesome", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:0.1.11"],
+            ["@material-ui/core", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:4.11.0"],
+            ["@material-ui/icons", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:4.9.1"],
             ["@types/classnames", "npm:2.2.10"],
             ["@types/events", "npm:3.0.0"],
             ["@types/prop-types", "npm:15.7.3"],
@@ -195,7 +213,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-helmet", "npm:6.1.0"],
             ["classnames", "npm:2.2.6"],
             ["dotenv", "npm:8.2.0"],
-            ["framer-motion", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.4.2"],
+            ["final-form", "npm:4.20.1"],
+            ["framer-motion", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.5.5"],
             ["gatsby", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.24.47"],
             ["gatsby-image", "npm:2.4.16"],
             ["gatsby-plugin-canonical-urls", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.3.10"],
@@ -215,8 +234,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["normalize.css", "npm:8.0.1"],
             ["react", "npm:16.13.1"],
             ["react-dom", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:16.13.1"],
+            ["react-final-form", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:6.5.1"],
             ["react-helmet", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:6.1.0"],
-            ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"]
+            ["typescript", "patch:typescript@npm%3A4.0.2#builtin<compat/typescript>::version=4.0.2&hash=5b02a2"]
           ],
           "linkType": "SOFT",
         }]
@@ -1066,10 +1086,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["virtual:38736d965ad2279b2e286b1d93cb95dc43536adfdb21d72f502b390087b9748457baf61956e48563d7f91648d459f1799d5dd05aa471627faf95312f973bfa76#npm:7.10.4", {
-          "packageLocation": "./.yarn/$$virtual/@babel-plugin-syntax-flow-virtual-7bda72544d/0/cache/@babel-plugin-syntax-flow-npm-7.10.4-2649765dd3-96d32d0411.zip/node_modules/@babel/plugin-syntax-flow/",
+        ["virtual:27473f8a1d5495deb8c0ed86791651d5961799daa236fdf43117f2e864aa43f94fadcd77f7598759257a45239f9a767a0cf91a52b145f2358f786e4ea29008ae#npm:7.10.4", {
+          "packageLocation": "./.yarn/$$virtual/@babel-plugin-syntax-flow-virtual-85791b658c/0/cache/@babel-plugin-syntax-flow-npm-7.10.4-2649765dd3-96d32d0411.zip/node_modules/@babel/plugin-syntax-flow/",
           "packageDependencies": [
-            ["@babel/plugin-syntax-flow", "virtual:38736d965ad2279b2e286b1d93cb95dc43536adfdb21d72f502b390087b9748457baf61956e48563d7f91648d459f1799d5dd05aa471627faf95312f973bfa76#npm:7.10.4"],
+            ["@babel/plugin-syntax-flow", "virtual:27473f8a1d5495deb8c0ed86791651d5961799daa236fdf43117f2e864aa43f94fadcd77f7598759257a45239f9a767a0cf91a52b145f2358f786e4ea29008ae#npm:7.10.4"],
             ["@babel/core", "npm:7.10.5"],
             ["@babel/helper-plugin-utils", "npm:7.10.4"]
           ],
@@ -1584,13 +1604,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@babel/plugin-transform-flow-strip-types", [
-        ["virtual:38736d965ad2279b2e286b1d93cb95dc43536adfdb21d72f502b390087b9748457baf61956e48563d7f91648d459f1799d5dd05aa471627faf95312f973bfa76#npm:7.10.4", {
-          "packageLocation": "./.yarn/$$virtual/@babel-plugin-transform-flow-strip-types-virtual-0d4b8e6e97/0/cache/@babel-plugin-transform-flow-strip-types-npm-7.10.4-2766f1172d-704d4c8a80.zip/node_modules/@babel/plugin-transform-flow-strip-types/",
+        ["virtual:27473f8a1d5495deb8c0ed86791651d5961799daa236fdf43117f2e864aa43f94fadcd77f7598759257a45239f9a767a0cf91a52b145f2358f786e4ea29008ae#npm:7.10.4", {
+          "packageLocation": "./.yarn/$$virtual/@babel-plugin-transform-flow-strip-types-virtual-e177ad1d54/0/cache/@babel-plugin-transform-flow-strip-types-npm-7.10.4-2766f1172d-704d4c8a80.zip/node_modules/@babel/plugin-transform-flow-strip-types/",
           "packageDependencies": [
-            ["@babel/plugin-transform-flow-strip-types", "virtual:38736d965ad2279b2e286b1d93cb95dc43536adfdb21d72f502b390087b9748457baf61956e48563d7f91648d459f1799d5dd05aa471627faf95312f973bfa76#npm:7.10.4"],
+            ["@babel/plugin-transform-flow-strip-types", "virtual:27473f8a1d5495deb8c0ed86791651d5961799daa236fdf43117f2e864aa43f94fadcd77f7598759257a45239f9a767a0cf91a52b145f2358f786e4ea29008ae#npm:7.10.4"],
             ["@babel/core", "npm:7.10.5"],
             ["@babel/helper-plugin-utils", "npm:7.10.4"],
-            ["@babel/plugin-syntax-flow", "virtual:38736d965ad2279b2e286b1d93cb95dc43536adfdb21d72f502b390087b9748457baf61956e48563d7f91648d459f1799d5dd05aa471627faf95312f973bfa76#npm:7.10.4"]
+            ["@babel/plugin-syntax-flow", "virtual:27473f8a1d5495deb8c0ed86791651d5961799daa236fdf43117f2e864aa43f94fadcd77f7598759257a45239f9a767a0cf91a52b145f2358f786e4ea29008ae#npm:7.10.4"]
           ],
           "packagePeers": [
             "@babel/core"
@@ -2695,6 +2715,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["regenerator-runtime", "npm:0.13.7"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:7.11.2", {
+          "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.11.2-f2cfabd212-2f127ad60a.zip/node_modules/@babel/runtime/",
+          "packageDependencies": [
+            ["@babel/runtime", "npm:7.11.2"],
+            ["regenerator-runtime", "npm:0.13.7"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["@babel/runtime-corejs3", [
@@ -3040,13 +3068,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@graphql-codegen/core", [
-        ["virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:1.17.6", {
-          "packageLocation": "./.yarn/$$virtual/@graphql-codegen-core-virtual-86b4dee5e6/0/cache/@graphql-codegen-core-npm-1.17.6-ab96e1cc8a-f5dff42d12.zip/node_modules/@graphql-codegen/core/",
+        ["virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6", {
+          "packageLocation": "./.yarn/$$virtual/@graphql-codegen-core-virtual-52e04d7408/0/cache/@graphql-codegen-core-npm-1.17.6-ab96e1cc8a-f5dff42d12.zip/node_modules/@graphql-codegen/core/",
           "packageDependencies": [
-            ["@graphql-codegen/core", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:1.17.6"],
-            ["@graphql-codegen/plugin-helpers", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:1.17.6"],
-            ["@graphql-tools/merge", "virtual:86b4dee5e68921ee2fbed2c8cb0de4702b526d162ce953c82ede6c175a047476226ed730c42c2e28e784a2f9e15f51766109d41efa1df136e753d8a1db7a3228#npm:6.0.15"],
-            ["@graphql-tools/utils", "virtual:86b4dee5e68921ee2fbed2c8cb0de4702b526d162ce953c82ede6c175a047476226ed730c42c2e28e784a2f9e15f51766109d41efa1df136e753d8a1db7a3228#npm:6.0.15"],
+            ["@graphql-codegen/core", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6"],
+            ["@graphql-codegen/plugin-helpers", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6"],
+            ["@graphql-tools/merge", "virtual:52e04d74089eb1b17a9d60fc78b9749f4b60a62456c8fa07ec9023ba6f9f8ce63720513e40162012f78bb49149a4bf90d9dc24953348797485a6a8c68a88d061#npm:6.0.15"],
+            ["@graphql-tools/utils", "virtual:52e04d74089eb1b17a9d60fc78b9749f4b60a62456c8fa07ec9023ba6f9f8ce63720513e40162012f78bb49149a4bf90d9dc24953348797485a6a8c68a88d061#npm:6.0.15"],
             ["graphql", null],
             ["tslib", "npm:2.0.0"]
           ],
@@ -3057,11 +3085,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@graphql-codegen/plugin-helpers", [
-        ["virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:1.17.6", {
-          "packageLocation": "./.yarn/$$virtual/@graphql-codegen-plugin-helpers-virtual-b88f19fd5c/0/cache/@graphql-codegen-plugin-helpers-npm-1.17.6-b149e539aa-6793149a95.zip/node_modules/@graphql-codegen/plugin-helpers/",
+        ["virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6", {
+          "packageLocation": "./.yarn/$$virtual/@graphql-codegen-plugin-helpers-virtual-f438bacdce/0/cache/@graphql-codegen-plugin-helpers-npm-1.17.6-b149e539aa-6793149a95.zip/node_modules/@graphql-codegen/plugin-helpers/",
           "packageDependencies": [
-            ["@graphql-codegen/plugin-helpers", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:1.17.6"],
-            ["@graphql-tools/utils", "virtual:86b4dee5e68921ee2fbed2c8cb0de4702b526d162ce953c82ede6c175a047476226ed730c42c2e28e784a2f9e15f51766109d41efa1df136e753d8a1db7a3228#npm:6.0.15"],
+            ["@graphql-codegen/plugin-helpers", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6"],
+            ["@graphql-tools/utils", "virtual:52e04d74089eb1b17a9d60fc78b9749f4b60a62456c8fa07ec9023ba6f9f8ce63720513e40162012f78bb49149a4bf90d9dc24953348797485a6a8c68a88d061#npm:6.0.15"],
             ["camel-case", "npm:4.1.1"],
             ["common-tags", "npm:1.8.0"],
             ["constant-case", "npm:3.0.3"],
@@ -3081,12 +3109,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@graphql-codegen/typescript", [
-        ["virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:1.17.6", {
-          "packageLocation": "./.yarn/$$virtual/@graphql-codegen-typescript-virtual-88a272ad83/0/cache/@graphql-codegen-typescript-npm-1.17.6-0ccefb6ee7-6ea0907cf3.zip/node_modules/@graphql-codegen/typescript/",
+        ["virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6", {
+          "packageLocation": "./.yarn/$$virtual/@graphql-codegen-typescript-virtual-2380ccd1dd/0/cache/@graphql-codegen-typescript-npm-1.17.6-0ccefb6ee7-6ea0907cf3.zip/node_modules/@graphql-codegen/typescript/",
           "packageDependencies": [
-            ["@graphql-codegen/typescript", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:1.17.6"],
-            ["@graphql-codegen/plugin-helpers", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:1.17.6"],
-            ["@graphql-codegen/visitor-plugin-common", "virtual:88a272ad83a07b42cf18638ba5d3cbdb5c605d3256b77d89c7ae4abfda9036dbdb671d42cb942f2db7a05bf4265179da162d7b549d6f6b35c8241d564cea3d44#npm:1.17.6"],
+            ["@graphql-codegen/typescript", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6"],
+            ["@graphql-codegen/plugin-helpers", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6"],
+            ["@graphql-codegen/visitor-plugin-common", "virtual:2380ccd1dd05b7c55882db05bbb1c6a7d0d52302de8877827424ab5dbc5a4e3fad5d113bc7ce527676e6f6bdc05e54336787d3a66c2094948777788d6087a92a#npm:1.17.6"],
             ["auto-bind", "npm:4.0.0"],
             ["graphql", null],
             ["tslib", "npm:2.0.0"]
@@ -3098,13 +3126,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@graphql-codegen/typescript-operations", [
-        ["virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:1.17.6", {
-          "packageLocation": "./.yarn/$$virtual/@graphql-codegen-typescript-operations-virtual-f6de7c118c/0/cache/@graphql-codegen-typescript-operations-npm-1.17.6-2b533a2a6c-7021153678.zip/node_modules/@graphql-codegen/typescript-operations/",
+        ["virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6", {
+          "packageLocation": "./.yarn/$$virtual/@graphql-codegen-typescript-operations-virtual-fc9f697531/0/cache/@graphql-codegen-typescript-operations-npm-1.17.6-2b533a2a6c-7021153678.zip/node_modules/@graphql-codegen/typescript-operations/",
           "packageDependencies": [
-            ["@graphql-codegen/typescript-operations", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:1.17.6"],
-            ["@graphql-codegen/plugin-helpers", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:1.17.6"],
-            ["@graphql-codegen/typescript", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:1.17.6"],
-            ["@graphql-codegen/visitor-plugin-common", "virtual:88a272ad83a07b42cf18638ba5d3cbdb5c605d3256b77d89c7ae4abfda9036dbdb671d42cb942f2db7a05bf4265179da162d7b549d6f6b35c8241d564cea3d44#npm:1.17.6"],
+            ["@graphql-codegen/typescript-operations", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6"],
+            ["@graphql-codegen/plugin-helpers", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6"],
+            ["@graphql-codegen/typescript", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6"],
+            ["@graphql-codegen/visitor-plugin-common", "virtual:2380ccd1dd05b7c55882db05bbb1c6a7d0d52302de8877827424ab5dbc5a4e3fad5d113bc7ce527676e6f6bdc05e54336787d3a66c2094948777788d6087a92a#npm:1.17.6"],
             ["auto-bind", "npm:4.0.0"],
             ["graphql", null],
             ["tslib", "npm:2.0.0"]
@@ -3116,17 +3144,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@graphql-codegen/visitor-plugin-common", [
-        ["virtual:88a272ad83a07b42cf18638ba5d3cbdb5c605d3256b77d89c7ae4abfda9036dbdb671d42cb942f2db7a05bf4265179da162d7b549d6f6b35c8241d564cea3d44#npm:1.17.6", {
-          "packageLocation": "./.yarn/$$virtual/@graphql-codegen-visitor-plugin-common-virtual-4dedd29309/0/cache/@graphql-codegen-visitor-plugin-common-npm-1.17.6-5812c8bc85-68c3ecbcbd.zip/node_modules/@graphql-codegen/visitor-plugin-common/",
+        ["virtual:2380ccd1dd05b7c55882db05bbb1c6a7d0d52302de8877827424ab5dbc5a4e3fad5d113bc7ce527676e6f6bdc05e54336787d3a66c2094948777788d6087a92a#npm:1.17.6", {
+          "packageLocation": "./.yarn/$$virtual/@graphql-codegen-visitor-plugin-common-virtual-2a63e5485c/0/cache/@graphql-codegen-visitor-plugin-common-npm-1.17.6-5812c8bc85-68c3ecbcbd.zip/node_modules/@graphql-codegen/visitor-plugin-common/",
           "packageDependencies": [
-            ["@graphql-codegen/visitor-plugin-common", "virtual:88a272ad83a07b42cf18638ba5d3cbdb5c605d3256b77d89c7ae4abfda9036dbdb671d42cb942f2db7a05bf4265179da162d7b549d6f6b35c8241d564cea3d44#npm:1.17.6"],
-            ["@graphql-codegen/plugin-helpers", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:1.17.6"],
-            ["@graphql-tools/relay-operation-optimizer", "virtual:4dedd293092034b65c5b03f2a02b4384b4e32f4f875adcb8fc18abb7bebb6d70efb97de4ba3e88afc62e21aa1e66aa021a227b52d2d067ca3dfb504667c3d6b0#npm:6.0.15"],
+            ["@graphql-codegen/visitor-plugin-common", "virtual:2380ccd1dd05b7c55882db05bbb1c6a7d0d52302de8877827424ab5dbc5a4e3fad5d113bc7ce527676e6f6bdc05e54336787d3a66c2094948777788d6087a92a#npm:1.17.6"],
+            ["@graphql-codegen/plugin-helpers", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6"],
+            ["@graphql-tools/relay-operation-optimizer", "virtual:2a63e5485c2f584c4687acde6b34b3f3df3398afa6020e77607ac8d5eead254049a9b1a6ae6522d6d42efdc5f742f66716a73b649e9b82e1d5c44f826d969e88#npm:6.0.15"],
             ["array.prototype.flatmap", "npm:1.2.3"],
             ["auto-bind", "npm:4.0.0"],
             ["dependency-graph", "npm:0.9.0"],
             ["graphql", null],
-            ["graphql-tag", "virtual:4dedd293092034b65c5b03f2a02b4384b4e32f4f875adcb8fc18abb7bebb6d70efb97de4ba3e88afc62e21aa1e66aa021a227b52d2d067ca3dfb504667c3d6b0#npm:2.10.4"],
+            ["graphql-tag", "virtual:2a63e5485c2f584c4687acde6b34b3f3df3398afa6020e77607ac8d5eead254049a9b1a6ae6522d6d42efdc5f742f66716a73b649e9b82e1d5c44f826d969e88#npm:2.10.4"],
             ["parse-filepath", "npm:1.0.2"],
             ["pascal-case", "npm:3.1.1"],
             ["tslib", "npm:2.0.0"]
@@ -3138,12 +3166,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@graphql-toolkit/code-file-loader", [
-        ["virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7", {
-          "packageLocation": "./.yarn/$$virtual/@graphql-toolkit-code-file-loader-virtual-d9d0846bd3/0/cache/@graphql-toolkit-code-file-loader-npm-0.10.7-f3dc0ded33-cabb8ef787.zip/node_modules/@graphql-toolkit/code-file-loader/",
+        ["virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7", {
+          "packageLocation": "./.yarn/$$virtual/@graphql-toolkit-code-file-loader-virtual-be7bc3849d/0/cache/@graphql-toolkit-code-file-loader-npm-0.10.7-f3dc0ded33-cabb8ef787.zip/node_modules/@graphql-toolkit/code-file-loader/",
           "packageDependencies": [
-            ["@graphql-toolkit/code-file-loader", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
-            ["@graphql-toolkit/common", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
-            ["@graphql-toolkit/graphql-tag-pluck", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
+            ["@graphql-toolkit/code-file-loader", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/common", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/graphql-tag-pluck", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
             ["graphql", null],
             ["tslib", "npm:1.11.2"]
           ],
@@ -3154,14 +3182,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@graphql-toolkit/common", [
-        ["virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7", {
-          "packageLocation": "./.yarn/$$virtual/@graphql-toolkit-common-virtual-652cace644/0/cache/@graphql-toolkit-common-npm-0.10.7-64e2794199-d2e4ac5d83.zip/node_modules/@graphql-toolkit/common/",
+        ["virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7", {
+          "packageLocation": "./.yarn/$$virtual/@graphql-toolkit-common-virtual-a2d082d78a/0/cache/@graphql-toolkit-common-npm-0.10.7-64e2794199-d2e4ac5d83.zip/node_modules/@graphql-toolkit/common/",
           "packageDependencies": [
-            ["@graphql-toolkit/common", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
+            ["@graphql-toolkit/common", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
             ["aggregate-error", "npm:3.0.1"],
             ["camel-case", "npm:4.1.1"],
             ["graphql", null],
-            ["graphql-tools", "virtual:652cace64432690fb5394a0dc1c3bac36e702556771910f151bb69ada470f7ed51aa5c0b83ca27703c579c8d7715a048b8e1599da0dd34f28c9c942063e8f5dd#npm:5.0.0"],
+            ["graphql-tools", "virtual:a2d082d78a8e47c3fa3d07cfd48742e42c6b232a6c8183c9391f9e852a56325d91cecda7b269d08448c84a371f24b558670f7e4179fa18870b62d5b4df63425f#npm:5.0.0"],
             ["lodash", "npm:4.17.15"]
           ],
           "packagePeers": [
@@ -3171,12 +3199,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@graphql-toolkit/core", [
-        ["virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7", {
-          "packageLocation": "./.yarn/$$virtual/@graphql-toolkit-core-virtual-3570e613e7/0/cache/@graphql-toolkit-core-npm-0.10.7-3dfe54d6e0-a474ea2c7b.zip/node_modules/@graphql-toolkit/core/",
+        ["virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7", {
+          "packageLocation": "./.yarn/$$virtual/@graphql-toolkit-core-virtual-221a908184/0/cache/@graphql-toolkit-core-npm-0.10.7-3dfe54d6e0-a474ea2c7b.zip/node_modules/@graphql-toolkit/core/",
           "packageDependencies": [
-            ["@graphql-toolkit/core", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
-            ["@graphql-toolkit/common", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
-            ["@graphql-toolkit/schema-merging", "virtual:3570e613e74c28524c0dc818fddeb04314c0a1a84cd0aa77e3411af3a84b2cbb8fa86d7594f69eb7fd8daa7d51720efd8f7433c833c6d5b0ce5ae469c364b074#npm:0.10.7"],
+            ["@graphql-toolkit/core", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/common", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/schema-merging", "virtual:221a908184743dbfbabd88ff4e0efc2816b6d92277bfbea3441b11e50de57ae368b6833c1974b945876a506c61aa00caebbf2ca7b3a78337b90200d4c47bce16#npm:0.10.7"],
             ["aggregate-error", "npm:3.0.1"],
             ["globby", "npm:11.0.0"],
             ["graphql", null],
@@ -3196,11 +3224,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@graphql-toolkit/graphql-file-loader", [
-        ["virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7", {
-          "packageLocation": "./.yarn/$$virtual/@graphql-toolkit-graphql-file-loader-virtual-cb4ffdc89e/0/cache/@graphql-toolkit-graphql-file-loader-npm-0.10.7-7f50b4d57e-0539dbdb78.zip/node_modules/@graphql-toolkit/graphql-file-loader/",
+        ["virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7", {
+          "packageLocation": "./.yarn/$$virtual/@graphql-toolkit-graphql-file-loader-virtual-2fdc5df308/0/cache/@graphql-toolkit-graphql-file-loader-npm-0.10.7-7f50b4d57e-0539dbdb78.zip/node_modules/@graphql-toolkit/graphql-file-loader/",
           "packageDependencies": [
-            ["@graphql-toolkit/graphql-file-loader", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
-            ["@graphql-toolkit/common", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
+            ["@graphql-toolkit/graphql-file-loader", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/common", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
             ["graphql", null],
             ["tslib", "npm:1.11.2"]
           ],
@@ -3211,14 +3239,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@graphql-toolkit/graphql-tag-pluck", [
-        ["virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7", {
-          "packageLocation": "./.yarn/$$virtual/@graphql-toolkit-graphql-tag-pluck-virtual-e59992aaa4/0/cache/@graphql-toolkit-graphql-tag-pluck-npm-0.10.7-03af07828d-bbed70a278.zip/node_modules/@graphql-toolkit/graphql-tag-pluck/",
+        ["virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7", {
+          "packageLocation": "./.yarn/$$virtual/@graphql-toolkit-graphql-tag-pluck-virtual-086d4660fe/0/cache/@graphql-toolkit-graphql-tag-pluck-npm-0.10.7-03af07828d-bbed70a278.zip/node_modules/@graphql-toolkit/graphql-tag-pluck/",
           "packageDependencies": [
-            ["@graphql-toolkit/graphql-tag-pluck", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
+            ["@graphql-toolkit/graphql-tag-pluck", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
             ["@babel/parser", "npm:7.9.6"],
             ["@babel/traverse", "npm:7.9.6"],
             ["@babel/types", "npm:7.9.6"],
-            ["@graphql-toolkit/common", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
+            ["@graphql-toolkit/common", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
             ["graphql", null],
             ["vue-template-compiler", "npm:2.6.11"]
           ],
@@ -3229,11 +3257,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@graphql-toolkit/json-file-loader", [
-        ["virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7", {
-          "packageLocation": "./.yarn/$$virtual/@graphql-toolkit-json-file-loader-virtual-b780608749/0/cache/@graphql-toolkit-json-file-loader-npm-0.10.7-def6bbc7bf-71c31182df.zip/node_modules/@graphql-toolkit/json-file-loader/",
+        ["virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7", {
+          "packageLocation": "./.yarn/$$virtual/@graphql-toolkit-json-file-loader-virtual-6331ffd178/0/cache/@graphql-toolkit-json-file-loader-npm-0.10.7-def6bbc7bf-71c31182df.zip/node_modules/@graphql-toolkit/json-file-loader/",
           "packageDependencies": [
-            ["@graphql-toolkit/json-file-loader", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
-            ["@graphql-toolkit/common", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
+            ["@graphql-toolkit/json-file-loader", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/common", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
             ["graphql", null],
             ["tslib", "npm:1.11.2"]
           ],
@@ -3244,14 +3272,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@graphql-toolkit/schema-merging", [
-        ["virtual:3570e613e74c28524c0dc818fddeb04314c0a1a84cd0aa77e3411af3a84b2cbb8fa86d7594f69eb7fd8daa7d51720efd8f7433c833c6d5b0ce5ae469c364b074#npm:0.10.7", {
-          "packageLocation": "./.yarn/$$virtual/@graphql-toolkit-schema-merging-virtual-268c7c8284/0/cache/@graphql-toolkit-schema-merging-npm-0.10.7-505596ef14-1803dfbc76.zip/node_modules/@graphql-toolkit/schema-merging/",
+        ["virtual:221a908184743dbfbabd88ff4e0efc2816b6d92277bfbea3441b11e50de57ae368b6833c1974b945876a506c61aa00caebbf2ca7b3a78337b90200d4c47bce16#npm:0.10.7", {
+          "packageLocation": "./.yarn/$$virtual/@graphql-toolkit-schema-merging-virtual-4357a9c4b5/0/cache/@graphql-toolkit-schema-merging-npm-0.10.7-505596ef14-1803dfbc76.zip/node_modules/@graphql-toolkit/schema-merging/",
           "packageDependencies": [
-            ["@graphql-toolkit/schema-merging", "virtual:3570e613e74c28524c0dc818fddeb04314c0a1a84cd0aa77e3411af3a84b2cbb8fa86d7594f69eb7fd8daa7d51720efd8f7433c833c6d5b0ce5ae469c364b074#npm:0.10.7"],
-            ["@graphql-toolkit/common", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
+            ["@graphql-toolkit/schema-merging", "virtual:221a908184743dbfbabd88ff4e0efc2816b6d92277bfbea3441b11e50de57ae368b6833c1974b945876a506c61aa00caebbf2ca7b3a78337b90200d4c47bce16#npm:0.10.7"],
+            ["@graphql-toolkit/common", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
             ["deepmerge", "npm:4.2.2"],
             ["graphql", null],
-            ["graphql-tools", "virtual:652cace64432690fb5394a0dc1c3bac36e702556771910f151bb69ada470f7ed51aa5c0b83ca27703c579c8d7715a048b8e1599da0dd34f28c9c942063e8f5dd#npm:5.0.0"],
+            ["graphql-tools", "virtual:a2d082d78a8e47c3fa3d07cfd48742e42c6b232a6c8183c9391f9e852a56325d91cecda7b269d08448c84a371f24b558670f7e4179fa18870b62d5b4df63425f#npm:5.0.0"],
             ["tslib", "npm:1.11.2"]
           ],
           "packagePeers": [
@@ -3261,14 +3289,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@graphql-toolkit/url-loader", [
-        ["virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7", {
-          "packageLocation": "./.yarn/$$virtual/@graphql-toolkit-url-loader-virtual-888796ac94/0/cache/@graphql-toolkit-url-loader-npm-0.10.7-754c1c6cd0-b9c99bf10a.zip/node_modules/@graphql-toolkit/url-loader/",
+        ["virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7", {
+          "packageLocation": "./.yarn/$$virtual/@graphql-toolkit-url-loader-virtual-1689674f70/0/cache/@graphql-toolkit-url-loader-npm-0.10.7-754c1c6cd0-b9c99bf10a.zip/node_modules/@graphql-toolkit/url-loader/",
           "packageDependencies": [
-            ["@graphql-toolkit/url-loader", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
-            ["@graphql-toolkit/common", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
+            ["@graphql-toolkit/url-loader", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/common", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
             ["cross-fetch", "npm:3.0.4"],
             ["graphql", null],
-            ["graphql-tools", "virtual:652cace64432690fb5394a0dc1c3bac36e702556771910f151bb69ada470f7ed51aa5c0b83ca27703c579c8d7715a048b8e1599da0dd34f28c9c942063e8f5dd#npm:5.0.0"],
+            ["graphql-tools", "virtual:a2d082d78a8e47c3fa3d07cfd48742e42c6b232a6c8183c9391f9e852a56325d91cecda7b269d08448c84a371f24b558670f7e4179fa18870b62d5b4df63425f#npm:5.0.0"],
             ["tslib", "npm:1.11.2"],
             ["valid-url", "npm:1.0.9"]
           ],
@@ -3279,12 +3307,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@graphql-tools/merge", [
-        ["virtual:86b4dee5e68921ee2fbed2c8cb0de4702b526d162ce953c82ede6c175a047476226ed730c42c2e28e784a2f9e15f51766109d41efa1df136e753d8a1db7a3228#npm:6.0.15", {
-          "packageLocation": "./.yarn/$$virtual/@graphql-tools-merge-virtual-f8c3c57164/0/cache/@graphql-tools-merge-npm-6.0.15-ef74044dfb-63050b1571.zip/node_modules/@graphql-tools/merge/",
+        ["virtual:52e04d74089eb1b17a9d60fc78b9749f4b60a62456c8fa07ec9023ba6f9f8ce63720513e40162012f78bb49149a4bf90d9dc24953348797485a6a8c68a88d061#npm:6.0.15", {
+          "packageLocation": "./.yarn/$$virtual/@graphql-tools-merge-virtual-36159ee19f/0/cache/@graphql-tools-merge-npm-6.0.15-ef74044dfb-63050b1571.zip/node_modules/@graphql-tools/merge/",
           "packageDependencies": [
-            ["@graphql-tools/merge", "virtual:86b4dee5e68921ee2fbed2c8cb0de4702b526d162ce953c82ede6c175a047476226ed730c42c2e28e784a2f9e15f51766109d41efa1df136e753d8a1db7a3228#npm:6.0.15"],
-            ["@graphql-tools/schema", "virtual:f8c3c57164e933a1441bfbde39134c99834221a9e8896c66781af4c6c77eb486348ea621e61ddcd5fc27ffd6dcc45ede5d46e74921a591741fe234997364d0b0#npm:6.0.15"],
-            ["@graphql-tools/utils", "virtual:86b4dee5e68921ee2fbed2c8cb0de4702b526d162ce953c82ede6c175a047476226ed730c42c2e28e784a2f9e15f51766109d41efa1df136e753d8a1db7a3228#npm:6.0.15"],
+            ["@graphql-tools/merge", "virtual:52e04d74089eb1b17a9d60fc78b9749f4b60a62456c8fa07ec9023ba6f9f8ce63720513e40162012f78bb49149a4bf90d9dc24953348797485a6a8c68a88d061#npm:6.0.15"],
+            ["@graphql-tools/schema", "virtual:36159ee19f76178dd01c98f9515fe5f66243a1a0e73e371e7cd9cb2b64fa318457b0b955f54911ba8d26c0f8e29146559d124d81d717e0ee9bfeb5722e9791ff#npm:6.0.15"],
+            ["@graphql-tools/utils", "virtual:52e04d74089eb1b17a9d60fc78b9749f4b60a62456c8fa07ec9023ba6f9f8ce63720513e40162012f78bb49149a4bf90d9dc24953348797485a6a8c68a88d061#npm:6.0.15"],
             ["graphql", null],
             ["tslib", "npm:2.0.0"]
           ],
@@ -3295,13 +3323,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@graphql-tools/relay-operation-optimizer", [
-        ["virtual:4dedd293092034b65c5b03f2a02b4384b4e32f4f875adcb8fc18abb7bebb6d70efb97de4ba3e88afc62e21aa1e66aa021a227b52d2d067ca3dfb504667c3d6b0#npm:6.0.15", {
-          "packageLocation": "./.yarn/$$virtual/@graphql-tools-relay-operation-optimizer-virtual-23c3f0141e/0/cache/@graphql-tools-relay-operation-optimizer-npm-6.0.15-7bf2e36441-2e8526e2bd.zip/node_modules/@graphql-tools/relay-operation-optimizer/",
+        ["virtual:2a63e5485c2f584c4687acde6b34b3f3df3398afa6020e77607ac8d5eead254049a9b1a6ae6522d6d42efdc5f742f66716a73b649e9b82e1d5c44f826d969e88#npm:6.0.15", {
+          "packageLocation": "./.yarn/$$virtual/@graphql-tools-relay-operation-optimizer-virtual-e09b67cc66/0/cache/@graphql-tools-relay-operation-optimizer-npm-6.0.15-7bf2e36441-2e8526e2bd.zip/node_modules/@graphql-tools/relay-operation-optimizer/",
           "packageDependencies": [
-            ["@graphql-tools/relay-operation-optimizer", "virtual:4dedd293092034b65c5b03f2a02b4384b4e32f4f875adcb8fc18abb7bebb6d70efb97de4ba3e88afc62e21aa1e66aa021a227b52d2d067ca3dfb504667c3d6b0#npm:6.0.15"],
-            ["@graphql-tools/utils", "virtual:86b4dee5e68921ee2fbed2c8cb0de4702b526d162ce953c82ede6c175a047476226ed730c42c2e28e784a2f9e15f51766109d41efa1df136e753d8a1db7a3228#npm:6.0.15"],
+            ["@graphql-tools/relay-operation-optimizer", "virtual:2a63e5485c2f584c4687acde6b34b3f3df3398afa6020e77607ac8d5eead254049a9b1a6ae6522d6d42efdc5f742f66716a73b649e9b82e1d5c44f826d969e88#npm:6.0.15"],
+            ["@graphql-tools/utils", "virtual:52e04d74089eb1b17a9d60fc78b9749f4b60a62456c8fa07ec9023ba6f9f8ce63720513e40162012f78bb49149a4bf90d9dc24953348797485a6a8c68a88d061#npm:6.0.15"],
             ["graphql", null],
-            ["relay-compiler", "virtual:23c3f0141e4c4d1de6262e3ecdb8d7512b1c3d54b6f7a8ed7afc89387a554c401358f86a0d0e00e1e1f873aba3652286b532ab00ad52ea547bb13a31ba9a3419#npm:10.0.0"]
+            ["relay-compiler", "virtual:e09b67cc66c204f144a8b5867ee1522a233456e25fc9aac35b7df68e43662f37263ca8cb9002f0fe61c5ada99825cf9e3398ce6c58921f045b5e6e5e9f48ea44#npm:10.0.0"]
           ],
           "packagePeers": [
             "graphql"
@@ -3310,6 +3338,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@graphql-tools/schema", [
+        ["virtual:36159ee19f76178dd01c98f9515fe5f66243a1a0e73e371e7cd9cb2b64fa318457b0b955f54911ba8d26c0f8e29146559d124d81d717e0ee9bfeb5722e9791ff#npm:6.0.15", {
+          "packageLocation": "./.yarn/$$virtual/@graphql-tools-schema-virtual-53a0b6df37/0/cache/@graphql-tools-schema-npm-6.0.15-607fefe8aa-0112bfb36a.zip/node_modules/@graphql-tools/schema/",
+          "packageDependencies": [
+            ["@graphql-tools/schema", "virtual:36159ee19f76178dd01c98f9515fe5f66243a1a0e73e371e7cd9cb2b64fa318457b0b955f54911ba8d26c0f8e29146559d124d81d717e0ee9bfeb5722e9791ff#npm:6.0.15"],
+            ["@graphql-tools/utils", "virtual:52e04d74089eb1b17a9d60fc78b9749f4b60a62456c8fa07ec9023ba6f9f8ce63720513e40162012f78bb49149a4bf90d9dc24953348797485a6a8c68a88d061#npm:6.0.15"],
+            ["graphql", null],
+            ["tslib", "npm:2.0.0"]
+          ],
+          "packagePeers": [
+            "graphql"
+          ],
+          "linkType": "HARD",
+        }],
         ["virtual:6ff59db6495377d7b511a9822796cbe5a7bb7761d90c4212129ca53b3be8047c4c7f778fa796e3b0943d6f35c3b7be20bb874ccf9d61aa7f4cde60fe2f7c30e9#npm:6.0.16", {
           "packageLocation": "./.yarn/$$virtual/@graphql-tools-schema-virtual-6e4e476366/0/cache/@graphql-tools-schema-npm-6.0.16-6610802062-c9faccc504.zip/node_modules/@graphql-tools/schema/",
           "packageDependencies": [
@@ -3322,22 +3363,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "graphql"
           ],
           "linkType": "HARD",
-        }],
-        ["virtual:f8c3c57164e933a1441bfbde39134c99834221a9e8896c66781af4c6c77eb486348ea621e61ddcd5fc27ffd6dcc45ede5d46e74921a591741fe234997364d0b0#npm:6.0.15", {
-          "packageLocation": "./.yarn/$$virtual/@graphql-tools-schema-virtual-d2fceff407/0/cache/@graphql-tools-schema-npm-6.0.15-607fefe8aa-0112bfb36a.zip/node_modules/@graphql-tools/schema/",
+        }]
+      ]],
+      ["@graphql-tools/utils", [
+        ["virtual:52e04d74089eb1b17a9d60fc78b9749f4b60a62456c8fa07ec9023ba6f9f8ce63720513e40162012f78bb49149a4bf90d9dc24953348797485a6a8c68a88d061#npm:6.0.15", {
+          "packageLocation": "./.yarn/$$virtual/@graphql-tools-utils-virtual-97b66a167f/0/cache/@graphql-tools-utils-npm-6.0.15-041d8cd8eb-d68a753b32.zip/node_modules/@graphql-tools/utils/",
           "packageDependencies": [
-            ["@graphql-tools/schema", "virtual:f8c3c57164e933a1441bfbde39134c99834221a9e8896c66781af4c6c77eb486348ea621e61ddcd5fc27ffd6dcc45ede5d46e74921a591741fe234997364d0b0#npm:6.0.15"],
-            ["@graphql-tools/utils", "virtual:86b4dee5e68921ee2fbed2c8cb0de4702b526d162ce953c82ede6c175a047476226ed730c42c2e28e784a2f9e15f51766109d41efa1df136e753d8a1db7a3228#npm:6.0.15"],
-            ["graphql", null],
-            ["tslib", "npm:2.0.0"]
+            ["@graphql-tools/utils", "virtual:52e04d74089eb1b17a9d60fc78b9749f4b60a62456c8fa07ec9023ba6f9f8ce63720513e40162012f78bb49149a4bf90d9dc24953348797485a6a8c68a88d061#npm:6.0.15"],
+            ["@ardatan/aggregate-error", "npm:0.0.1"],
+            ["camel-case", "npm:4.1.1"],
+            ["graphql", null]
           ],
           "packagePeers": [
             "graphql"
           ],
           "linkType": "HARD",
-        }]
-      ]],
-      ["@graphql-tools/utils", [
+        }],
         ["virtual:6e4e476366051f613c6d0714f7a1c3a6be29e3e53e0157dcc89003a606de10874595031968ed346e22ce56c8d601c18c27a8898c2e84d42a228c03f2c97671d6#npm:6.0.16", {
           "packageLocation": "./.yarn/$$virtual/@graphql-tools-utils-virtual-482405bb94/0/cache/@graphql-tools-utils-npm-6.0.16-689323d58e-215d395487.zip/node_modules/@graphql-tools/utils/",
           "packageDependencies": [
@@ -3358,19 +3399,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@ardatan/aggregate-error", "npm:0.0.1"],
             ["camel-case", "npm:4.1.1"],
             ["graphql", "npm:14.7.0"]
-          ],
-          "packagePeers": [
-            "graphql"
-          ],
-          "linkType": "HARD",
-        }],
-        ["virtual:86b4dee5e68921ee2fbed2c8cb0de4702b526d162ce953c82ede6c175a047476226ed730c42c2e28e784a2f9e15f51766109d41efa1df136e753d8a1db7a3228#npm:6.0.15", {
-          "packageLocation": "./.yarn/$$virtual/@graphql-tools-utils-virtual-19878f64f8/0/cache/@graphql-tools-utils-npm-6.0.15-041d8cd8eb-d68a753b32.zip/node_modules/@graphql-tools/utils/",
-          "packageDependencies": [
-            ["@graphql-tools/utils", "virtual:86b4dee5e68921ee2fbed2c8cb0de4702b526d162ce953c82ede6c175a047476226ed730c42c2e28e784a2f9e15f51766109d41efa1df136e753d8a1db7a3228#npm:6.0.15"],
-            ["@ardatan/aggregate-error", "npm:0.0.1"],
-            ["camel-case", "npm:4.1.1"],
-            ["graphql", null]
           ],
           "packagePeers": [
             "graphql"
@@ -3968,6 +3996,140 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@material-ui/core", [
+        ["virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:4.11.0", {
+          "packageLocation": "./.yarn/$$virtual/@material-ui-core-virtual-1c544e06ad/0/cache/@material-ui-core-npm-4.11.0-36df670c6a-02b3ada79f.zip/node_modules/@material-ui/core/",
+          "packageDependencies": [
+            ["@material-ui/core", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:4.11.0"],
+            ["@babel/runtime", "npm:7.11.2"],
+            ["@material-ui/styles", "virtual:1c544e06ad3ae48190dd9ad7d81bcf4b68f1c777320991f7eb8721a0fabc70e6c1938422e2834d52d8627a1cf3c34cb1d1ffa3c4652ebbce610296f89564c049#npm:4.10.0"],
+            ["@material-ui/system", "virtual:1c544e06ad3ae48190dd9ad7d81bcf4b68f1c777320991f7eb8721a0fabc70e6c1938422e2834d52d8627a1cf3c34cb1d1ffa3c4652ebbce610296f89564c049#npm:4.9.14"],
+            ["@material-ui/types", "virtual:1c544e06ad3ae48190dd9ad7d81bcf4b68f1c777320991f7eb8721a0fabc70e6c1938422e2834d52d8627a1cf3c34cb1d1ffa3c4652ebbce610296f89564c049#npm:5.1.0"],
+            ["@material-ui/utils", "virtual:1c544e06ad3ae48190dd9ad7d81bcf4b68f1c777320991f7eb8721a0fabc70e6c1938422e2834d52d8627a1cf3c34cb1d1ffa3c4652ebbce610296f89564c049#npm:4.10.2"],
+            ["@types/react", "npm:16.9.46"],
+            ["@types/react-transition-group", "npm:4.4.0"],
+            ["clsx", "npm:1.1.1"],
+            ["hoist-non-react-statics", "npm:3.3.2"],
+            ["popper.js", "npm:1.16.1-lts"],
+            ["prop-types", "npm:15.7.2"],
+            ["react", "npm:16.13.1"],
+            ["react-dom", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:16.13.1"],
+            ["react-is", "npm:16.13.1"],
+            ["react-transition-group", "virtual:1c544e06ad3ae48190dd9ad7d81bcf4b68f1c777320991f7eb8721a0fabc70e6c1938422e2834d52d8627a1cf3c34cb1d1ffa3c4652ebbce610296f89564c049#npm:4.4.1"]
+          ],
+          "packagePeers": [
+            "@types/react",
+            "react",
+            "react-dom"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@material-ui/icons", [
+        ["virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:4.9.1", {
+          "packageLocation": "./.yarn/$$virtual/@material-ui-icons-virtual-d316a239b2/0/cache/@material-ui-icons-npm-4.9.1-b72f1f7c51-110bb77f07.zip/node_modules/@material-ui/icons/",
+          "packageDependencies": [
+            ["@material-ui/icons", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:4.9.1"],
+            ["@babel/runtime", "npm:7.11.2"],
+            ["@material-ui/core", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:4.11.0"],
+            ["@types/react", "npm:16.9.46"],
+            ["react", "npm:16.13.1"],
+            ["react-dom", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:16.13.1"]
+          ],
+          "packagePeers": [
+            "@material-ui/core",
+            "@types/react",
+            "react",
+            "react-dom"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@material-ui/styles", [
+        ["virtual:1c544e06ad3ae48190dd9ad7d81bcf4b68f1c777320991f7eb8721a0fabc70e6c1938422e2834d52d8627a1cf3c34cb1d1ffa3c4652ebbce610296f89564c049#npm:4.10.0", {
+          "packageLocation": "./.yarn/$$virtual/@material-ui-styles-virtual-e51fb9c310/0/cache/@material-ui-styles-npm-4.10.0-d754c19060-928821cb46.zip/node_modules/@material-ui/styles/",
+          "packageDependencies": [
+            ["@material-ui/styles", "virtual:1c544e06ad3ae48190dd9ad7d81bcf4b68f1c777320991f7eb8721a0fabc70e6c1938422e2834d52d8627a1cf3c34cb1d1ffa3c4652ebbce610296f89564c049#npm:4.10.0"],
+            ["@babel/runtime", "npm:7.11.2"],
+            ["@emotion/hash", "npm:0.8.0"],
+            ["@material-ui/types", "virtual:1c544e06ad3ae48190dd9ad7d81bcf4b68f1c777320991f7eb8721a0fabc70e6c1938422e2834d52d8627a1cf3c34cb1d1ffa3c4652ebbce610296f89564c049#npm:5.1.0"],
+            ["@material-ui/utils", "virtual:1c544e06ad3ae48190dd9ad7d81bcf4b68f1c777320991f7eb8721a0fabc70e6c1938422e2834d52d8627a1cf3c34cb1d1ffa3c4652ebbce610296f89564c049#npm:4.10.2"],
+            ["@types/react", "npm:16.9.46"],
+            ["clsx", "npm:1.1.1"],
+            ["csstype", "npm:2.6.13"],
+            ["hoist-non-react-statics", "npm:3.3.2"],
+            ["jss", "npm:10.4.0"],
+            ["jss-plugin-camel-case", "npm:10.4.0"],
+            ["jss-plugin-default-unit", "npm:10.4.0"],
+            ["jss-plugin-global", "npm:10.4.0"],
+            ["jss-plugin-nested", "npm:10.4.0"],
+            ["jss-plugin-props-sort", "npm:10.4.0"],
+            ["jss-plugin-rule-value-function", "npm:10.4.0"],
+            ["jss-plugin-vendor-prefixer", "npm:10.4.0"],
+            ["prop-types", "npm:15.7.2"],
+            ["react", "npm:16.13.1"],
+            ["react-dom", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:16.13.1"]
+          ],
+          "packagePeers": [
+            "@types/react",
+            "react",
+            "react-dom"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@material-ui/system", [
+        ["virtual:1c544e06ad3ae48190dd9ad7d81bcf4b68f1c777320991f7eb8721a0fabc70e6c1938422e2834d52d8627a1cf3c34cb1d1ffa3c4652ebbce610296f89564c049#npm:4.9.14", {
+          "packageLocation": "./.yarn/$$virtual/@material-ui-system-virtual-fdb2fec0ea/0/cache/@material-ui-system-npm-4.9.14-c4583ad9fa-f1be6f4564.zip/node_modules/@material-ui/system/",
+          "packageDependencies": [
+            ["@material-ui/system", "virtual:1c544e06ad3ae48190dd9ad7d81bcf4b68f1c777320991f7eb8721a0fabc70e6c1938422e2834d52d8627a1cf3c34cb1d1ffa3c4652ebbce610296f89564c049#npm:4.9.14"],
+            ["@babel/runtime", "npm:7.11.2"],
+            ["@material-ui/utils", "virtual:1c544e06ad3ae48190dd9ad7d81bcf4b68f1c777320991f7eb8721a0fabc70e6c1938422e2834d52d8627a1cf3c34cb1d1ffa3c4652ebbce610296f89564c049#npm:4.10.2"],
+            ["@types/react", "npm:16.9.46"],
+            ["csstype", "npm:2.6.13"],
+            ["prop-types", "npm:15.7.2"],
+            ["react", "npm:16.13.1"],
+            ["react-dom", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:16.13.1"]
+          ],
+          "packagePeers": [
+            "@types/react",
+            "react",
+            "react-dom"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@material-ui/types", [
+        ["virtual:1c544e06ad3ae48190dd9ad7d81bcf4b68f1c777320991f7eb8721a0fabc70e6c1938422e2834d52d8627a1cf3c34cb1d1ffa3c4652ebbce610296f89564c049#npm:5.1.0", {
+          "packageLocation": "./.yarn/$$virtual/@material-ui-types-virtual-c6affb4ba9/0/cache/@material-ui-types-npm-5.1.0-19cb52ee2a-0985676618.zip/node_modules/@material-ui/types/",
+          "packageDependencies": [
+            ["@material-ui/types", "virtual:1c544e06ad3ae48190dd9ad7d81bcf4b68f1c777320991f7eb8721a0fabc70e6c1938422e2834d52d8627a1cf3c34cb1d1ffa3c4652ebbce610296f89564c049#npm:5.1.0"],
+            ["@types/react", "npm:16.9.46"]
+          ],
+          "packagePeers": [
+            "@types/react"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@material-ui/utils", [
+        ["virtual:1c544e06ad3ae48190dd9ad7d81bcf4b68f1c777320991f7eb8721a0fabc70e6c1938422e2834d52d8627a1cf3c34cb1d1ffa3c4652ebbce610296f89564c049#npm:4.10.2", {
+          "packageLocation": "./.yarn/$$virtual/@material-ui-utils-virtual-3644b7d43a/0/cache/@material-ui-utils-npm-4.10.2-d49c39aec1-53b2a9ca15.zip/node_modules/@material-ui/utils/",
+          "packageDependencies": [
+            ["@material-ui/utils", "virtual:1c544e06ad3ae48190dd9ad7d81bcf4b68f1c777320991f7eb8721a0fabc70e6c1938422e2834d52d8627a1cf3c34cb1d1ffa3c4652ebbce610296f89564c049#npm:4.10.2"],
+            ["@babel/runtime", "npm:7.11.2"],
+            ["prop-types", "npm:15.7.2"],
+            ["react", "npm:16.13.1"],
+            ["react-dom", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:16.13.1"],
+            ["react-is", "npm:16.13.1"]
+          ],
+          "packagePeers": [
+            "react",
+            "react-dom"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@mdx-js/mdx", [
         ["npm:2.0.0-next.7", {
           "packageLocation": "./.yarn/cache/@mdx-js-mdx-npm-2.0.0-next.7-5f0fcb7990-0be75fc5b1.zip/node_modules/@mdx-js/mdx/",
@@ -4149,29 +4311,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "webpack-dev-server",
             "webpack-hot-middleware",
             "webpack-plugin-serve"
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["@popmotion/easing", [
-        ["npm:1.0.2", {
-          "packageLocation": "./.yarn/cache/@popmotion-easing-npm-1.0.2-aa43f2135f-f073547c00.zip/node_modules/@popmotion/easing/",
-          "packageDependencies": [
-            ["@popmotion/easing", "npm:1.0.2"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["@popmotion/popcorn", [
-        ["npm:0.4.4", {
-          "packageLocation": "./.yarn/cache/@popmotion-popcorn-npm-0.4.4-85a81c96da-316b066a11.zip/node_modules/@popmotion/popcorn/",
-          "packageDependencies": [
-            ["@popmotion/popcorn", "npm:0.4.4"],
-            ["@popmotion/easing", "npm:1.0.2"],
-            ["framesync", "npm:4.0.4"],
-            ["hey-listen", "npm:1.0.8"],
-            ["style-value-types", "npm:3.1.9"],
-            ["tslib", "npm:1.13.0"]
           ],
           "linkType": "HARD",
         }]
@@ -4862,6 +5001,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-react-helmet-npm-6.1.0-2b66a9e4e0-b7aaa3aa2d.zip/node_modules/@types/react-helmet/",
           "packageDependencies": [
             ["@types/react-helmet", "npm:6.1.0"],
+            ["@types/react", "npm:16.9.46"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/react-transition-group", [
+        ["npm:4.4.0", {
+          "packageLocation": "./.yarn/cache/@types-react-transition-group-npm-4.4.0-dc81edfd45-b761f70623.zip/node_modules/@types/react-transition-group/",
+          "packageDependencies": [
+            ["@types/react-transition-group", "npm:4.4.0"],
             ["@types/react", "npm:16.9.46"]
           ],
           "linkType": "HARD",
@@ -6394,15 +6543,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["babel-preset-fbjs", [
-        ["virtual:9de3f82b736341f96e7e85b9d2572db5c2390ab6f06967e3193933dcb790c20189a4fb179c1330308783d40a1f7fb719e0e56bd298d4d8e6d41440cdbb93b675#npm:3.3.0", {
-          "packageLocation": "./.yarn/$$virtual/babel-preset-fbjs-virtual-38736d965a/0/cache/babel-preset-fbjs-npm-3.3.0-69ce7fca19-b6cd74200e.zip/node_modules/babel-preset-fbjs/",
+        ["virtual:f4358b50c2d7f6cde50d6cf76fe53b340e8a85e8ecc4cc73f4b9c55f24d4e0b8d02c4740aa3e8e4ceba0c42b3fb69c4212ec4805b1d91acb38df56cf0f0bec63#npm:3.3.0", {
+          "packageLocation": "./.yarn/$$virtual/babel-preset-fbjs-virtual-27473f8a1d/0/cache/babel-preset-fbjs-npm-3.3.0-69ce7fca19-b6cd74200e.zip/node_modules/babel-preset-fbjs/",
           "packageDependencies": [
-            ["babel-preset-fbjs", "virtual:9de3f82b736341f96e7e85b9d2572db5c2390ab6f06967e3193933dcb790c20189a4fb179c1330308783d40a1f7fb719e0e56bd298d4d8e6d41440cdbb93b675#npm:3.3.0"],
+            ["babel-preset-fbjs", "virtual:f4358b50c2d7f6cde50d6cf76fe53b340e8a85e8ecc4cc73f4b9c55f24d4e0b8d02c4740aa3e8e4ceba0c42b3fb69c4212ec4805b1d91acb38df56cf0f0bec63#npm:3.3.0"],
             ["@babel/core", "npm:7.10.5"],
             ["@babel/plugin-proposal-class-properties", "virtual:5f23518d35d591b10ae1617bfdffd3728de53e07d780f5d9fc432d48b235d028000bd1f436162c40a5425c86c9592b327dc5c01954d7e41009458cd8a7947fb7#npm:7.10.4"],
             ["@babel/plugin-proposal-object-rest-spread", "virtual:8648f0a3fe9b009726a26efef6f3852a0e632fa178ab68120524a339b64b49123fe71eff6de16f3339c224f9b62ef3d2ea6fede4e3042a63b4c15e49e12fd30b#npm:7.10.4"],
             ["@babel/plugin-syntax-class-properties", "virtual:cf534d70c97331295a2e3194f395853610e76abbd2fea4d73f9f25ffcfcb51f7179e918b3ad029ccf9759c2426e38675ac7a06694af23103e53d82f3370e949e#npm:7.10.4"],
-            ["@babel/plugin-syntax-flow", "virtual:38736d965ad2279b2e286b1d93cb95dc43536adfdb21d72f502b390087b9748457baf61956e48563d7f91648d459f1799d5dd05aa471627faf95312f973bfa76#npm:7.10.4"],
+            ["@babel/plugin-syntax-flow", "virtual:27473f8a1d5495deb8c0ed86791651d5961799daa236fdf43117f2e864aa43f94fadcd77f7598759257a45239f9a767a0cf91a52b145f2358f786e4ea29008ae#npm:7.10.4"],
             ["@babel/plugin-syntax-jsx", "virtual:8648f0a3fe9b009726a26efef6f3852a0e632fa178ab68120524a339b64b49123fe71eff6de16f3339c224f9b62ef3d2ea6fede4e3042a63b4c15e49e12fd30b#npm:7.10.4"],
             ["@babel/plugin-syntax-object-rest-spread", "virtual:db2b50d51c9dc376045d91b368678415b551ad321a397082090abb0245576bf590e27a9fd104586a0ab4e2e95281ea285a131958a1e4a388504efdb4bfafb7c7#npm:7.8.3"],
             ["@babel/plugin-transform-arrow-functions", "virtual:cf534d70c97331295a2e3194f395853610e76abbd2fea4d73f9f25ffcfcb51f7179e918b3ad029ccf9759c2426e38675ac7a06694af23103e53d82f3370e949e#npm:7.10.4"],
@@ -6411,7 +6560,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/plugin-transform-classes", "virtual:cf534d70c97331295a2e3194f395853610e76abbd2fea4d73f9f25ffcfcb51f7179e918b3ad029ccf9759c2426e38675ac7a06694af23103e53d82f3370e949e#npm:7.10.4"],
             ["@babel/plugin-transform-computed-properties", "virtual:cf534d70c97331295a2e3194f395853610e76abbd2fea4d73f9f25ffcfcb51f7179e918b3ad029ccf9759c2426e38675ac7a06694af23103e53d82f3370e949e#npm:7.10.4"],
             ["@babel/plugin-transform-destructuring", "virtual:cf534d70c97331295a2e3194f395853610e76abbd2fea4d73f9f25ffcfcb51f7179e918b3ad029ccf9759c2426e38675ac7a06694af23103e53d82f3370e949e#npm:7.10.4"],
-            ["@babel/plugin-transform-flow-strip-types", "virtual:38736d965ad2279b2e286b1d93cb95dc43536adfdb21d72f502b390087b9748457baf61956e48563d7f91648d459f1799d5dd05aa471627faf95312f973bfa76#npm:7.10.4"],
+            ["@babel/plugin-transform-flow-strip-types", "virtual:27473f8a1d5495deb8c0ed86791651d5961799daa236fdf43117f2e864aa43f94fadcd77f7598759257a45239f9a767a0cf91a52b145f2358f786e4ea29008ae#npm:7.10.4"],
             ["@babel/plugin-transform-for-of", "virtual:cf534d70c97331295a2e3194f395853610e76abbd2fea4d73f9f25ffcfcb51f7179e918b3ad029ccf9759c2426e38675ac7a06694af23103e53d82f3370e949e#npm:7.10.4"],
             ["@babel/plugin-transform-function-name", "virtual:cf534d70c97331295a2e3194f395853610e76abbd2fea4d73f9f25ffcfcb51f7179e918b3ad029ccf9759c2426e38675ac7a06694af23103e53d82f3370e949e#npm:7.10.4"],
             ["@babel/plugin-transform-literals", "virtual:cf534d70c97331295a2e3194f395853610e76abbd2fea4d73f9f25ffcfcb51f7179e918b3ad029ccf9759c2426e38675ac7a06694af23103e53d82f3370e949e#npm:7.10.4"],
@@ -7459,6 +7608,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@fortawesome/fontawesome-svg-core", "npm:1.2.30"],
             ["@fortawesome/free-brands-svg-icons", "npm:5.14.0"],
             ["@fortawesome/react-fontawesome", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:0.1.11"],
+            ["@material-ui/core", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:4.11.0"],
+            ["@material-ui/icons", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:4.9.1"],
             ["@types/classnames", "npm:2.2.10"],
             ["@types/events", "npm:3.0.0"],
             ["@types/prop-types", "npm:15.7.3"],
@@ -7468,7 +7619,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-helmet", "npm:6.1.0"],
             ["classnames", "npm:2.2.6"],
             ["dotenv", "npm:8.2.0"],
-            ["framer-motion", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.4.2"],
+            ["final-form", "npm:4.20.1"],
+            ["framer-motion", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.5.5"],
             ["gatsby", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.24.47"],
             ["gatsby-image", "npm:2.4.16"],
             ["gatsby-plugin-canonical-urls", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.3.10"],
@@ -7488,8 +7640,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["normalize.css", "npm:8.0.1"],
             ["react", "npm:16.13.1"],
             ["react-dom", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:16.13.1"],
+            ["react-final-form", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:6.5.1"],
             ["react-helmet", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:6.1.0"],
-            ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"]
+            ["typescript", "patch:typescript@npm%3A4.0.2#builtin<compat/typescript>::version=4.0.2&hash=5b02a2"]
           ],
           "linkType": "SOFT",
         }]
@@ -7880,6 +8033,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["clone-response", "npm:1.0.2"],
             ["mimic-response", "npm:1.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["clsx", [
+        ["npm:1.1.1", {
+          "packageLocation": "./.yarn/cache/clsx-npm-1.1.1-362bec0598-d8ae10ac05.zip/node_modules/clsx/",
+          "packageDependencies": [
+            ["clsx", "npm:1.1.1"]
           ],
           "linkType": "HARD",
         }]
@@ -8772,6 +8934,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["css-vendor", [
+        ["npm:2.0.8", {
+          "packageLocation": "./.yarn/cache/css-vendor-npm-2.0.8-3fef9dd826-a185d200db.zip/node_modules/css-vendor/",
+          "packageDependencies": [
+            ["css-vendor", "npm:2.0.8"],
+            ["@babel/runtime", "npm:7.11.2"],
+            ["is-in-browser", "npm:1.1.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["css-what", [
         ["npm:2.1.3", {
           "packageLocation": "./.yarn/cache/css-what-npm-2.1.3-a9583898e8-732fcecfe3.zip/node_modules/css-what/",
@@ -8910,6 +9083,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/csstype-npm-2.6.11-77160fd1b8-b5de145e84.zip/node_modules/csstype/",
           "packageDependencies": [
             ["csstype", "npm:2.6.11"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:2.6.13", {
+          "packageLocation": "./.yarn/cache/csstype-npm-2.6.13-2f54b26722-0a84ef4b06.zip/node_modules/csstype/",
+          "packageDependencies": [
+            ["csstype", "npm:2.6.13"]
           ],
           "linkType": "HARD",
         }],
@@ -9631,6 +9811,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["dom-converter", "npm:0.2.0"],
             ["utila", "npm:0.4.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["dom-helpers", [
+        ["npm:5.2.0", {
+          "packageLocation": "./.yarn/cache/dom-helpers-npm-5.2.0-4c13ee1a2c-9ef27628f4.zip/node_modules/dom-helpers/",
+          "packageDependencies": [
+            ["dom-helpers", "npm:5.2.0"],
+            ["@babel/runtime", "npm:7.11.2"],
+            ["csstype", "npm:3.0.2"]
           ],
           "linkType": "HARD",
         }]
@@ -11230,6 +11421,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["final-form", [
+        ["npm:4.20.1", {
+          "packageLocation": "./.yarn/cache/final-form-npm-4.20.1-5003d9144f-007bc31ead.zip/node_modules/final-form/",
+          "packageDependencies": [
+            ["final-form", "npm:4.20.1"],
+            ["@babel/runtime", "npm:7.10.5"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["finalhandler", [
         ["npm:1.1.2", {
           "packageLocation": "./.yarn/cache/finalhandler-npm-1.1.2-55a75d6b53-f2e5b6bfe2.zip/node_modules/finalhandler/",
@@ -11504,17 +11705,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["framer-motion", [
-        ["virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.4.2", {
-          "packageLocation": "./.yarn/$$virtual/framer-motion-virtual-c327603e77/0/cache/framer-motion-npm-2.4.2-5fda8bafec-5f35c2439e.zip/node_modules/framer-motion/",
+        ["virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.5.5", {
+          "packageLocation": "./.yarn/$$virtual/framer-motion-virtual-0f25d219e0/0/cache/framer-motion-npm-2.5.5-0868b91f57-e32d05423a.zip/node_modules/framer-motion/",
           "packageDependencies": [
-            ["framer-motion", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.4.2"],
+            ["framer-motion", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.5.5"],
             ["@emotion/is-prop-valid", "npm:0.8.8"],
-            ["@popmotion/easing", "npm:1.0.2"],
-            ["@popmotion/popcorn", "npm:0.4.4"],
             ["csstype", "npm:3.0.2"],
             ["framesync", "npm:4.0.4"],
             ["hey-listen", "npm:1.0.8"],
-            ["popmotion", "npm:9.0.0-beta-8"],
+            ["popmotion", "npm:9.0.0-rc.7"],
             ["react", "npm:16.13.1"],
             ["react-dom", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:16.13.1"],
             ["style-value-types", "npm:3.1.9"],
@@ -12079,26 +12278,54 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["gatsby-plugin-graphql-codegen", [
-        ["virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.7.1", {
-          "packageLocation": "./.yarn/$$virtual/gatsby-plugin-graphql-codegen-virtual-fa542099a2/0/cache/gatsby-plugin-graphql-codegen-npm-2.7.1-31b0c685d8-8e1ea2df3f.zip/node_modules/gatsby-plugin-graphql-codegen/",
+        ["virtual:5cd5fe19a2db8bb5f0e5c87bc892c88738f1fbd76edcc1f0a3e97525ce08c055e983162ec2faeda570e821a92cce92396d4b7258cd9a8842071ff88ccc519fdb#npm:2.7.1", {
+          "packageLocation": "./.yarn/$$virtual/gatsby-plugin-graphql-codegen-virtual-e1e78512b2/0/cache/gatsby-plugin-graphql-codegen-npm-2.7.1-31b0c685d8-8e1ea2df3f.zip/node_modules/gatsby-plugin-graphql-codegen/",
           "packageDependencies": [
-            ["gatsby-plugin-graphql-codegen", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.7.1"],
-            ["@graphql-codegen/core", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:1.17.6"],
-            ["@graphql-codegen/plugin-helpers", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:1.17.6"],
-            ["@graphql-codegen/typescript", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:1.17.6"],
-            ["@graphql-codegen/typescript-operations", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:1.17.6"],
-            ["@graphql-toolkit/code-file-loader", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
-            ["@graphql-toolkit/common", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
-            ["@graphql-toolkit/core", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
-            ["@graphql-toolkit/graphql-file-loader", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
-            ["@graphql-toolkit/graphql-tag-pluck", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
-            ["@graphql-toolkit/json-file-loader", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
-            ["@graphql-toolkit/url-loader", "virtual:fa542099a2c9c427ef019657e6fdbf58fd865dccbc06ecd87a21ae21a085a0e24992760ae58529f28ab6558832241138aaa33405ba609781e2b5e14fa1da6f82#npm:0.10.7"],
+            ["gatsby-plugin-graphql-codegen", "virtual:5cd5fe19a2db8bb5f0e5c87bc892c88738f1fbd76edcc1f0a3e97525ce08c055e983162ec2faeda570e821a92cce92396d4b7258cd9a8842071ff88ccc519fdb#npm:2.7.1"],
+            ["@graphql-codegen/core", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6"],
+            ["@graphql-codegen/plugin-helpers", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6"],
+            ["@graphql-codegen/typescript", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6"],
+            ["@graphql-codegen/typescript-operations", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6"],
+            ["@graphql-toolkit/code-file-loader", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/common", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/core", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/graphql-file-loader", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/graphql-tag-pluck", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/json-file-loader", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/url-loader", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
             ["fs-extra", "npm:7.0.1"],
             ["gatsby", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.24.47"],
             ["graphql", null],
             ["lodash.debounce", "npm:4.0.8"],
             ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"]
+          ],
+          "packagePeers": [
+            "gatsby",
+            "graphql",
+            "typescript"
+          ],
+          "linkType": "HARD",
+        }],
+        ["virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.7.1", {
+          "packageLocation": "./.yarn/$$virtual/gatsby-plugin-graphql-codegen-virtual-fa542099a2/0/cache/gatsby-plugin-graphql-codegen-npm-2.7.1-31b0c685d8-8e1ea2df3f.zip/node_modules/gatsby-plugin-graphql-codegen/",
+          "packageDependencies": [
+            ["gatsby-plugin-graphql-codegen", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.7.1"],
+            ["@graphql-codegen/core", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6"],
+            ["@graphql-codegen/plugin-helpers", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6"],
+            ["@graphql-codegen/typescript", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6"],
+            ["@graphql-codegen/typescript-operations", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:1.17.6"],
+            ["@graphql-toolkit/code-file-loader", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/common", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/core", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/graphql-file-loader", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/graphql-tag-pluck", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/json-file-loader", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["@graphql-toolkit/url-loader", "virtual:e1e78512b296eaa61e9f84a09e0f34c196dca50df26c843ecb590c2000cac3c78dc3fbfbae496434c691c8ed0acd5d499acdbc48cf71c3660dba9ad786d6e344#npm:0.10.7"],
+            ["fs-extra", "npm:7.0.1"],
+            ["gatsby", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.24.47"],
+            ["graphql", null],
+            ["lodash.debounce", "npm:4.0.8"],
+            ["typescript", "patch:typescript@npm%3A4.0.2#builtin<compat/typescript>::version=4.0.2&hash=5b02a2"]
           ],
           "packagePeers": [
             "gatsby",
@@ -12270,7 +12497,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fork-ts-checker-webpack-plugin", "npm:4.1.6"],
             ["fs-extra", "npm:7.0.1"],
             ["gatsby", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.24.47"],
-            ["gatsby-plugin-graphql-codegen", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:2.7.1"],
+            ["gatsby-plugin-graphql-codegen", "virtual:5cd5fe19a2db8bb5f0e5c87bc892c88738f1fbd76edcc1f0a3e97525ce08c055e983162ec2faeda570e821a92cce92396d4b7258cd9a8842071ff88ccc519fdb#npm:2.7.1"],
             ["graphql", null],
             ["ts-loader", "virtual:5cd5fe19a2db8bb5f0e5c87bc892c88738f1fbd76edcc1f0a3e97525ce08c055e983162ec2faeda570e821a92cce92396d4b7258cd9a8842071ff88ccc519fdb#npm:6.2.2"],
             ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"]
@@ -13101,10 +13328,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["graphql-tag", [
-        ["virtual:4dedd293092034b65c5b03f2a02b4384b4e32f4f875adcb8fc18abb7bebb6d70efb97de4ba3e88afc62e21aa1e66aa021a227b52d2d067ca3dfb504667c3d6b0#npm:2.10.4", {
-          "packageLocation": "./.yarn/$$virtual/graphql-tag-virtual-5d8b60cf2d/0/cache/graphql-tag-npm-2.10.4-6cee82501e-19c20d48c2.zip/node_modules/graphql-tag/",
+        ["virtual:2a63e5485c2f584c4687acde6b34b3f3df3398afa6020e77607ac8d5eead254049a9b1a6ae6522d6d42efdc5f742f66716a73b649e9b82e1d5c44f826d969e88#npm:2.10.4", {
+          "packageLocation": "./.yarn/$$virtual/graphql-tag-virtual-cce7072a53/0/cache/graphql-tag-npm-2.10.4-6cee82501e-19c20d48c2.zip/node_modules/graphql-tag/",
           "packageDependencies": [
-            ["graphql-tag", "virtual:4dedd293092034b65c5b03f2a02b4384b4e32f4f875adcb8fc18abb7bebb6d70efb97de4ba3e88afc62e21aa1e66aa021a227b52d2d067ca3dfb504667c3d6b0#npm:2.10.4"],
+            ["graphql-tag", "virtual:2a63e5485c2f584c4687acde6b34b3f3df3398afa6020e77607ac8d5eead254049a9b1a6ae6522d6d42efdc5f742f66716a73b649e9b82e1d5c44f826d969e88#npm:2.10.4"],
             ["graphql", null]
           ],
           "packagePeers": [
@@ -13114,10 +13341,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["graphql-tools", [
-        ["virtual:652cace64432690fb5394a0dc1c3bac36e702556771910f151bb69ada470f7ed51aa5c0b83ca27703c579c8d7715a048b8e1599da0dd34f28c9c942063e8f5dd#npm:5.0.0", {
-          "packageLocation": "./.yarn/$$virtual/graphql-tools-virtual-2704b50afb/0/cache/graphql-tools-npm-5.0.0-e5e908926b-6c51826578.zip/node_modules/graphql-tools/",
+        ["virtual:a2d082d78a8e47c3fa3d07cfd48742e42c6b232a6c8183c9391f9e852a56325d91cecda7b269d08448c84a371f24b558670f7e4179fa18870b62d5b4df63425f#npm:5.0.0", {
+          "packageLocation": "./.yarn/$$virtual/graphql-tools-virtual-2298b8a900/0/cache/graphql-tools-npm-5.0.0-e5e908926b-6c51826578.zip/node_modules/graphql-tools/",
           "packageDependencies": [
-            ["graphql-tools", "virtual:652cace64432690fb5394a0dc1c3bac36e702556771910f151bb69ada470f7ed51aa5c0b83ca27703c579c8d7715a048b8e1599da0dd34f28c9c942063e8f5dd#npm:5.0.0"],
+            ["graphql-tools", "virtual:a2d082d78a8e47c3fa3d07cfd48742e42c6b232a6c8183c9391f9e852a56325d91cecda7b269d08448c84a371f24b558670f7e4179fa18870b62d5b4df63425f#npm:5.0.0"],
             ["apollo-link", "virtual:771ce8444089b33a3ffa0df19623065659e54cd107a4edda5dfe87eac82942ab06b0f74f100b0546d1f7b028acedb50038f59e57371a5e3b738162eb2ea4c9c7#npm:1.2.14"],
             ["apollo-upload-client", "npm:13.0.0"],
             ["deprecated-decorator", "npm:0.1.6"],
@@ -13797,6 +14024,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/human-signals-npm-1.1.1-616b2586c2-cac115f635.zip/node_modules/human-signals/",
           "packageDependencies": [
             ["human-signals", "npm:1.1.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["hyphenate-style-name", [
+        ["npm:1.0.4", {
+          "packageLocation": "./.yarn/cache/hyphenate-style-name-npm-1.0.4-a79c7da506-4cfeb47e98.zip/node_modules/hyphenate-style-name/",
+          "packageDependencies": [
+            ["hyphenate-style-name", "npm:1.0.4"]
           ],
           "linkType": "HARD",
         }]
@@ -14686,6 +14922,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["is-in-browser", [
+        ["npm:1.1.3", {
+          "packageLocation": "./.yarn/cache/is-in-browser-npm-1.1.3-31bae97541-2696bb6167.zip/node_modules/is-in-browser/",
+          "packageDependencies": [
+            ["is-in-browser", "npm:1.1.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["is-installed-globally", [
         ["npm:0.3.2", {
           "packageLocation": "./.yarn/cache/is-installed-globally-npm-0.3.2-a593acf078-10fc4fb09f.zip/node_modules/is-installed-globally/",
@@ -15424,6 +15669,100 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["extsprintf", "npm:1.3.0"],
             ["json-schema", "npm:0.2.3"],
             ["verror", "npm:1.10.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["jss", [
+        ["npm:10.4.0", {
+          "packageLocation": "./.yarn/cache/jss-npm-10.4.0-5f3f261a45-bc3cc9adba.zip/node_modules/jss/",
+          "packageDependencies": [
+            ["jss", "npm:10.4.0"],
+            ["@babel/runtime", "npm:7.11.2"],
+            ["csstype", "npm:3.0.2"],
+            ["is-in-browser", "npm:1.1.3"],
+            ["tiny-warning", "npm:1.0.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["jss-plugin-camel-case", [
+        ["npm:10.4.0", {
+          "packageLocation": "./.yarn/cache/jss-plugin-camel-case-npm-10.4.0-06288a9df3-80101373db.zip/node_modules/jss-plugin-camel-case/",
+          "packageDependencies": [
+            ["jss-plugin-camel-case", "npm:10.4.0"],
+            ["@babel/runtime", "npm:7.11.2"],
+            ["hyphenate-style-name", "npm:1.0.4"],
+            ["jss", "npm:10.4.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["jss-plugin-default-unit", [
+        ["npm:10.4.0", {
+          "packageLocation": "./.yarn/cache/jss-plugin-default-unit-npm-10.4.0-f1c6922ae0-a04db0607f.zip/node_modules/jss-plugin-default-unit/",
+          "packageDependencies": [
+            ["jss-plugin-default-unit", "npm:10.4.0"],
+            ["@babel/runtime", "npm:7.11.2"],
+            ["jss", "npm:10.4.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["jss-plugin-global", [
+        ["npm:10.4.0", {
+          "packageLocation": "./.yarn/cache/jss-plugin-global-npm-10.4.0-9a0530a8c7-2a4321673d.zip/node_modules/jss-plugin-global/",
+          "packageDependencies": [
+            ["jss-plugin-global", "npm:10.4.0"],
+            ["@babel/runtime", "npm:7.11.2"],
+            ["jss", "npm:10.4.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["jss-plugin-nested", [
+        ["npm:10.4.0", {
+          "packageLocation": "./.yarn/cache/jss-plugin-nested-npm-10.4.0-1b80a211a5-fb19e91821.zip/node_modules/jss-plugin-nested/",
+          "packageDependencies": [
+            ["jss-plugin-nested", "npm:10.4.0"],
+            ["@babel/runtime", "npm:7.11.2"],
+            ["jss", "npm:10.4.0"],
+            ["tiny-warning", "npm:1.0.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["jss-plugin-props-sort", [
+        ["npm:10.4.0", {
+          "packageLocation": "./.yarn/cache/jss-plugin-props-sort-npm-10.4.0-f0a4b3faf5-7549507973.zip/node_modules/jss-plugin-props-sort/",
+          "packageDependencies": [
+            ["jss-plugin-props-sort", "npm:10.4.0"],
+            ["@babel/runtime", "npm:7.11.2"],
+            ["jss", "npm:10.4.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["jss-plugin-rule-value-function", [
+        ["npm:10.4.0", {
+          "packageLocation": "./.yarn/cache/jss-plugin-rule-value-function-npm-10.4.0-2dda409bb7-4cf567502a.zip/node_modules/jss-plugin-rule-value-function/",
+          "packageDependencies": [
+            ["jss-plugin-rule-value-function", "npm:10.4.0"],
+            ["@babel/runtime", "npm:7.11.2"],
+            ["jss", "npm:10.4.0"],
+            ["tiny-warning", "npm:1.0.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["jss-plugin-vendor-prefixer", [
+        ["npm:10.4.0", {
+          "packageLocation": "./.yarn/cache/jss-plugin-vendor-prefixer-npm-10.4.0-19ab68753e-6206fb0a3f.zip/node_modules/jss-plugin-vendor-prefixer/",
+          "packageDependencies": [
+            ["jss-plugin-vendor-prefixer", "npm:10.4.0"],
+            ["@babel/runtime", "npm:7.11.2"],
+            ["css-vendor", "npm:2.0.8"],
+            ["jss", "npm:10.4.0"]
           ],
           "linkType": "HARD",
         }]
@@ -18519,16 +18858,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["popmotion", [
-        ["npm:9.0.0-beta-8", {
-          "packageLocation": "./.yarn/cache/popmotion-npm-9.0.0-beta-8-97dc6195e2-b5dcdeae79.zip/node_modules/popmotion/",
+        ["npm:9.0.0-rc.7", {
+          "packageLocation": "./.yarn/cache/popmotion-npm-9.0.0-rc.7-ebc64fce6d-8a98286734.zip/node_modules/popmotion/",
           "packageDependencies": [
-            ["popmotion", "npm:9.0.0-beta-8"],
-            ["@popmotion/easing", "npm:1.0.2"],
-            ["@popmotion/popcorn", "npm:0.4.4"],
+            ["popmotion", "npm:9.0.0-rc.7"],
             ["framesync", "npm:4.0.4"],
             ["hey-listen", "npm:1.0.8"],
             ["style-value-types", "npm:3.1.9"],
             ["tslib", "npm:1.13.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["popper.js", [
+        ["npm:1.16.1-lts", {
+          "packageLocation": "./.yarn/cache/popper.js-npm-1.16.1-lts-d305bea564-93704853f7.zip/node_modules/popper.js/",
+          "packageDependencies": [
+            ["popper.js", "npm:1.16.1-lts"]
           ],
           "linkType": "HARD",
         }]
@@ -19673,6 +20019,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["react-final-form", [
+        ["virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:6.5.1", {
+          "packageLocation": "./.yarn/$$virtual/react-final-form-virtual-7a98772c03/0/cache/react-final-form-npm-6.5.1-58e075ed94-cc4c0f880a.zip/node_modules/react-final-form/",
+          "packageDependencies": [
+            ["react-final-form", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:6.5.1"],
+            ["@babel/runtime", "npm:7.10.5"],
+            ["final-form", "npm:4.20.1"],
+            ["react", "npm:16.13.1"]
+          ],
+          "packagePeers": [
+            "final-form",
+            "react"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["react-focus-lock", [
         ["virtual:1a02211b5a4b91fa58c5a06e8a069b9a98733d240a105d4004b181b0592bd79c49496d395e01c33c34f2134174541828093c1228a573b6bb6617c03133a3aa68#npm:2.4.1", {
           "packageLocation": "./.yarn/$$virtual/react-focus-lock-virtual-12fd1b5aa5/0/cache/react-focus-lock-npm-2.4.1-a28c8ea758-f181d6413d.zip/node_modules/react-focus-lock/",
@@ -19871,6 +20233,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [
             "@types/react",
             "react"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["react-transition-group", [
+        ["virtual:1c544e06ad3ae48190dd9ad7d81bcf4b68f1c777320991f7eb8721a0fabc70e6c1938422e2834d52d8627a1cf3c34cb1d1ffa3c4652ebbce610296f89564c049#npm:4.4.1", {
+          "packageLocation": "./.yarn/$$virtual/react-transition-group-virtual-2de9b27e30/0/cache/react-transition-group-npm-4.4.1-5b62a122ef-e14446123f.zip/node_modules/react-transition-group/",
+          "packageDependencies": [
+            ["react-transition-group", "virtual:1c544e06ad3ae48190dd9ad7d81bcf4b68f1c777320991f7eb8721a0fabc70e6c1938422e2834d52d8627a1cf3c34cb1d1ffa3c4652ebbce610296f89564c049#npm:4.4.1"],
+            ["@babel/runtime", "npm:7.10.5"],
+            ["dom-helpers", "npm:5.2.0"],
+            ["loose-envify", "npm:1.4.0"],
+            ["prop-types", "npm:15.7.2"],
+            ["react", "npm:16.13.1"],
+            ["react-dom", "virtual:606a21d5aac684c12a285095a7db171abf3b1370d716779fcccbe099ca51d4bce0d89b8bcf8ca55e78846cbde63261b771bd39c395efe62a02f165a944446e59#npm:16.13.1"]
+          ],
+          "packagePeers": [
+            "react",
+            "react-dom"
           ],
           "linkType": "HARD",
         }]
@@ -20214,17 +20595,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["relay-compiler", [
-        ["virtual:23c3f0141e4c4d1de6262e3ecdb8d7512b1c3d54b6f7a8ed7afc89387a554c401358f86a0d0e00e1e1f873aba3652286b532ab00ad52ea547bb13a31ba9a3419#npm:10.0.0", {
-          "packageLocation": "./.yarn/$$virtual/relay-compiler-virtual-9de3f82b73/0/cache/relay-compiler-npm-10.0.0-564a878bc1-8f420f3d96.zip/node_modules/relay-compiler/",
+        ["virtual:e09b67cc66c204f144a8b5867ee1522a233456e25fc9aac35b7df68e43662f37263ca8cb9002f0fe61c5ada99825cf9e3398ce6c58921f045b5e6e5e9f48ea44#npm:10.0.0", {
+          "packageLocation": "./.yarn/$$virtual/relay-compiler-virtual-f4358b50c2/0/cache/relay-compiler-npm-10.0.0-564a878bc1-8f420f3d96.zip/node_modules/relay-compiler/",
           "packageDependencies": [
-            ["relay-compiler", "virtual:23c3f0141e4c4d1de6262e3ecdb8d7512b1c3d54b6f7a8ed7afc89387a554c401358f86a0d0e00e1e1f873aba3652286b532ab00ad52ea547bb13a31ba9a3419#npm:10.0.0"],
+            ["relay-compiler", "virtual:e09b67cc66c204f144a8b5867ee1522a233456e25fc9aac35b7df68e43662f37263ca8cb9002f0fe61c5ada99825cf9e3398ce6c58921f045b5e6e5e9f48ea44#npm:10.0.0"],
             ["@babel/core", "npm:7.10.5"],
             ["@babel/generator", "npm:7.10.5"],
             ["@babel/parser", "npm:7.10.5"],
             ["@babel/runtime", "npm:7.10.5"],
             ["@babel/traverse", "npm:7.10.5"],
             ["@babel/types", "npm:7.10.5"],
-            ["babel-preset-fbjs", "virtual:9de3f82b736341f96e7e85b9d2572db5c2390ab6f06967e3193933dcb790c20189a4fb179c1330308783d40a1f7fb719e0e56bd298d4d8e6d41440cdbb93b675#npm:3.3.0"],
+            ["babel-preset-fbjs", "virtual:f4358b50c2d7f6cde50d6cf76fe53b340e8a85e8ecc4cc73f4b9c55f24d4e0b8d02c4740aa3e8e4ceba0c42b3fb69c4212ec4805b1d91acb38df56cf0f0bec63#npm:3.3.0"],
             ["chalk", "npm:4.1.0"],
             ["fb-watchman", "npm:2.0.1"],
             ["fbjs", "npm:1.0.0"],
@@ -23108,6 +23489,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/typescript-patch-ba0dbfd217-f0d3d9c987.zip/node_modules/typescript/",
           "packageDependencies": [
             ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["patch:typescript@npm%3A4.0.2#builtin<compat/typescript>::version=4.0.2&hash=5b02a2", {
+          "packageLocation": "./.yarn/cache/typescript-patch-edef266e49-b8b689ef99.zip/node_modules/typescript/",
+          "packageDependencies": [
+            ["typescript", "patch:typescript@npm%3A4.0.2#builtin<compat/typescript>::version=4.0.2&hash=5b02a2"]
           ],
           "linkType": "HARD",
         }]

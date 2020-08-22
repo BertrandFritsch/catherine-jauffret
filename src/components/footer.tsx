@@ -38,7 +38,7 @@ export default function Footer({ className, socialMedias, additionalContent }: P
         <div className={ footerStyles.separator } />
         <ul className={ headerStyles.menu }>
           <li><Link to='/'>Livre d'or</Link></li>
-          <li><Link to='/'>Contact</Link></li>
+          <li><Link to='/contact'>Contact</Link></li>
           <li>
             <a className={ footerStyles.socialLink } href={ socialMedias.facebook }>
               <FontAwesomeIcon icon={ faFacebook } />

@@ -1,6 +1,7 @@
 
 $base-color: #000000;
 $text-color: #ffffff;
+$default-foreground-color: darken($text-color, 15%);
 $root-background-color: lighten($base-color, 8.25%);
 $overlay-background-color: lighten($base-color, 15%);
 $overlay-background-top: linear-gradient(0, transparent, $overlay-background-color);
@@ -8,7 +9,8 @@ $overlay-background-bottom: linear-gradient(0, $overlay-background-color, transp
 
 :export {
   baseColor: $base-color;
-  textColor: text-color;
+  textColor: $text-color;
+  defaultForegroundColor: $default-foreground-color;
   rootBackgroundColor: $root-background-color;
   overlayBackgroundColor: $overlay-background-color;
   overlayBackgroundTop: $overlay-background-top;
