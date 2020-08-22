@@ -1,0 +1,35 @@
+@import '../components/variables';
+
+.section {
+  width: 40rem;
+}
+
+.title {
+  margin: 2rem 0;
+}
+
+.form {
+  display: grid;
+  row-gap: 1rem;
+  justify-items: start;
+}
+
+.small-field-root:global(.MuiFormControl-root) {
+  flex-direction: row;
+  align-items: center;
+}
+
+.small-field {
+  width: 20rem;
+
+  :global(.MuiOutlinedInput-input:-webkit-autofill) {
+    caret-color: $default-foreground-color;
+    border-radius: inherit;
+    box-shadow: 0 0 0 100px $overlay-background-color inset;
+    -webkit-text-fill-color: $default-foreground-color;
+  }
+}
+
+.message {
+  justify-self: stretch;
+}

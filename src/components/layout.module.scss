@@ -9,7 +9,7 @@ body {
   position: absolute;
   min-height: 100%;
   width: 100%;
-  color: darken($text-color, 15%);
+  color: $default-foreground-color;
 
   display: flex;
   flex-direction: column;
