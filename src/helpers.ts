@@ -19,3 +19,23 @@ const EmailRE = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(
 export function isEmailValid(value: string) {
   return EmailRE.test(value.toLowerCase());
 }
+
+const textareaHTMLEscaper = ((): (content: string) => string => {
+  const textarea = typeof window !== 'undefined' ? window.document.createElement('textarea') : null;
+
+  return textarea
+    ? content => {
+      textarea.textContent = content;
+      return textarea.innerHTML;
+    }
+    : content => content;
+})();
+
+export function makeURLEncodedData(record: Record<string, string>) {
+  return Object.keys(record).reduce(
+    (data, key) => {
+      data.append(key, textareaHTMLEscaper(record[ key ]));
+      return data;
+    },
+    new URLSearchParams());
+}
