@@ -7,7 +7,7 @@ import { Field, Form } from 'react-final-form';
 import { isEmailValid } from '../helpers';
 
 import * as styles from './contact.module.scss';
-import variables from '../components/variables.scss';
+import variables from '../components/variables.module.scss';
 
 const darkTheme = createMuiTheme({
   palette: {

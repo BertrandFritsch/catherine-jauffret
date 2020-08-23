@@ -7,7 +7,7 @@ import { motion, Variants } from 'framer-motion';
 
 import * as footerStyles from './footer.module.scss';
 import * as headerStyles from './header.module.scss';
-import variables from './variables.scss';
+import variables from './variables.module.scss';
 
 interface Props {
   className?: string;

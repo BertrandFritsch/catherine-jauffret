@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { motion, useViewportScroll, Variants } from 'framer-motion';
 
 import * as headerStyles from './header.module.scss';
-import variables from './variables.scss';
+import variables from './variables.module.scss';
 
 interface Props {
   className?: string;
