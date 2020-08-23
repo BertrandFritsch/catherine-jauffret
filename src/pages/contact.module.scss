@@ -8,9 +8,21 @@
   margin: 2rem 0;
 }
 
+.title-loading {
+  text-align: center;
+}
+
+.title-error {
+  text-align: center;
+}
+
+.title-sublitted {
+  text-align: center;
+}
+
 .form {
   display: grid;
-  row-gap: 1rem;
+  row-gap: 1.5rem;
   justify-items: start;
 }
 
