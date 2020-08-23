@@ -56,9 +56,9 @@ jspm_packages/
 .env.*
 !.env.example
 
-.cache
+/.cache
 **/.cache
-public
+/public
 
 .idea
 .vscode
