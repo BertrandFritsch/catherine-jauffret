@@ -1,10 +1,17 @@
 @import '../components/variables.module';
 
 .container {
-  margin: 2rem 0;
+  margin: 2rem auto;
+  max-width: 680px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.book {
+  margin: 1rem 0;
   display: grid;
   grid-gap: 1rem 1rem;
-  max-width: 680px;
   grid-auto-flow: row;
 }
 
@@ -62,4 +69,13 @@
     white-space: pre-wrap;
     line-height: 1.5;
   }
+}
+
+.message-button {
+  align-self: flex-end;
+  overflow: hidden;
+}
+
+.form-section {
+  overflow: hidden;
 }
