@@ -1,28 +1,16 @@
-import classNames from 'classnames';
+import { Button, MuiThemeProvider, TextField } from '@material-ui/core';
+import { AnimatePresence, motion, Variants } from 'framer-motion';
 import * as React from 'react';
+import { Field, Form } from 'react-final-form';
+import { CachePolicies, useFetch } from 'use-http';
+import * as formStyles from '../components/form.module.scss';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { createMuiTheme, TextField, MuiThemeProvider, Button, FormControl, InputLabel, OutlinedInput, InputAdornment, OutlinedInputProps, FormHelperText, Tooltip, useTheme } from '@material-ui/core';
-import { Done, Error } from '@material-ui/icons';
-import { Field, Form } from 'react-final-form';
+import SmallTextField from '../components/smallTextField';
+import { theme } from '../components/theme';
 import { isEmailValid, makeURLEncodedData } from '../helpers';
-import { useFetch, CachePolicies } from 'use-http';
-import { AnimatePresence, motion } from 'framer-motion';
 
-import * as styles from './contact.module.scss';
-import variables from '../components/variables.module.scss';
-
-const darkTheme = createMuiTheme({
-  palette: {
-    type: 'dark',
-    primary: {
-      main: variables.textColor
-    }
-  },
-  typography: {
-    fontFamily: 'inherit'
-  }
-});
+import * as styles from '../components/form.module.scss';
 
 interface Record {
   name: string;
@@ -32,13 +20,13 @@ interface Record {
 }
 
 function validateEmail(value: string) {
-  return value && !isEmailValid(value) ? 'L`adresse e-mail n\'est pas correcte' : undefined;
+  return value && !isEmailValid(value) ? 'L\'adresse de messagerie n\'est pas correcte' : undefined;
 }
 
 function validateConfirmationEmail(value: string, record: Partial<Record>) {
   const email = record.email?.trim();
 
-  return value && email !== value ? 'Les adresses e-mail ne correspondent pas' : undefined;
+  return value && email !== value ? 'Les adresses de messagerie ne correspondent pas' : undefined;
 }
 
 function validate(record: Partial<Record>) {
@@ -47,10 +35,10 @@ function validate(record: Partial<Record>) {
   const confirmationEmail = record.confirmationEmail?.trim();
   const message = record.message?.trim();
   const errors = {
-    name: !name ? 'Veuillez saisir votre nom' : undefined,
-    email: !email ? 'Veuillez saisir votre adresse e-mail' : validateEmail(email),
+    name: !name ? 'Laissez-moi votre nom' : undefined,
+    email: !email ? 'Laissez-moi votre adresse de messagerie' : validateEmail(email),
     confirmationEmail: !confirmationEmail
-                       ? 'Veuillez confirmer votre adresse e-mail'
+                       ? 'Veuillez confirmer votre adresse de messagerie'
                        : validateConfirmationEmail(confirmationEmail, record),
     message: !message ? 'Laissez-moi un message' : undefined
   };
@@ -58,39 +46,30 @@ function validate(record: Partial<Record>) {
   return Object.values(errors).some(e => e !== undefined) ? errors : undefined;
 }
 
-interface SmallTextFieldProps extends OutlinedInputProps {
-  errorText?: string;
-  errorType?: 'SubmitError' | 'HintError';
-  showIcon: boolean;
-}
+const formVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    pointerEvents: 'none'
+  },
+  visible: {
+    opacity: 1,
+    pointerEvents: 'auto'
+  }
+};
 
-const SmallTextField = ({ error, errorText, errorType, showIcon, ...props }: SmallTextFieldProps) => {
-  const theme = useTheme();
-
-  return (
-    <FormControl variant="outlined" error={ errorText !== undefined && errorType === 'SubmitError' } className={ styles.smallFieldRoot }>
-      <InputLabel>{ props.label }</InputLabel>
-      <OutlinedInput
-        type='text'
-        className={ styles.smallField }
-        { ...props }
-        endAdornment={
-          showIcon &&
-          <InputAdornment position="end">
-            {
-              errorText !== undefined
-              ? <Tooltip title={ errorText }><Error color='error' /></Tooltip>
-              : <Done style={ { color: theme.palette.success[ theme.palette.type ] } } />
-            }
-          </InputAdornment>
-        }
-      />
-      {
-        errorText !== undefined && errorType === 'SubmitError' &&
-        <FormHelperText>{ errorText }</FormHelperText>
-      }
-    </FormControl>
-  );
+const titleVariants: Variants = {
+  initial: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: .8
+    }
+  },
+  exit: {
+    opacity: 0
+  }
 };
 
 export default function Contact() {
@@ -137,85 +116,73 @@ export default function Contact() {
     <Layout>
       <SEO title='Contact' />
       <section className={ styles.section }>
-        <motion.p layout className={ classNames(styles.title, { [ styles.titleLoading ]: submittedStatus.current === 'SUBMITTING' }, { [ styles.titleError ]: submittedStatus.current === 'SUBMITTING_ERROR' }, { [ styles.titleSublitted ]: submittedStatus.current === 'SUBMITTED' }) }>
-          {
-            submittedStatus.current === 'NONE' &&
-            <span>Laissez-moi votre message et vos coordonnées et je vous répondrai dès que possible</span>
-          }
-          {
-            submittedStatus.current === 'SUBMITTING' &&
-            <span>Le message est en cours d'envoi...</span>
-          }
-          {
-            submittedStatus.current === 'SUBMITTING_ERROR' &&
-            <span style={ { color: darkTheme.palette.error.dark } }>Le message n'a malheureusement pas pu être envoyé.<br />Vous pouvez réessayer plus tard.</span>
-          }
-          {
-            submittedStatus.current === 'SUBMITTED' &&
-            <span>Merci pour votre message.<br />Je vous répondrai dès que possible.</span>
-          }
-        </motion.p>
-        <MuiThemeProvider theme={ darkTheme }>
+        <AnimatePresence initial={ false } exitBeforeEnter>
+          <motion.p initial='initial' animate='visible' exit='exit' className={ formStyles.submittedStateMessage }>
+            {
+              submittedStatus.current === 'SUBMITTING' &&
+              <motion.span variants={ titleVariants }>Le message est en cours d'envoi...</motion.span>
+            }
+            {
+              submittedStatus.current === 'SUBMITTING_ERROR' &&
+              <motion.span variants={ titleVariants } style={ { color: theme.palette.error.main } }>Le message n'a malheureusement pas pu être envoyé.<br />Vous pouvez réessayer plus tard.</motion.span>
+            }
+            {
+              submittedStatus.current === 'SUBMITTED' &&
+              <motion.span variants={ titleVariants }>Merci pour votre message.<br />Je vous répondrai dès que possible.</motion.span>
+            }
+          </motion.p>
+        </AnimatePresence>
+        <MuiThemeProvider theme={ theme }>
           <Form<Record> onSubmit={ submit }>
             {
               ({ handleSubmit, values }) =>
-                <AnimatePresence initial={ false } exitBeforeEnter>
-                  {
-                    submittedStatus.current === 'NONE' &&
-                    <motion.form className={ styles.form }
-                                 onSubmit={ handleSubmit }
-                                 name='contact'
-                                 data-netlify='true'
-                                 initial={ { opacity: 0 } }
-                                 animate={ { opacity: 1, transition: { duration: .8 } } }
-                                 exit={ { opacity: 0, height: 0, overflow: 'hidden' } }>
-                      <Field<string> name='name'>
-                        {
-                          ({ input, meta }) =>
-                            <SmallTextField label='Votre nom' { ...input } autoFocus showIcon={ false } errorText={ !meta.dirtySinceLastSubmit ? meta.submitError : undefined }
-                                            errorType='SubmitError' />
-                        }
-                      </Field>
-                      <Field<string> name='email'>
-                        {
-                          ({ input, meta }) => {
-                            const value = input.value.trim();
-                            const errorText = !meta.dirtySinceLastSubmit && meta.submitError || validateEmail(value);
-                            return (
-                              <SmallTextField label='Votre adresse e-mail' { ...input } showIcon={ !!value } errorText={ errorText }
-                                              errorType={ !meta.dirtySinceLastSubmit && meta.submitError ? 'SubmitError' : 'HintError' } />
-                            );
-                          }
-                        }
-                      </Field>
-                      <Field<string> name='confirmationEmail'>
-                        {
-                          ({ input, meta }) => {
-                            const value = input.value.trim();
-                            const errorText = !meta.dirtySinceLastSubmit && meta.submitError || validateConfirmationEmail(value, values);
-                            return (
-                              <SmallTextField label='Confirmez l&apos;adresse e-mail' { ...input } autoComplete='off'
-                                              showIcon={ !!value }
-                                              errorText={ errorText }
-                                              errorType={ !meta.dirtySinceLastSubmit && meta.submitError ? 'SubmitError' : 'HintError' } />
-                            );
-                          }
-                        }
-                      </Field>
-                      <Field<string> name='message'>
-                        {
-                          ({ input, meta }) =>
-                            <TextField className={ styles.message } variant='outlined' label='Votre message' { ...input } multiline rows={ 10 }
-                                       error={ !meta.dirtySinceLastSubmit && meta.submitError !== undefined }
-                                       helperText={ meta.submitError } />
-                        }
-                      </Field>
-                      <Button type='submit' variant='contained'>
-                        <span>Envoyer</span>
-                      </Button>
-                    </motion.form>
-                  }
-                </AnimatePresence>
+                <motion.form className={ styles.form } variants={ formVariants } animate={ submittedStatus.current === 'NONE' ? 'visible' : 'hidden' } onSubmit={ handleSubmit } name='contact' data-netlify='true'>
+                  <span>Laissez-moi votre message et vos coordonnées et je vous répondrai dès que possible</span>
+                  <Field<string> name='name'>
+                    {
+                      ({ input, meta }) =>
+                        <SmallTextField label='Votre nom' { ...input } autoFocus showIcon={ false } errorText={ !meta.dirtySinceLastSubmit ? meta.submitError : undefined }
+                                        errorType='SubmitError' />
+                    }
+                  </Field>
+                  <Field<string> name='email'>
+                    {
+                      ({ input, meta }) => {
+                        const value = input.value.trim();
+                        const errorText = !meta.dirtySinceLastSubmit && meta.submitError || validateEmail(value);
+                        return (
+                          <SmallTextField label='Votre adresse de messagerie' { ...input } showIcon={ !!value } errorText={ errorText }
+                                          errorType={ !meta.dirtySinceLastSubmit && meta.submitError ? 'SubmitError' : 'HintError' } />
+                        );
+                      }
+                    }
+                  </Field>
+                  <Field<string> name='confirmationEmail'>
+                    {
+                      ({ input, meta }) => {
+                        const value = input.value.trim();
+                        const errorText = !meta.dirtySinceLastSubmit && meta.submitError || validateConfirmationEmail(value, values);
+                        return (
+                          <SmallTextField label='Confirmez l&apos;adresse de messagerie' { ...input } autoComplete='off'
+                                          showIcon={ !!value }
+                                          errorText={ errorText }
+                                          errorType={ !meta.dirtySinceLastSubmit && meta.submitError ? 'SubmitError' : 'HintError' } />
+                        );
+                      }
+                    }
+                  </Field>
+                  <Field<string> name='message'>
+                    {
+                      ({ input, meta }) =>
+                        <TextField className={ styles.message } variant='outlined' label='Votre message' { ...input } multiline rows={ 10 }
+                                   error={ !meta.dirtySinceLastSubmit && meta.submitError !== undefined }
+                                   helperText={ meta.submitError } />
+                    }
+                  </Field>
+                  <Button type='submit' variant='contained'>
+                    <span>Envoyer</span>
+                  </Button>
+                </motion.form>
             }
           </Form>
         </MuiThemeProvider>

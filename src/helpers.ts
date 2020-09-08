@@ -20,6 +20,12 @@ export function isEmailValid(value: string) {
   return EmailRE.test(value.toLowerCase());
 }
 
+const URLRE = /^(http|https):\/\/(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@\-/]))?$/;
+
+export function isURLValid(value: string) {
+  return URLRE.test(value.toLowerCase());
+}
+
 const textareaHTMLEscaper = ((): (content: string) => string => {
   const textarea = typeof window !== 'undefined' ? window.document.createElement('textarea') : null;
 
@@ -31,10 +37,13 @@ const textareaHTMLEscaper = ((): (content: string) => string => {
     : content => content;
 })();
 
-export function makeURLEncodedData(record: Record<string, string>) {
+export function makeURLEncodedData(record: Record<string, string | null>) {
   return Object.keys(record).reduce(
     (data, key) => {
-      data.append(key, textareaHTMLEscaper(record[ key ]));
+      const value = record[ key ];
+      if (value !== null) {
+        data.append(key, textareaHTMLEscaper(value));
+      }
       return data;
     },
     new URLSearchParams());
