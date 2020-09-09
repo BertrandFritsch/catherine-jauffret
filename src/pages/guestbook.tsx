@@ -124,6 +124,7 @@ export default function Guestbook() {
             }
           </AnimatePresence>
         </MuiThemeProvider>
+        <form name='guestbook' data-netlify='true' hidden />
       </motion.section>
     </Layout>
   );
