@@ -3,7 +3,6 @@ import { AnimatePresence, motion, Variants } from 'framer-motion';
 import * as React from 'react';
 import { Field, Form } from 'react-final-form';
 import { CachePolicies, useFetch } from 'use-http';
-import * as formStyles from '../components/form.module.scss';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import SmallTextField from '../components/smallTextField';
@@ -117,7 +116,7 @@ export default function Contact() {
       <SEO title='Contact' />
       <section className={ styles.section }>
         <AnimatePresence initial={ false } exitBeforeEnter>
-          <motion.p initial='initial' animate='visible' exit='exit' className={ formStyles.submittedStateMessage }>
+          <motion.p initial='initial' animate='visible' exit='exit' className={ styles.submittedStateMessage }>
             {
               submittedStatus.current === 'SUBMITTING' &&
               <motion.span variants={ titleVariants }>Le message est en cours d'envoi...</motion.span>
