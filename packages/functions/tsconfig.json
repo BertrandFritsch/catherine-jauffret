@@ -1,0 +1,17 @@
+{
+  "include": [
+    "src/**/*"
+  ],
+  "compilerOptions": {
+    "noEmitOnError": true,
+    "target": "ES2017",
+    "module": "esnext",
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "strict": true,
+    "isolatedModules": false,
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true
+  }
+}
