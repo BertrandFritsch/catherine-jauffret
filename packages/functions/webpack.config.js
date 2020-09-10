@@ -8,7 +8,7 @@ module.exports = {
   entry: [
     "./src/submission-created.ts"
   ],
-  target: "node",
+  target: "web",
   mode,
   devtool,
   module: {

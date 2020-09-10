@@ -19,8 +19,8 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.62",
-    "@types/node-fetch": "^2",
-    "@types/webpack": "^4",
+    "@types/node-fetch": "^2.5.7",
+    "@types/webpack": "^4.41.22",
     "node-fetch": "^2.6.1",
     "pnp-webpack-plugin": "^1.6.4",
     "ts-loader": "^8.0.3",

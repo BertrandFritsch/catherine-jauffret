@@ -9,6 +9,10 @@ import { theme } from './theme';
 
 import * as styles from '../components/form.module.scss';
 
+interface Props {
+  isFormDisplayed: boolean;
+}
+
 interface Record {
   name: string;
   email: string;
@@ -42,10 +46,12 @@ function validate(record: Partial<Record>) {
 const formVariants: Variants = {
   hidden: {
     opacity: 0,
+    height: 0,
     pointerEvents: 'none'
   },
   visible: {
     opacity: 1,
+    height: 'auto',
     pointerEvents: 'auto'
   }
 };
@@ -65,7 +71,7 @@ const titleVariants: Variants = {
   }
 };
 
-export default function GuestbookForm() {
+export default function GuestbookForm({ isFormDisplayed }: Props) {
   const { loading: messageLoading, error: messageError, post: sendMessage } = useFetch({
     cachePolicy: CachePolicies.NO_CACHE,
     headers: {
@@ -126,11 +132,11 @@ export default function GuestbookForm() {
       <Form<Record> onSubmit={ submit }>
         {
           ({ handleSubmit }) =>
-            <motion.form className={ styles.form } variants={ formVariants } animate={ submittedStatus.current === 'NONE' ? 'visible' : 'hidden' } onSubmit={ handleSubmit } name='guestbook' data-netlify='true'>
+            <motion.form className={ styles.form } variants={ formVariants } animate={ submittedStatus.current === 'NONE' ? 'visible' : 'hidden' } onSubmit={ handleSubmit } name='guestbook' data-netlify='true' netlify-honeypot='bot-field'>
               <Field<string> name='name'>
                 {
                   ({ input, meta }) =>
-                    <SmallTextField label='Votre nom' { ...input } autoFocus showIcon={ false } errorText={ !meta.dirtySinceLastSubmit ? meta.submitError : undefined }
+                    <SmallTextField label='Votre nom' { ...input } setInputFocus={ isFormDisplayed } showIcon={ false } errorText={ !meta.dirtySinceLastSubmit ? meta.submitError : undefined }
                                     errorType='SubmitError' />
                 }
               </Field>
@@ -166,6 +172,7 @@ export default function GuestbookForm() {
                                helperText={ meta.submitError } />
                 }
               </Field>
+              <input name='bot-field' hidden />
               <Button type='submit' variant='contained'>
                 <span>Envoyer</span>
               </Button>
