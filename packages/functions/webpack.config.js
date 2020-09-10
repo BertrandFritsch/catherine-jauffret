@@ -8,7 +8,7 @@ module.exports = {
   entry: [
     "./src/submission-created.ts"
   ],
-  target: "web",
+  target: "node",
   mode,
   devtool,
   module: {
@@ -28,11 +28,11 @@ module.exports = {
   output: {
     filename: "submission-created.js",
     path: path.resolve(__dirname, "dist"),
-    libraryTarget: 'umd'
+    libraryTarget: 'commonjs'
   },
-  node: {
-    __dirname: false,
-    __filename: false
+  node: false,
+  optimization: {
+    minimize: false
   },
   resolveLoader: {
     plugins: [

@@ -17,7 +17,7 @@ interface Record {
   name: string;
   email: string;
   website: string | null;
-  message: string;
+  comment: string;
 }
 
 function validateEmail(value: string) {
@@ -32,12 +32,12 @@ function validate(record: Partial<Record>) {
   const name = record.name?.trim();
   const email = record.email?.trim();
   const website = record.website?.trim();
-  const message = record.message?.trim();
+  const comment = record.comment?.trim();
   const errors = {
     name: !name ? 'Laissez-moi votre nom' : undefined,
     email: !email ? 'Laissez-moi votre adresse de messagerie' : validateEmail(email),
     website: website && validateURL(website),
-    message: !message ? 'Laissez-moi un message' : undefined
+    comment: !comment ? 'Laissez-moi un message' : undefined
   };
 
   return Object.values(errors).some(e => e !== undefined) ? errors : undefined;
@@ -164,7 +164,7 @@ export default function GuestbookForm({ isFormDisplayed }: Props) {
                   }
                 }
               </Field>
-              <Field<string> name='message'>
+              <Field<string> name='comment'>
                 {
                   ({ input, meta }) =>
                     <TextField className={ styles.message } variant='outlined' label='Votre message' { ...input } multiline rows={ 10 }

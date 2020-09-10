@@ -9,7 +9,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "functions:build": "webpack --env.NODE_ENV=production --config webpack.config.js -p",
+    "functions:build": "webpack --env.NODE_ENV=production --config webpack.config.js -p && sed -Ei \"s|convert = require[^;]*;||\" ./dist/submission-created.js",
     "functions:build:develop": "webpack --config webpack.config.js --progress",
     "tsc:check": "tsc --noEmit --pretty"
   },
