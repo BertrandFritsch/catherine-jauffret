@@ -3,6 +3,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "build": "yarn build:incremental && yarn functions:build"
+  },
   "dependenciesMeta": {
     "gatsby-transformer-sharp": {
       "unplugged": true
