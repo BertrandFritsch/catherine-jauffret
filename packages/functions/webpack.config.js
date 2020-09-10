@@ -6,7 +6,7 @@ const mode = isProduction ? "production" : "development"
 const devtool = isProduction ? false : "inline-source-map"
 module.exports = {
   entry: [
-    "./src/postGuestbookEntry.ts"
+    "./src/submission-created.ts"
   ],
   target: "node",
   mode,
@@ -26,7 +26,7 @@ module.exports = {
     ]
   },
   output: {
-    filename: "postGuestbookEntry.js",
+    filename: "submission-created.js",
     path: path.resolve(__dirname, "dist")
   },
   node: {
