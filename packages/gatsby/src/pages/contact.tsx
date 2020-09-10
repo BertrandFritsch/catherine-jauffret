@@ -135,7 +135,7 @@ export default function Contact() {
           <Form<Record> onSubmit={ submit }>
             {
               ({ handleSubmit, values }) =>
-                <motion.form className={ styles.form } variants={ formVariants } animate={ submittedStatus.current === 'NONE' ? 'visible' : 'hidden' } onSubmit={ handleSubmit } name='contact' data-netlify='true'>
+                <motion.form className={ styles.form } variants={ formVariants } animate={ submittedStatus.current === 'NONE' ? 'visible' : 'hidden' } onSubmit={ handleSubmit } name='contact' data-netlify='true' netlify-honeypot='bot-field'>
                   <span>Laissez-moi votre message et vos coordonnées et je vous répondrai dès que possible</span>
                   <Field<string> name='name'>
                     {
@@ -178,6 +178,7 @@ export default function Contact() {
                                    helperText={ meta.submitError } />
                     }
                   </Field>
+                  <input name='bot-field' hidden />
                   <Button type='submit' variant='contained'>
                     <span>Envoyer</span>
                   </Button>

@@ -56,25 +56,21 @@ export default function Guestbook() {
     }
   `);
 
-  const [ displayTopForm, setDisplayTopForm ] = React.useState(false);
-  const [ displayBottomForm, setDisplayBottomForm ] = React.useState(false);
+  const [ displayForm, setDisplayForm ] = React.useState(false);
 
   return (
     <Layout>
       <SEO title="Livre d'Or" />
-      <motion.section className={ styles.container } initial='hidden' animate='visible'>
+      <section className={ styles.container }>
         <MuiThemeProvider theme={ theme }>
-          {
-            displayTopForm &&
-            <motion.section className={ styles.formSection } variants={ formVariants }>
-              <GuestbookForm />
-            </motion.section>
-          }
+          <motion.section className={ styles.formSection } variants={ formVariants } initial='hidden' animate={ displayForm ? 'visible' : 'hidden' }>
+            <GuestbookForm isFormDisplayed={ displayForm } />
+          </motion.section>
           <AnimatePresence>
             {
-              !displayTopForm && !displayBottomForm &&
+              !displayForm &&
               <motion.section className={ styles.messageButton } variants={ buttonVariants } initial={ false } animate='visible' exit='hidden'>
-                <Button variant='contained' onClick={ () => setDisplayTopForm(true) }>
+                <Button variant='contained' onClick={ () => setDisplayForm(true) }>
                   <span>Laisser un message</span>
                 </Button>
               </motion.section>
@@ -109,23 +105,16 @@ export default function Guestbook() {
           </section>
           <AnimatePresence>
             {
-              !displayTopForm && !displayBottomForm &&
+              !displayForm &&
               <motion.section className={ styles.messageButton } variants={ buttonVariants } initial={ false } animate='visible' exit='hidden'>
-                <Button variant='contained' onClick={ () => setDisplayBottomForm(true) }>
+                <Button variant='contained' onClick={ () => setDisplayForm(true) }>
                   <span>Laisser un message</span>
                 </Button>
               </motion.section>
             }
-            {
-              displayBottomForm &&
-              <motion.section className={ styles.formSection } variants={ formVariants } onAnimationComplete={ () => { window.scrollTo(0, window.document.body.scrollHeight); } }>
-                <GuestbookForm />
-              </motion.section>
-            }
           </AnimatePresence>
         </MuiThemeProvider>
-        <form name='guestbook' data-netlify='true' hidden />
-      </motion.section>
+      </section>
     </Layout>
   );
 }
