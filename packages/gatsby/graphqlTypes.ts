@@ -5126,8 +5126,6 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime: Maybe<DateQueryOperatorInput>;
   siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
-  port: Maybe<IntQueryOperatorInput>;
-  host: Maybe<StringQueryOperatorInput>;
   polyfill: Maybe<BooleanQueryOperatorInput>;
   pathPrefix: Maybe<StringQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
@@ -5502,8 +5500,6 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime: Maybe<Scalars['Date']>;
   siteMetadata: Maybe<SiteSiteMetadata>;
-  port: Maybe<Scalars['Int']>;
-  host: Maybe<Scalars['String']>;
   polyfill: Maybe<Scalars['Boolean']>;
   pathPrefix: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -5708,8 +5704,6 @@ export type SiteFieldsEnum =
   | 'siteMetadata___siteUrl'
   | 'siteMetadata___author'
   | 'siteMetadata___socialMedias___facebook'
-  | 'port'
-  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -5802,8 +5796,6 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime: Maybe<DateQueryOperatorInput>;
   siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
-  port: Maybe<IntQueryOperatorInput>;
-  host: Maybe<StringQueryOperatorInput>;
   polyfill: Maybe<BooleanQueryOperatorInput>;
   pathPrefix: Maybe<StringQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
@@ -5861,10 +5853,22 @@ export type SitePageConnectionGroupArgs = {
 
 export type SitePageContext = {
   slug: Maybe<Scalars['String']>;
+  layoutOverlay: Maybe<SitePageContextLayoutOverlay>;
 };
 
 export type SitePageContextFilterInput = {
   slug: Maybe<StringQueryOperatorInput>;
+  layoutOverlay: Maybe<SitePageContextLayoutOverlayFilterInput>;
+};
+
+export type SitePageContextLayoutOverlay = {
+  pathname: Maybe<Scalars['String']>;
+  title: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextLayoutOverlayFilterInput = {
+  pathname: Maybe<StringQueryOperatorInput>;
+  title: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -5967,6 +5971,8 @@ export type SitePageFieldsEnum =
   | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
   | 'context___slug'
+  | 'context___layoutOverlay___pathname'
+  | 'context___layoutOverlay___title'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
@@ -6008,6 +6014,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___resolve'
   | 'pluginCreator___name'
   | 'pluginCreator___version'
+  | 'pluginCreator___pluginOptions___component'
   | 'pluginCreator___pluginOptions___siteUrl'
   | 'pluginCreator___pluginOptions___name'
   | 'pluginCreator___pluginOptions___path'
@@ -6225,6 +6232,7 @@ export type SitePluginFieldsEnum =
   | 'resolve'
   | 'name'
   | 'version'
+  | 'pluginOptions___component'
   | 'pluginOptions___siteUrl'
   | 'pluginOptions___name'
   | 'pluginOptions___path'
@@ -6373,6 +6381,7 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 };
 
 export type SitePluginPluginOptions = {
+  component: Maybe<Scalars['String']>;
   siteUrl: Maybe<Scalars['String']>;
   name: Maybe<Scalars['String']>;
   path: Maybe<Scalars['String']>;
@@ -6477,6 +6486,7 @@ export type SitePluginPluginOptionsEnvProductionPolicyFilterListInput = {
 };
 
 export type SitePluginPluginOptionsFilterInput = {
+  component: Maybe<StringQueryOperatorInput>;
   siteUrl: Maybe<StringQueryOperatorInput>;
   name: Maybe<StringQueryOperatorInput>;
   path: Maybe<StringQueryOperatorInput>;

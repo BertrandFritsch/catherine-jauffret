@@ -1,7 +1,6 @@
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import { graphql, navigate, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import { CollagesQuery } from '../../graphqlTypes';
-import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Img from 'gatsby-image';
 import { NNU } from '../helpers';
@@ -46,8 +45,16 @@ export default function Collages() {
 
   groups.sort((a, b) => a.year > b.year ? -1 : 1);
 
+  const collageClickHandler = React.useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      navigate(NNU(e.currentTarget.dataset.href), { state: { collageThumbnailCoords: e.currentTarget.getBoundingClientRect() } })
+      e.preventDefault();
+    },
+    []
+  );
+
   return (
-    <Layout>
+    <>
       <SEO title='Collages' />
       <section>
         {
@@ -61,11 +68,9 @@ export default function Collages() {
                       (node, i) => (
                         <section key={ i } className={ collagesStyles.node }>
                           <h2>{ node.title }</h2>
-                          <Link to={ `/collage/${ node.slug }` } className={ collagesStyles.linkCollage }>
-                            <div className={ collagesStyles.collage }>
-                              <Img fixed={ NNU(node.collage?.localFile?.childImageSharp?.fixed) } />
-                            </div>
-                          </Link>
+                          <a data-href={ `/collage/${ node.slug }` } className={ collagesStyles.linkCollage } onClick={ collageClickHandler }>
+                            <Img style={ { display: 'block' } } fixed={ NNU(node.collage?.localFile?.childImageSharp?.fixed) } />
+                          </a>
                         </section>
                       )
                     )
@@ -76,6 +81,6 @@ export default function Collages() {
           )
         }
       </section>
-    </Layout>
+    </>
   );
 }

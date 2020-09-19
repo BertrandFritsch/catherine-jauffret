@@ -1,7 +1,15 @@
+@use '../components/variables.module';
 
-.section {
+.container {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 1;
+  background-color: variables.$root-background-color;
+
+  &.animate {
+    opacity: 0;
+    background: none;
+  }
 }

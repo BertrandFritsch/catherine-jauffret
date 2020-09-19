@@ -3,7 +3,6 @@ import { AnimatePresence, motion, Variants } from 'framer-motion';
 import * as React from 'react';
 import { Field, Form } from 'react-final-form';
 import { CachePolicies, useFetch } from 'use-http';
-import Layout from '../components/layout';
 import SEO from '../components/seo';
 import SmallTextField from '../components/smallTextField';
 import { theme } from '../components/theme';
@@ -116,7 +115,7 @@ export default function Contact() {
   }
 
   return (
-    <Layout>
+    <>
       <SEO title='Contact' />
       <section className={ styles.section }>
         <AnimatePresence initial={ false } exitBeforeEnter>
@@ -196,7 +195,7 @@ export default function Contact() {
           </AnimatePresence>
         </MuiThemeProvider>
       </section>
-    </Layout>
+    </>
   );
 }
 

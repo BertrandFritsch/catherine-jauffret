@@ -4,11 +4,11 @@ import classNames from 'classnames';
 import { motion, useViewportScroll, Variants } from 'framer-motion';
 
 import * as styles from './header.module.scss';
-import variables from './variables.module.scss';
 
 interface Props {
   className?: string;
   siteTitle: string;
+  overlay: boolean;
 }
 
 const defaultProps: Partial<Props> = {
@@ -16,26 +16,30 @@ const defaultProps: Partial<Props> = {
 };
 
 const headerVariants: Variants = {
-  overlayInitial: {
+  overlayNone: {
+    opacity: 1,
+    pointerEvents: 'auto'
+  },
+
+  overlayHidden: {
     opacity: 0,
     pointerEvents: 'none'
   },
 
   overlayHover: {
     opacity: 1,
-    pointerEvents: 'auto',
-    background: variables.overlayBackgroundTop
+    pointerEvents: 'auto'
   }
 }
 
-export default function Header({ className, siteTitle }: Props) {
+export default function Header({ className, siteTitle, overlay }: Props) {
   const { scrollY } = useViewportScroll();
   const [ isCollapsed, setIsCollapsed ] = React.useState(scrollY.get() > 0);
-  React.useEffect(() => scrollY.onChange(v => setIsCollapsed(v > 0)), []);
+  React.useLayoutEffect(() => scrollY.onChange(v => setIsCollapsed(v > 0)), []);
 
   return (
     <header className={ classNames(styles.header, className) }>
-      <motion.div className={ classNames(styles.fixedHeader, { [ styles.collapsed ]: isCollapsed }) }
+      <motion.div className={ classNames(styles.fixedHeader, { [ styles.overlay ]: overlay, [ styles.collapsed ]: !overlay && isCollapsed }) }
                   layout
                   variants={ headerVariants }>
         <motion.h1 layout><Link to='/'>{ siteTitle }</Link></motion.h1>

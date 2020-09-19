@@ -1,5 +1,7 @@
 @use './variables.module';
 
+$fixe-header-height: 4.75rem;
+
 @use '~hamburgers/_sass/hamburgers/hamburgers' with (
   $hamburger-types: (collapse),
   $hamburger-layer-color: variables.$default-foreground-color,
@@ -8,7 +10,7 @@
 );
 
 .header {
-  margin: 4.75rem 0 0; // height of fixed header
+  margin: $fixe-header-height 0 0;
   align-self: stretch;
 
   h2 {
@@ -37,9 +39,14 @@
   z-index: 2;
   background-color: variables.$root-background-color;
 
+  &.overlay {
+    background: variables.$overlay-background-top;
+  }
+
   display: flex;
 
   h1 {
+    z-index: 1;
     flex: auto;
     text-align: center;
     white-space: nowrap;
@@ -60,9 +67,11 @@
 
   .menu {
     position: absolute;
-    top: 100%;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 10rem;
+    padding: $fixe-header-height 0 0;
+    height: 13rem;
     border-radius: 0 0 0 10rem;
     background-color: variables.$root-background-color;
     //background-color: red;
