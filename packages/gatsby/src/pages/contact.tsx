@@ -3,7 +3,6 @@ import { AnimatePresence, motion, Variants } from 'framer-motion';
 import * as React from 'react';
 import { Field, Form } from 'react-final-form';
 import { CachePolicies, useFetch } from 'use-http';
-import Layout from '../components/layout';
 import SEO from '../components/seo';
 import SmallTextField from '../components/smallTextField';
 import { theme } from '../components/theme';
@@ -48,10 +47,14 @@ function validate(record: Partial<Record>) {
 const formVariants: Variants = {
   hidden: {
     opacity: 0,
+    height: 0,
+    display: 'none',
     pointerEvents: 'none'
   },
   visible: {
     opacity: 1,
+    height: 'auto',
+    display: 'grid',
     pointerEvents: 'auto'
   }
 };
@@ -80,16 +83,15 @@ export default function Contact() {
     }
   });
 
-  const submit = React.useMemo(
-    () =>
-      (record: Record) => {
-        const errors = validate(record);
-        if (errors) {
-          return errors;
-        }
-
-        return sendMessage('/contact', makeURLEncodedData({ ...record, 'form-name': 'contact' }));
+  const submit = React.useCallback(
+    (record: Record) => {
+      const errors = validate(record);
+      if (errors) {
+        return errors;
       }
+
+      return sendMessage('/contact', makeURLEncodedData({ ...record, 'form-name': 'contact' }));
+    }
     , []
   );
 
@@ -112,7 +114,7 @@ export default function Contact() {
   }
 
   return (
-    <Layout>
+    <>
       <SEO title='Contact' />
       <section className={ styles.section }>
         <AnimatePresence initial={ false } exitBeforeEnter>
@@ -132,62 +134,67 @@ export default function Contact() {
           </motion.p>
         </AnimatePresence>
         <MuiThemeProvider theme={ theme }>
-          <Form<Record> onSubmit={ submit }>
+          <AnimatePresence>
             {
-              ({ handleSubmit, values }) =>
-                <motion.form className={ styles.form } variants={ formVariants } animate={ submittedStatus.current === 'NONE' ? 'visible' : 'hidden' } onSubmit={ handleSubmit } name='contact' data-netlify='true' netlify-honeypot='bot-field'>
-                  <span>Laissez-moi votre message et vos coordonnées et je vous répondrai dès que possible</span>
-                  <Field<string> name='name'>
-                    {
-                      ({ input, meta }) =>
-                        <SmallTextField label='Votre nom' { ...input } autoFocus showIcon={ false } errorText={ !meta.dirtySinceLastSubmit ? meta.submitError : undefined }
-                                        errorType='SubmitError' />
-                    }
-                  </Field>
-                  <Field<string> name='email'>
-                    {
-                      ({ input, meta }) => {
-                        const value = input.value.trim();
-                        const errorText = !meta.dirtySinceLastSubmit && meta.submitError || validateEmail(value);
-                        return (
-                          <SmallTextField label='Votre adresse de messagerie' { ...input } showIcon={ !!value } errorText={ errorText }
-                                          errorType={ !meta.dirtySinceLastSubmit && meta.submitError ? 'SubmitError' : 'HintError' } />
-                        );
-                      }
-                    }
-                  </Field>
-                  <Field<string> name='confirmationEmail'>
-                    {
-                      ({ input, meta }) => {
-                        const value = input.value.trim();
-                        const errorText = !meta.dirtySinceLastSubmit && meta.submitError || validateConfirmationEmail(value, values);
-                        return (
-                          <SmallTextField label='Confirmez l&apos;adresse de messagerie' { ...input } autoComplete='off'
-                                          showIcon={ !!value }
-                                          errorText={ errorText }
-                                          errorType={ !meta.dirtySinceLastSubmit && meta.submitError ? 'SubmitError' : 'HintError' } />
-                        );
-                      }
-                    }
-                  </Field>
-                  <Field<string> name='message'>
-                    {
-                      ({ input, meta }) =>
-                        <TextField className={ styles.message } variant='outlined' label='Votre message' { ...input } multiline rows={ 10 }
-                                   error={ !meta.dirtySinceLastSubmit && meta.submitError !== undefined }
-                                   helperText={ meta.submitError } />
-                    }
-                  </Field>
-                  <input name='bot-field' hidden />
-                  <Button type='submit' variant='contained'>
-                    <span>Envoyer</span>
-                  </Button>
-                </motion.form>
+              submittedStatus.current === 'NONE' &&
+              <Form<Record> onSubmit={ submit }>
+                {
+                  ({ handleSubmit, values }) =>
+                    <motion.form className={ styles.form } variants={ formVariants } initial={ false } animate='visible' exit='hidden' onSubmit={ handleSubmit } name='contact' data-netlify='true' netlify-honeypot='bot-field'>
+                      <span>Laissez-moi votre message et vos coordonnées et je vous répondrai dès que possible</span>
+                      <Field<string> name='name'>
+                        {
+                          ({ input, meta }) =>
+                            <SmallTextField label='Votre nom' { ...input } autoFocus showIcon={ false } errorText={ !meta.dirtySinceLastSubmit ? meta.submitError : undefined }
+                                            errorType='SubmitError' />
+                        }
+                      </Field>
+                      <Field<string> name='email'>
+                        {
+                          ({ input, meta }) => {
+                            const value = input.value.trim();
+                            const errorText = !meta.dirtySinceLastSubmit && meta.submitError || validateEmail(value);
+                            return (
+                              <SmallTextField label='Votre adresse de messagerie' { ...input } showIcon={ !!value } errorText={ errorText }
+                                              errorType={ !meta.dirtySinceLastSubmit && meta.submitError ? 'SubmitError' : 'HintError' } />
+                            );
+                          }
+                        }
+                      </Field>
+                      <Field<string> name='confirmationEmail'>
+                        {
+                          ({ input, meta }) => {
+                            const value = input.value.trim();
+                            const errorText = !meta.dirtySinceLastSubmit && meta.submitError || validateConfirmationEmail(value, values);
+                            return (
+                              <SmallTextField label='Confirmez l&apos;adresse de messagerie' { ...input } autoComplete='off'
+                                              showIcon={ !!value }
+                                              errorText={ errorText }
+                                              errorType={ !meta.dirtySinceLastSubmit && meta.submitError ? 'SubmitError' : 'HintError' } />
+                            );
+                          }
+                        }
+                      </Field>
+                      <Field<string> name='message'>
+                        {
+                          ({ input, meta }) =>
+                            <TextField className={ styles.message } variant='outlined' label='Votre message' { ...input } multiline rows={ 10 }
+                                       error={ !meta.dirtySinceLastSubmit && meta.submitError !== undefined }
+                                       helperText={ meta.submitError } />
+                        }
+                      </Field>
+                      <input name='bot-field' hidden />
+                      <Button type='submit' variant='contained'>
+                        <span>Envoyer</span>
+                      </Button>
+                    </motion.form>
+                }
+              </Form>
             }
-          </Form>
+          </AnimatePresence>
         </MuiThemeProvider>
       </section>
-    </Layout>
+    </>
   );
 }
 

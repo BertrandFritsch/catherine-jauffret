@@ -3,13 +3,12 @@ import * as React from 'react';
 import { faExternalLinkAlt, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GuestbookQuery } from '../../graphqlTypes';
-import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { theme } from '../components/theme';
 import { NNU } from '../helpers';
 import { Button, MuiThemeProvider } from '@material-ui/core';
 import GuestbookForm from '../components/guestbookForm';
+import { theme } from '../components/theme';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 
 import * as styles from './guestbook.module.scss';
@@ -59,7 +58,7 @@ export default function Guestbook() {
   const [ displayForm, setDisplayForm ] = React.useState(false);
 
   return (
-    <Layout>
+    <>
       <SEO title="Livre d'Or" />
       <section className={ styles.container }>
         <MuiThemeProvider theme={ theme }>
@@ -115,6 +114,6 @@ export default function Guestbook() {
           </AnimatePresence>
         </MuiThemeProvider>
       </section>
-    </Layout>
+    </>
   );
 }

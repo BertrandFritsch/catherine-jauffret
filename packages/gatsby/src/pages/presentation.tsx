@@ -4,7 +4,6 @@ import { PresentationQuery } from '../../graphqlTypes';
 import Img from 'gatsby-image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { ANNU } from '../helpers';
 
@@ -34,7 +33,7 @@ export default function IndexPage() {
   ANNU(data.contentfulPresentation.image?.localFile?.childImageSharp?.fixed);
 
   return (
-    <Layout>
+    <>
       <SEO title='Présentation' />
       <section className={ indexStyles.section }>
         <Img className={ indexStyles.imagePlaceholder }
@@ -44,6 +43,6 @@ export default function IndexPage() {
         { documentToReactComponents(data.contentfulPresentation.text?.json) }
         <h5>{ data.contentfulPresentation.author }</h5>
       </section>
-    </Layout>
+    </>
   );
 };

@@ -1,7 +1,29 @@
+@use '../components/variables.module';
 
-.section {
-  height: 100%;
+.container {
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 1;
+
+  &.animate {
+    opacity: 0;
+  }
+}
+
+.background-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  pointer-events: none;
+  background-color: variables.$root-background-color;
+  opacity: 1;
+
+  &.animate {
+    opacity: 0;
+  }
 }

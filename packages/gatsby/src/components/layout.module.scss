@@ -1,18 +1,19 @@
-@import 'variables.module';
+@use 'variables.module';
 
 html {
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background-color: $root-background-color;
+  background-color: variables.$root-background-color;
 }
 
 .container {
   min-height: 100vh;
   width: 100%;
-  color: $default-foreground-color;
+  color: variables.$default-foreground-color;
 
   display: flex;
   flex-direction: column;
@@ -23,32 +24,25 @@ body {
     flex: none;
   }
 
-  .main {
-    flex: none;
-  }
-
   .footer {
     flex: none;
   }
 
   &.overlay {
-    height: 100%;
-    display: block;
+    z-index: 1;
+  }
+}
 
-    .header {
-      position: absolute;
-      top: 0;
-      z-index: 1;
-    }
+.main {
+  flex: none;
+  padding: 0 1rem;
 
-    .main {
-      height: 100%;
-    }
-
-    .footer {
-      position: absolute;
-      bottom: 0;
-      z-index: 1;
-    }
+  &.overlay-main {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
   }
 }

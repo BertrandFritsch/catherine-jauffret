@@ -2,11 +2,13 @@
 $base-color: #000000;
 $text-color: #ffffff;
 $highlight-color: #b99128;
+$message-color: darken($text-color, 45%);
 $default-foreground-color: darken($text-color, 15%);
 $root-background-color: lighten($base-color, 8.25%);
 $overlay-background-color: lighten($base-color, 15%);
 $overlay-background-top: linear-gradient(0, transparent, $overlay-background-color);
 $overlay-background-bottom: linear-gradient(0, $overlay-background-color, transparent);
+$background-transparent: rgba(0, 0, 0, 0);
 
 :export {
   baseColor: $base-color;
@@ -17,4 +19,5 @@ $overlay-background-bottom: linear-gradient(0, $overlay-background-color, transp
   overlayBackgroundColor: $overlay-background-color;
   overlayBackgroundTop: $overlay-background-top;
   overlayBackgroundBottom: $overlay-background-bottom;
+  backgroundTransparent: $background-transparent;
 }

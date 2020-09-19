@@ -3,7 +3,6 @@ import * as React from 'react';
 import { HomepageQuery } from '../../graphqlTypes';
 import Img from 'gatsby-image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { ANNU } from '../helpers';
 
@@ -16,7 +15,7 @@ export default function IndexPage() {
         image {
           localFile {
             childImageSharp {
-              fixed(width: 400, quality: 100) {
+              fixed(width: 320, quality: 100) {
                 ...GatsbyImageSharpFixed_withWebp
               }
             }
@@ -32,7 +31,7 @@ export default function IndexPage() {
   ANNU(data.contentfulHomepage.image?.localFile?.childImageSharp?.fixed);
 
   return (
-    <Layout>
+    <>
       <SEO title='Accueil' />
       <section className={ indexStyles.section }>
         <Img className={ indexStyles.imagePlaceholder }
@@ -41,6 +40,6 @@ export default function IndexPage() {
         { documentToReactComponents(data.contentfulHomepage.text?.json) }
         <h5>{ data.contentfulHomepage.author }</h5>
       </section>
-    </Layout>
+    </>
   );
 };

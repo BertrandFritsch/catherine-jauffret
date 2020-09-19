@@ -1,4 +1,4 @@
-@import '../components/variables.module';
+@use '../components/variables.module';
 
 .year {
   text-align: right;
@@ -7,7 +7,7 @@
 }
 
 .nodes {
-  padding: 1rem;
+  padding: 1rem .25rem;
   display: grid;
   grid-gap: 2rem;
   justify-content: start;
@@ -15,8 +15,20 @@
   grid-template-columns: repeat(3, 320px);
 }
 
+@media (max-width: 1056px /* 320px * 3 + 2rem * 2 + 1rem * 2 */) {
+  .nodes {
+    grid-template-columns: repeat(2, 320px);
+  }
+}
+
+@media (max-width: 704px /* 320px * 2 + 2rem * 1 + 1rem * 2 */) {
+  .nodes {
+    grid-template-columns: 320px;
+  }
+}
+
 .node {
-  background-color: lighten($base-color, 10%);
+  background-color: lighten(variables.$base-color, 10%);
 
   h2 {
     padding: 1rem;
@@ -27,9 +39,11 @@
 }
 
 .link-collage {
+  display: inline-block;
   color: inherit;
-}
+  cursor: pointer;
 
-.collage {
-  position: relative;
+  &.collage-animating {
+    visibility: hidden;
+  }
 }

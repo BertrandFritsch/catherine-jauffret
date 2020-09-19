@@ -80,16 +80,15 @@ export default function GuestbookForm({ isFormDisplayed }: Props) {
     }
   });
 
-  const submit = React.useMemo(
-    () =>
-      (record: Record) => {
-        const errors = validate(record);
-        if (errors) {
-          return errors;
-        }
-
-        return sendMessage('/guestbook', makeURLEncodedData({ ...record, 'form-name': 'guestbook' }));
+  const submit = React.useCallback(
+    (record: Record) => {
+      const errors = validate(record);
+      if (errors) {
+        return errors;
       }
+
+      return sendMessage('/guestbook', makeURLEncodedData({ ...record, 'form-name': 'guestbook' }));
+    }
     , []
   );
 
