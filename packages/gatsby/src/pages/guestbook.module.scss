@@ -1,4 +1,4 @@
-@import '../components/variables.module';
+@use '../components/variables.module';
 
 .container {
   margin: 2rem auto;
@@ -16,7 +16,7 @@
 }
 
 .card {
-  background-color: lighten($base-color, 10%);
+  background-color: lighten(variables.$base-color, 10%);
   padding: 1rem;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);

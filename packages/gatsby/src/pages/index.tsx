@@ -16,7 +16,7 @@ export default function IndexPage() {
         image {
           localFile {
             childImageSharp {
-              fixed(width: 400, quality: 100) {
+              fixed(width: 320, quality: 100) {
                 ...GatsbyImageSharpFixed_withWebp
               }
             }

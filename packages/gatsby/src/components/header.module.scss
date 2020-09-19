@@ -1,4 +1,4 @@
-@import 'variables.module';
+@use 'variables.module';
 
 .header {
   margin: 12.25rem 0 0; // height of fixed header
@@ -9,8 +9,8 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
-  background-color: $root-background-color;
+  z-index: 2;
+  background-color: variables.$root-background-color;
 
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@
     padding: 1.5rem 0;
     text-transform: uppercase;
     margin: 0;
-    color: $text-color;
+    color: variables.$text-color;
     a {
       text-decoration: none;
       color: inherit;
@@ -43,8 +43,8 @@
   &.collapsed {
     flex-direction: row;
     justify-content: center;
-    background-color: darken($root-background-color, 2%);
-    box-shadow: 0 1px 30px -20px lighten($root-background-color, 30%);
+    background-color: darken(variables.$root-background-color, 2%);
+    box-shadow: 0 1px 30px -20px lighten(variables.$root-background-color, 30%);
 
     h1 {
       font-size: 2rem;
@@ -70,10 +70,10 @@
     text-decoration: none;
     color: inherit;
     text-transform: uppercase;
-    margin: 0 1rem;
+    margin: 0 0 0 1rem;
 
     &:hover {
-      color: $text-color;
+      color: variables.$text-color;
     }
 
     &.active-page {

@@ -1,17 +1,12 @@
-@import './variables.module';
-
-.small-field-root:global(.MuiFormControl-root) {
-  flex-direction: row;
-  align-items: center;
-}
+@use './variables.module';
 
 .small-field {
   width: 20rem;
 
   :global(.MuiOutlinedInput-input:-webkit-autofill) {
-    caret-color: $default-foreground-color;
+    caret-color: variables.$default-foreground-color;
     border-radius: inherit;
-    box-shadow: 0 0 0 100px $overlay-background-color inset;
-    -webkit-text-fill-color: $default-foreground-color;
+    box-shadow: 0 0 0 100px variables.$overlay-background-color inset;
+    -webkit-text-fill-color: variables.$default-foreground-color;
   }
 }

@@ -4,6 +4,7 @@ import { SiteTitleQuery } from '../../graphqlTypes';
 import { ANNU } from '../helpers';
 import Footer from './footer';
 import Header from './header';
+import HeaderMobile from './headerMobile';
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
 
@@ -41,13 +42,18 @@ export default function Layout({ overlay, additionalOverlayContent, children }: 
   ANNU(data.site.siteMetadata.socialMedias.facebook);
 
   return (
-    <motion.div className={ classNames(layoutStyles.container, overlay && layoutStyles.overlay) }
+    <motion.div className={ classNames(layoutStyles.container, { [ layoutStyles.overlay ]: overlay }) }
                 onHoverStart={ () => setShowOverlay(true) }
                 onHoverEnd={ () => setShowOverlay(false) }
                 onTap={ () => setPreventOverlay(!preventOverlay) }
                 animate={ overlay ? !preventOverlay && showOverlay ? 'overlayHover' : 'overlayInitial' : undefined }
     >
-      <Header className={ layoutStyles.header } siteTitle={ data.site.siteMetadata?.title } />
+      {
+        window.matchMedia('(min-width: 768px)').matches
+          ? <Header className={ layoutStyles.header } siteTitle={ data.site.siteMetadata?.title } />
+          : <HeaderMobile siteTitle={ data.site.siteMetadata?.title } />
+      }
+
       <main className={ layoutStyles.main }>{ children }</main>
       <Footer className={ layoutStyles.footer }
               socialMedias={ { facebook: data.site.siteMetadata.socialMedias.facebook } }

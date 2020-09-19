@@ -1,4 +1,4 @@
-@import 'variables.module';
+@use 'variables.module';
 
 html {
   scroll-behavior: smooth;
@@ -6,13 +6,13 @@ html {
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background-color: $root-background-color;
+  background-color: variables.$root-background-color;
 }
 
 .container {
   min-height: 100vh;
   width: 100%;
-  color: $default-foreground-color;
+  color: variables.$default-foreground-color;
 
   display: flex;
   flex-direction: column;
@@ -25,6 +25,7 @@ body {
 
   .main {
     flex: none;
+    padding: 0 1rem;
   }
 
   .footer {
@@ -32,7 +33,7 @@ body {
   }
 
   &.overlay {
-    height: 100%;
+    height: 100vh;
     display: block;
 
     .header {
@@ -42,7 +43,7 @@ body {
     }
 
     .main {
-      height: 100%;
+      height: 100vh;
     }
 
     .footer {

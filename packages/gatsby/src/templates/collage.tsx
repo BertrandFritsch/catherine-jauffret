@@ -16,7 +16,7 @@ export const query = graphql`
       collage {
         localFile {
           childImageSharp {
-            fluid(maxWidth: 1920, sizes: "(max-width: 1920px) 100vw, 1920px", quality: 100) {
+            fluid(maxWidth: 1920, quality: 100) {
               ...GatsbyImageSharpFluid_withWebp
               ...GatsbyImageSharpFluidLimitPresentationSize
             }
@@ -43,7 +43,7 @@ export default function Collage({ data }: Props) {
       <SEO title={ data.contentfulCollage.title } />
       <section className={ collageStyles.section }>
         <Img fluid={ data.contentfulCollage.collage.localFile.childImageSharp.fluid }
-             style={ { flex: 'auto', maxHeight: '100%' } }
+             style={ { flex: 'auto', maxHeight: '100vh' } }
              imgStyle={ { objectFit: 'contain' } }
         />
       </section>

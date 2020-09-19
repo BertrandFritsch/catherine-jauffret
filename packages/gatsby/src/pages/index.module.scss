@@ -1,7 +1,7 @@
+@use '../components/variables.module';
 
 .section {
   max-width: 680px;
-  margin: auto;
 
   h5 {
     text-align: right;
@@ -15,7 +15,7 @@
   blockquote {
     font-family: 'Lora', sans-serif;
     font-weight: 400;
-    color: #888;
+    color: variables.$message-color;
     font-style: italic;
     margin: 2rem 0;
   }
@@ -23,7 +23,7 @@
   h4 {
     font-family: 'Lora', sans-serif;
     font-weight: 400;
-    color: #888;
+    color: variables.$message-color;
     font-style: italic;
   }
 }
@@ -33,4 +33,16 @@
   width: 302px;
   float: left;
   margin: 0 2rem 1rem 0;
+}
+
+@media (max-width: 500px) {
+  .section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .image-placeholder {
+    margin: 1rem 0;
+    align-self: center;
+  }
 }

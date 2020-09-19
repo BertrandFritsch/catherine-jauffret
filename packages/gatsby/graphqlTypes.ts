@@ -1372,13 +1372,13 @@ export type ContentfulCvFieldsEnum =
   | 'text___internal___mediaType'
   | 'text___internal___owner'
   | 'text___internal___type'
-  | 'text___content'
-  | 'text___content___content'
-  | 'text___content___content___value'
-  | 'text___content___content___nodeType'
-  | 'text___content___content___content'
-  | 'text___content___nodeType'
   | 'text___nodeType'
+  | 'text___content'
+  | 'text___content___nodeType'
+  | 'text___content___content'
+  | 'text___content___content___nodeType'
+  | 'text___content___content___value'
+  | 'text___content___content___content'
   | 'text___text'
   | 'text___json'
   | 'spaceId'
@@ -1429,13 +1429,13 @@ export type ContentfulCvFieldsEnum =
   | 'childContentfulCvTextRichTextNode___internal___mediaType'
   | 'childContentfulCvTextRichTextNode___internal___owner'
   | 'childContentfulCvTextRichTextNode___internal___type'
-  | 'childContentfulCvTextRichTextNode___content'
-  | 'childContentfulCvTextRichTextNode___content___content'
-  | 'childContentfulCvTextRichTextNode___content___content___value'
-  | 'childContentfulCvTextRichTextNode___content___content___nodeType'
-  | 'childContentfulCvTextRichTextNode___content___content___content'
-  | 'childContentfulCvTextRichTextNode___content___nodeType'
   | 'childContentfulCvTextRichTextNode___nodeType'
+  | 'childContentfulCvTextRichTextNode___content'
+  | 'childContentfulCvTextRichTextNode___content___nodeType'
+  | 'childContentfulCvTextRichTextNode___content___content'
+  | 'childContentfulCvTextRichTextNode___content___content___nodeType'
+  | 'childContentfulCvTextRichTextNode___content___content___value'
+  | 'childContentfulCvTextRichTextNode___content___content___content'
   | 'childContentfulCvTextRichTextNode___text'
   | 'childContentfulCvTextRichTextNode___json';
 
@@ -1508,9 +1508,9 @@ export type ContentfulCvTextRichTextNode = Node & {
   parent: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
-  content: Maybe<Array<Maybe<ContentfulCvTextRichTextNodeContent>>>;
   /** @deprecated This field is deprecated, please use 'json' instead. */
   nodeType: Maybe<Scalars['String']>;
+  content: Maybe<Array<Maybe<ContentfulCvTextRichTextNodeContent>>>;
   text: Maybe<Scalars['String']>;
   json: Maybe<Scalars['JSON']>;
 };
@@ -1537,24 +1537,24 @@ export type ContentfulCvTextRichTextNodeConnectionGroupArgs = {
 };
 
 export type ContentfulCvTextRichTextNodeContent = {
-  content: Maybe<Array<Maybe<ContentfulCvTextRichTextNodeContentContent>>>;
   nodeType: Maybe<Scalars['String']>;
+  content: Maybe<Array<Maybe<ContentfulCvTextRichTextNodeContentContent>>>;
 };
 
 export type ContentfulCvTextRichTextNodeContentContent = {
-  value: Maybe<Scalars['String']>;
   nodeType: Maybe<Scalars['String']>;
+  value: Maybe<Scalars['String']>;
   content: Maybe<Array<Maybe<ContentfulCvTextRichTextNodeContentContentContent>>>;
 };
 
 export type ContentfulCvTextRichTextNodeContentContentContent = {
-  value: Maybe<Scalars['String']>;
   nodeType: Maybe<Scalars['String']>;
+  value: Maybe<Scalars['String']>;
 };
 
 export type ContentfulCvTextRichTextNodeContentContentContentFilterInput = {
-  value: Maybe<StringQueryOperatorInput>;
   nodeType: Maybe<StringQueryOperatorInput>;
+  value: Maybe<StringQueryOperatorInput>;
 };
 
 export type ContentfulCvTextRichTextNodeContentContentContentFilterListInput = {
@@ -1562,8 +1562,8 @@ export type ContentfulCvTextRichTextNodeContentContentContentFilterListInput = {
 };
 
 export type ContentfulCvTextRichTextNodeContentContentFilterInput = {
-  value: Maybe<StringQueryOperatorInput>;
   nodeType: Maybe<StringQueryOperatorInput>;
+  value: Maybe<StringQueryOperatorInput>;
   content: Maybe<ContentfulCvTextRichTextNodeContentContentContentFilterListInput>;
 };
 
@@ -1572,8 +1572,8 @@ export type ContentfulCvTextRichTextNodeContentContentFilterListInput = {
 };
 
 export type ContentfulCvTextRichTextNodeContentFilterInput = {
-  content: Maybe<ContentfulCvTextRichTextNodeContentContentFilterListInput>;
   nodeType: Maybe<StringQueryOperatorInput>;
+  content: Maybe<ContentfulCvTextRichTextNodeContentContentFilterListInput>;
 };
 
 export type ContentfulCvTextRichTextNodeContentFilterListInput = {
@@ -1673,15 +1673,15 @@ export type ContentfulCvTextRichTextNodeFieldsEnum =
   | 'internal___mediaType'
   | 'internal___owner'
   | 'internal___type'
-  | 'content'
-  | 'content___content'
-  | 'content___content___value'
-  | 'content___content___nodeType'
-  | 'content___content___content'
-  | 'content___content___content___value'
-  | 'content___content___content___nodeType'
-  | 'content___nodeType'
   | 'nodeType'
+  | 'content'
+  | 'content___nodeType'
+  | 'content___content'
+  | 'content___content___nodeType'
+  | 'content___content___value'
+  | 'content___content___content'
+  | 'content___content___content___nodeType'
+  | 'content___content___content___value'
   | 'text'
   | 'json';
 
@@ -1690,8 +1690,8 @@ export type ContentfulCvTextRichTextNodeFilterInput = {
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
-  content: Maybe<ContentfulCvTextRichTextNodeContentFilterListInput>;
   nodeType: Maybe<StringQueryOperatorInput>;
+  content: Maybe<ContentfulCvTextRichTextNodeContentFilterListInput>;
   text: Maybe<StringQueryOperatorInput>;
   json: Maybe<JsonQueryOperatorInput>;
 };
@@ -2602,12 +2602,12 @@ export type ContentfulHomepageFieldsEnum =
   | 'text___internal___mediaType'
   | 'text___internal___owner'
   | 'text___internal___type'
-  | 'text___content'
-  | 'text___content___content'
-  | 'text___content___content___value'
-  | 'text___content___content___nodeType'
-  | 'text___content___nodeType'
   | 'text___nodeType'
+  | 'text___content'
+  | 'text___content___nodeType'
+  | 'text___content___content'
+  | 'text___content___content___nodeType'
+  | 'text___content___content___value'
   | 'text___text'
   | 'text___json'
   | 'spaceId'
@@ -2658,12 +2658,12 @@ export type ContentfulHomepageFieldsEnum =
   | 'childContentfulHomepageTextRichTextNode___internal___mediaType'
   | 'childContentfulHomepageTextRichTextNode___internal___owner'
   | 'childContentfulHomepageTextRichTextNode___internal___type'
-  | 'childContentfulHomepageTextRichTextNode___content'
-  | 'childContentfulHomepageTextRichTextNode___content___content'
-  | 'childContentfulHomepageTextRichTextNode___content___content___value'
-  | 'childContentfulHomepageTextRichTextNode___content___content___nodeType'
-  | 'childContentfulHomepageTextRichTextNode___content___nodeType'
   | 'childContentfulHomepageTextRichTextNode___nodeType'
+  | 'childContentfulHomepageTextRichTextNode___content'
+  | 'childContentfulHomepageTextRichTextNode___content___nodeType'
+  | 'childContentfulHomepageTextRichTextNode___content___content'
+  | 'childContentfulHomepageTextRichTextNode___content___content___nodeType'
+  | 'childContentfulHomepageTextRichTextNode___content___content___value'
   | 'childContentfulHomepageTextRichTextNode___text'
   | 'childContentfulHomepageTextRichTextNode___json';
 
@@ -2736,9 +2736,9 @@ export type ContentfulHomepageTextRichTextNode = Node & {
   parent: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
-  content: Maybe<Array<Maybe<ContentfulHomepageTextRichTextNodeContent>>>;
   /** @deprecated This field is deprecated, please use 'json' instead. */
   nodeType: Maybe<Scalars['String']>;
+  content: Maybe<Array<Maybe<ContentfulHomepageTextRichTextNodeContent>>>;
   text: Maybe<Scalars['String']>;
   json: Maybe<Scalars['JSON']>;
 };
@@ -2765,18 +2765,18 @@ export type ContentfulHomepageTextRichTextNodeConnectionGroupArgs = {
 };
 
 export type ContentfulHomepageTextRichTextNodeContent = {
-  content: Maybe<Array<Maybe<ContentfulHomepageTextRichTextNodeContentContent>>>;
   nodeType: Maybe<Scalars['String']>;
+  content: Maybe<Array<Maybe<ContentfulHomepageTextRichTextNodeContentContent>>>;
 };
 
 export type ContentfulHomepageTextRichTextNodeContentContent = {
-  value: Maybe<Scalars['String']>;
   nodeType: Maybe<Scalars['String']>;
+  value: Maybe<Scalars['String']>;
 };
 
 export type ContentfulHomepageTextRichTextNodeContentContentFilterInput = {
-  value: Maybe<StringQueryOperatorInput>;
   nodeType: Maybe<StringQueryOperatorInput>;
+  value: Maybe<StringQueryOperatorInput>;
 };
 
 export type ContentfulHomepageTextRichTextNodeContentContentFilterListInput = {
@@ -2784,8 +2784,8 @@ export type ContentfulHomepageTextRichTextNodeContentContentFilterListInput = {
 };
 
 export type ContentfulHomepageTextRichTextNodeContentFilterInput = {
-  content: Maybe<ContentfulHomepageTextRichTextNodeContentContentFilterListInput>;
   nodeType: Maybe<StringQueryOperatorInput>;
+  content: Maybe<ContentfulHomepageTextRichTextNodeContentContentFilterListInput>;
 };
 
 export type ContentfulHomepageTextRichTextNodeContentFilterListInput = {
@@ -2885,12 +2885,12 @@ export type ContentfulHomepageTextRichTextNodeFieldsEnum =
   | 'internal___mediaType'
   | 'internal___owner'
   | 'internal___type'
-  | 'content'
-  | 'content___content'
-  | 'content___content___value'
-  | 'content___content___nodeType'
-  | 'content___nodeType'
   | 'nodeType'
+  | 'content'
+  | 'content___nodeType'
+  | 'content___content'
+  | 'content___content___nodeType'
+  | 'content___content___value'
   | 'text'
   | 'json';
 
@@ -2899,8 +2899,8 @@ export type ContentfulHomepageTextRichTextNodeFilterInput = {
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
-  content: Maybe<ContentfulHomepageTextRichTextNodeContentFilterListInput>;
   nodeType: Maybe<StringQueryOperatorInput>;
+  content: Maybe<ContentfulHomepageTextRichTextNodeContentFilterListInput>;
   text: Maybe<StringQueryOperatorInput>;
   json: Maybe<JsonQueryOperatorInput>;
 };
@@ -3267,12 +3267,12 @@ export type ContentfulPresentationFieldsEnum =
   | 'text___internal___mediaType'
   | 'text___internal___owner'
   | 'text___internal___type'
-  | 'text___content'
-  | 'text___content___content'
-  | 'text___content___content___value'
-  | 'text___content___content___nodeType'
-  | 'text___content___nodeType'
   | 'text___nodeType'
+  | 'text___content'
+  | 'text___content___nodeType'
+  | 'text___content___content'
+  | 'text___content___content___nodeType'
+  | 'text___content___content___value'
   | 'text___text'
   | 'text___json'
   | 'spaceId'
@@ -3323,12 +3323,12 @@ export type ContentfulPresentationFieldsEnum =
   | 'childContentfulPresentationTextRichTextNode___internal___mediaType'
   | 'childContentfulPresentationTextRichTextNode___internal___owner'
   | 'childContentfulPresentationTextRichTextNode___internal___type'
-  | 'childContentfulPresentationTextRichTextNode___content'
-  | 'childContentfulPresentationTextRichTextNode___content___content'
-  | 'childContentfulPresentationTextRichTextNode___content___content___value'
-  | 'childContentfulPresentationTextRichTextNode___content___content___nodeType'
-  | 'childContentfulPresentationTextRichTextNode___content___nodeType'
   | 'childContentfulPresentationTextRichTextNode___nodeType'
+  | 'childContentfulPresentationTextRichTextNode___content'
+  | 'childContentfulPresentationTextRichTextNode___content___nodeType'
+  | 'childContentfulPresentationTextRichTextNode___content___content'
+  | 'childContentfulPresentationTextRichTextNode___content___content___nodeType'
+  | 'childContentfulPresentationTextRichTextNode___content___content___value'
   | 'childContentfulPresentationTextRichTextNode___text'
   | 'childContentfulPresentationTextRichTextNode___json';
 
@@ -3401,9 +3401,9 @@ export type ContentfulPresentationTextRichTextNode = Node & {
   parent: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
-  content: Maybe<Array<Maybe<ContentfulPresentationTextRichTextNodeContent>>>;
   /** @deprecated This field is deprecated, please use 'json' instead. */
   nodeType: Maybe<Scalars['String']>;
+  content: Maybe<Array<Maybe<ContentfulPresentationTextRichTextNodeContent>>>;
   text: Maybe<Scalars['String']>;
   json: Maybe<Scalars['JSON']>;
 };
@@ -3430,18 +3430,18 @@ export type ContentfulPresentationTextRichTextNodeConnectionGroupArgs = {
 };
 
 export type ContentfulPresentationTextRichTextNodeContent = {
-  content: Maybe<Array<Maybe<ContentfulPresentationTextRichTextNodeContentContent>>>;
   nodeType: Maybe<Scalars['String']>;
+  content: Maybe<Array<Maybe<ContentfulPresentationTextRichTextNodeContentContent>>>;
 };
 
 export type ContentfulPresentationTextRichTextNodeContentContent = {
-  value: Maybe<Scalars['String']>;
   nodeType: Maybe<Scalars['String']>;
+  value: Maybe<Scalars['String']>;
 };
 
 export type ContentfulPresentationTextRichTextNodeContentContentFilterInput = {
-  value: Maybe<StringQueryOperatorInput>;
   nodeType: Maybe<StringQueryOperatorInput>;
+  value: Maybe<StringQueryOperatorInput>;
 };
 
 export type ContentfulPresentationTextRichTextNodeContentContentFilterListInput = {
@@ -3449,8 +3449,8 @@ export type ContentfulPresentationTextRichTextNodeContentContentFilterListInput 
 };
 
 export type ContentfulPresentationTextRichTextNodeContentFilterInput = {
-  content: Maybe<ContentfulPresentationTextRichTextNodeContentContentFilterListInput>;
   nodeType: Maybe<StringQueryOperatorInput>;
+  content: Maybe<ContentfulPresentationTextRichTextNodeContentContentFilterListInput>;
 };
 
 export type ContentfulPresentationTextRichTextNodeContentFilterListInput = {
@@ -3550,12 +3550,12 @@ export type ContentfulPresentationTextRichTextNodeFieldsEnum =
   | 'internal___mediaType'
   | 'internal___owner'
   | 'internal___type'
-  | 'content'
-  | 'content___content'
-  | 'content___content___value'
-  | 'content___content___nodeType'
-  | 'content___nodeType'
   | 'nodeType'
+  | 'content'
+  | 'content___nodeType'
+  | 'content___content'
+  | 'content___content___nodeType'
+  | 'content___content___value'
   | 'text'
   | 'json';
 
@@ -3564,8 +3564,8 @@ export type ContentfulPresentationTextRichTextNodeFilterInput = {
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
-  content: Maybe<ContentfulPresentationTextRichTextNodeContentFilterListInput>;
   nodeType: Maybe<StringQueryOperatorInput>;
+  content: Maybe<ContentfulPresentationTextRichTextNodeContentFilterListInput>;
   text: Maybe<StringQueryOperatorInput>;
   json: Maybe<JsonQueryOperatorInput>;
 };
@@ -4987,10 +4987,10 @@ export type Query = {
   allFile: FileConnection;
   directory: Maybe<Directory>;
   allDirectory: DirectoryConnection;
-  sitePage: Maybe<SitePage>;
-  allSitePage: SitePageConnection;
   site: Maybe<Site>;
   allSite: SiteConnection;
+  sitePage: Maybe<SitePage>;
+  allSitePage: SitePageConnection;
   imageSharp: Maybe<ImageSharp>;
   allImageSharp: ImageSharpConnection;
   contentfulAsset: Maybe<ContentfulAsset>;
@@ -5123,6 +5123,28 @@ export type QueryAllDirectoryArgs = {
 };
 
 
+export type QuerySiteArgs = {
+  buildTime: Maybe<DateQueryOperatorInput>;
+  siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
+  port: Maybe<IntQueryOperatorInput>;
+  host: Maybe<StringQueryOperatorInput>;
+  polyfill: Maybe<BooleanQueryOperatorInput>;
+  pathPrefix: Maybe<StringQueryOperatorInput>;
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+};
+
+
+export type QueryAllSiteArgs = {
+  filter: Maybe<SiteFilterInput>;
+  sort: Maybe<SiteSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
 export type QuerySitePageArgs = {
   path: Maybe<StringQueryOperatorInput>;
   component: Maybe<StringQueryOperatorInput>;
@@ -5144,28 +5166,6 @@ export type QuerySitePageArgs = {
 export type QueryAllSitePageArgs = {
   filter: Maybe<SitePageFilterInput>;
   sort: Maybe<SitePageSortInput>;
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-};
-
-
-export type QuerySiteArgs = {
-  buildTime: Maybe<DateQueryOperatorInput>;
-  siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
-  port: Maybe<IntQueryOperatorInput>;
-  host: Maybe<StringQueryOperatorInput>;
-  polyfill: Maybe<BooleanQueryOperatorInput>;
-  pathPrefix: Maybe<StringQueryOperatorInput>;
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
-};
-
-
-export type QueryAllSiteArgs = {
-  filter: Maybe<SiteFilterInput>;
-  sort: Maybe<SiteSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -5303,8 +5303,8 @@ export type QueryContentfulCvTextRichTextNodeArgs = {
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
-  content: Maybe<ContentfulCvTextRichTextNodeContentFilterListInput>;
   nodeType: Maybe<StringQueryOperatorInput>;
+  content: Maybe<ContentfulCvTextRichTextNodeContentFilterListInput>;
   text: Maybe<StringQueryOperatorInput>;
   json: Maybe<JsonQueryOperatorInput>;
 };
@@ -5350,8 +5350,8 @@ export type QueryContentfulPresentationTextRichTextNodeArgs = {
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
-  content: Maybe<ContentfulPresentationTextRichTextNodeContentFilterListInput>;
   nodeType: Maybe<StringQueryOperatorInput>;
+  content: Maybe<ContentfulPresentationTextRichTextNodeContentFilterListInput>;
   text: Maybe<StringQueryOperatorInput>;
   json: Maybe<JsonQueryOperatorInput>;
 };
@@ -5397,8 +5397,8 @@ export type QueryContentfulHomepageTextRichTextNodeArgs = {
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
-  content: Maybe<ContentfulHomepageTextRichTextNodeContentFilterListInput>;
   nodeType: Maybe<StringQueryOperatorInput>;
+  content: Maybe<ContentfulHomepageTextRichTextNodeContentFilterListInput>;
   text: Maybe<StringQueryOperatorInput>;
   json: Maybe<JsonQueryOperatorInput>;
 };
@@ -6016,6 +6016,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___fonts___family'
   | 'pluginCreator___pluginOptions___fonts___variable'
   | 'pluginCreator___pluginOptions___fonts___weights'
+  | 'pluginCreator___pluginOptions___implementation___info'
   | 'pluginCreator___pluginOptions___spaceId'
   | 'pluginCreator___pluginOptions___accessToken'
   | 'pluginCreator___pluginOptions___downloadLocal'
@@ -6234,6 +6235,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___fonts___family'
   | 'pluginOptions___fonts___variable'
   | 'pluginOptions___fonts___weights'
+  | 'pluginOptions___implementation___info'
   | 'pluginOptions___spaceId'
   | 'pluginOptions___accessToken'
   | 'pluginOptions___downloadLocal'
@@ -6377,6 +6379,7 @@ export type SitePluginPluginOptions = {
   host: Maybe<Scalars['String']>;
   env: Maybe<SitePluginPluginOptionsEnv>;
   fonts: Maybe<Array<Maybe<SitePluginPluginOptionsFonts>>>;
+  implementation: Maybe<SitePluginPluginOptionsImplementation>;
   spaceId: Maybe<Scalars['String']>;
   accessToken: Maybe<Scalars['String']>;
   downloadLocal: Maybe<Scalars['Boolean']>;
@@ -6480,6 +6483,7 @@ export type SitePluginPluginOptionsFilterInput = {
   host: Maybe<StringQueryOperatorInput>;
   env: Maybe<SitePluginPluginOptionsEnvFilterInput>;
   fonts: Maybe<SitePluginPluginOptionsFontsFilterListInput>;
+  implementation: Maybe<SitePluginPluginOptionsImplementationFilterInput>;
   spaceId: Maybe<StringQueryOperatorInput>;
   accessToken: Maybe<StringQueryOperatorInput>;
   downloadLocal: Maybe<BooleanQueryOperatorInput>;
@@ -6526,6 +6530,14 @@ export type SitePluginPluginOptionsIconsFilterInput = {
 
 export type SitePluginPluginOptionsIconsFilterListInput = {
   elemMatch: Maybe<SitePluginPluginOptionsIconsFilterInput>;
+};
+
+export type SitePluginPluginOptionsImplementation = {
+  info: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsImplementationFilterInput = {
+  info: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginSortInput = {

@@ -2,6 +2,7 @@
 $base-color: #000000;
 $text-color: #ffffff;
 $highlight-color: #b99128;
+$message-color: darken($text-color, 45%);
 $default-foreground-color: darken($text-color, 15%);
 $root-background-color: lighten($base-color, 8.25%);
 $overlay-background-color: lighten($base-color, 15%);
