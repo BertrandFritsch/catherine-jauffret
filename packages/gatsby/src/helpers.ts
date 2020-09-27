@@ -48,3 +48,11 @@ export function makeURLEncodedData(record: Record<string, string | null>) {
     },
     new URLSearchParams());
 }
+
+export function isCollagesPage(pathname: string) {
+  return pathname.match('^/collages') !== null;
+}
+
+export function isCollagePage(pathname: string) {
+  return pathname.match('^/collage/') !== null;
+}

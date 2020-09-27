@@ -1,9 +1,10 @@
+import { isCollagePage, isCollagesPage } from "./src/helpers"
 
 export function shouldUpdateScroll({ routerProps: { location } }) {
-  if (location.pathname.match('^/collages') !== null) {
+  if (isCollagesPage(location.pathname)) {
     return true;
   }
-  else if (location.pathname.match('^/collage/') !== null) {
+  else if (isCollagePage(location.pathname)) {
     return false;
   }
 

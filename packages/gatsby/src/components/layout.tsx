@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useStaticQuery, graphql, PageProps } from 'gatsby';
 import { SiteTitleQuery } from '../../graphqlTypes';
-import { ANNU } from '../helpers';
+import { ANNU, isCollagePage, isCollagesPage } from '../helpers';
 import Footer from './footer';
 import Header from './header';
 import HeaderMobile from './headerMobile';
@@ -36,7 +36,7 @@ export default function Layout({ pageContext, location, children }: Props) {
 
   // store the /collages page to keep it on navigation to a /collage page
   const collagesPageRef = React.useRef<any>(null);
-  if (location.pathname === '/collages') {
+  if (isCollagesPage(location.pathname)) {
     collagesPageRef.current = children;
   }
   else if (collagesPageRef.current !== null && location.pathname !== pageContext.layoutOverlay?.pathname) {
@@ -79,7 +79,7 @@ export default function Layout({ pageContext, location, children }: Props) {
 
       <AnimatePresence>
         {
-          location.pathname.match('^/collage/') &&
+          isCollagePage(location.pathname) &&
           <motion.main key={ location.pathname }
                        className={ classNames(styles.main, { [ styles.overlayMain ]: location.pathname === pageContext.layoutOverlay?.pathname }) }
                        exit='none'>

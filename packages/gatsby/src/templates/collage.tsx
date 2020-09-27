@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import * as React from 'react';
 import { CollageQuery } from '../../graphqlTypes';
 import SEO from '../components/seo';
-import { ANNU } from '../helpers';
+import { ANNU, isCollagesPage } from '../helpers';
 import classNames from 'classnames';
 
 import * as collageStyles from './collage.module.scss';
@@ -92,7 +92,7 @@ export default function Collage({ data, location }: Props) {
     () =>
       // listen to the kind of navigation to only animate the exit state when going back to the /collages page
       globalHistory.listen(({ action, location: loc }) => {
-        if (action !== 'POP' || loc.pathname !== '/collages') {
+        if (action !== 'POP' || !isCollagesPage(loc.pathname)) {
           setCancelExitAnimation(true);
         }
       }),
