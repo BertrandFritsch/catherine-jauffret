@@ -49,10 +49,12 @@ export function makeURLEncodedData(record: Record<string, string | null>) {
     new URLSearchParams());
 }
 
+const CollagesRE = /^\/collages/;
 export function isCollagesPage(pathname: string) {
-  return pathname.match('^/collages') !== null;
+  return CollagesRE.test(pathname);
 }
 
+const CollageRE = /^\/collage\//;
 export function isCollagePage(pathname: string) {
-  return pathname.match('^/collage/') !== null;
+  return CollageRE.test(pathname);
 }

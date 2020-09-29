@@ -18,7 +18,7 @@
     "url": "https://github.com/BertrandFritsch/catherine-jauffret.git"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.62",
+    "@types/aws-lambda": "^8.10.63",
     "@types/node-fetch": "^2.5.7",
     "@types/webpack": "^4.41.22",
     "node-fetch": "^2.6.1",

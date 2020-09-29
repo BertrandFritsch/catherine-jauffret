@@ -1,9 +1,11 @@
-import { graphql, navigate, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import { CollagesQuery } from '../../graphqlTypes';
+import { CollageContext } from '../components/CollageAnimation';
 import SEO from '../components/seo';
 import Img from 'gatsby-image';
 import { NNU } from '../helpers';
+import classNames from 'classnames';
 
 import * as collagesStyles from './collages.module.scss';
 
@@ -45,12 +47,20 @@ export default function Collages() {
 
   groups.sort((a, b) => a.year > b.year ? -1 : 1);
 
+  const collageContext = React.useContext(CollageContext);
+
   const collageClickHandler = React.useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>) => {
-      navigate(NNU(e.currentTarget.dataset.href), { state: { collageThumbnailCoords: e.currentTarget.getBoundingClientRect() } })
       e.preventDefault();
+      collageContext.showCollage(NNU(e.currentTarget.dataset.href), e.currentTarget.getBoundingClientRect());
     },
-    []
+    [ collageContext ]
+  );
+
+  const shouldHideCollage = React.useCallback(
+    (pathname: string) =>
+      collageContext.state.type !== 'NONE' && collageContext.state.type !== 'STARTING' && collageContext.state.pathname === pathname,
+    [ collageContext ]
   );
 
   return (
@@ -68,7 +78,7 @@ export default function Collages() {
                       (node, i) => (
                         <section key={ i } className={ collagesStyles.node }>
                           <h2>{ node.title }</h2>
-                          <a data-href={ `/collage/${ node.slug }` } className={ collagesStyles.linkCollage } onClick={ collageClickHandler }>
+                          <a data-href={ `/collage/${ node.slug }` } className={ classNames(collagesStyles.linkCollage, { [ collagesStyles.collageAnimating ]: shouldHideCollage(`/collage/${ node.slug }`) }) } onClick={ collageClickHandler }>
                             <Img style={ { display: 'block' } } fixed={ NNU(node.collage?.localFile?.childImageSharp?.fixed) } />
                           </a>
                         </section>

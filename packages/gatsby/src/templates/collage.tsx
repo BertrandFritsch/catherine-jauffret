@@ -1,14 +1,14 @@
-import { globalHistory } from '@reach/router';
-import { motion } from 'framer-motion';
+import { motion, TargetAndTransition, Variants } from 'framer-motion';
 import { graphql, PageProps } from 'gatsby';
 import Img from 'gatsby-image';
 import * as React from 'react';
 import { CollageQuery } from '../../graphqlTypes';
+import { CollageContext } from '../components/CollageAnimation';
 import SEO from '../components/seo';
-import { ANNU, isCollagesPage } from '../helpers';
+import { ANNU } from '../helpers';
 import classNames from 'classnames';
 
-import * as collageStyles from './collage.module.scss';
+import * as styles from './collage.module.scss';
 
 export const query = graphql`
   query Collage($slug: String!) {
@@ -29,33 +29,23 @@ export const query = graphql`
   }
 `;
 
-interface Props extends PageProps<object, object, { collageThumbnailCoords?: DOMRect }> {
+interface Props extends PageProps {
   data: CollageQuery;
 }
 
-export default function Collage({ data, location }: Props) {
+export default function Collage({ data }: Props) {
   ANNU(data.contentfulCollage?.collage?.localFile?.childImageSharp?.fluid);
   const image = data.contentfulCollage?.collage?.localFile?.childImageSharp?.fluid;
 
-  React.useLayoutEffect(
-    () => {
-      const sbWidth = window.innerWidth - document.documentElement.getBoundingClientRect().width;
-      document.documentElement.style.cssText = `overflow: hidden; margin-right: ${ sbWidth }px`;
+  const [ dragging, setDragging ] = React.useState(false);
 
-      return () => {
-        document.documentElement.style.cssText = '';
-      };
-    },
-    []
-  );
-
-  const collageThumbnailCoords = location.state?.collageThumbnailCoords;
-
-  const [ animating, setAnimating ] = React.useState(collageThumbnailCoords !== undefined);
+  const collageContextValue = React.useContext(CollageContext);
+  const collageThumbnailCoords = collageContextValue.state.type !== 'NONE' ? collageContextValue.state.rect : null;
 
   const animateValues = React.useMemo(
     () => {
-      if (typeof window !== 'undefined' && collageThumbnailCoords) {
+      if (collageThumbnailCoords) {
+        ANNU(window);
         const screenAspectRatio = window.innerWidth / window.innerHeight;
         return {
           x: (collageThumbnailCoords.left + collageThumbnailCoords.width / 2) - (window.innerWidth / 2),
@@ -82,51 +72,56 @@ export default function Collage({ data, location }: Props) {
     scale: 1,
     opacity: 1,
     transition: {
-      ease: 'linear',
+      ease: 'easeIn',
       type: 'tween'
     }
   };
 
-  const [ cancelExitAnimation, setCancelExitAnimation ] = React.useState(false);
-  React.useEffect(
-    () =>
-      // listen to the kind of navigation to only animate the exit state when going back to the /collages page
-      globalHistory.listen(({ action, location: loc }) => {
-        if (action !== 'POP' || !isCollagesPage(loc.pathname)) {
-          setCancelExitAnimation(true);
+  const exitVariants: TargetAndTransition | undefined =
+    collageContextValue.state.type !== 'NONE' && animateValues
+      ? {
+          x: [ null, animateValues.x ],
+          y: [ null, animateValues.y ],
+          scale: [ null, animateValues.scale ],
+          opacity: 1,
+          transition: {
+            ease: 'easeOut',
+            type: 'tween'
+          }
         }
-      }),
-    []
-  );
+      : undefined;
 
-  const exitVariants =
-    !cancelExitAnimation && animateValues
-    ? {
-        x: animateValues.x,
-        y: animateValues.y,
-        scale: animateValues.scale,
-        opacity: 1,
-        transition: {
-          ease: 'linear',
-          type: 'tween'
-        }
-      }
-    : undefined;
+  const backgroundVariants: Variants = {
+    in: {
+      opacity: 1
+    },
+
+    out: {
+      opacity: 0
+    }
+  };
 
   return (
     <>
       <SEO title={ data.contentfulCollage.title } />
-      <motion.section className={ classNames(collageStyles.container, { [ collageStyles.animate ]: animating }) }
+      <motion.div className={ classNames(styles.backgroundLayer, { [ styles.animate ]: collageContextValue.state.type !== 'NONE' }) }
+                  variants={ backgroundVariants }
+                  initial={ false }
+                  animate={ collageContextValue.state.type === 'ANIMATING_OUT' || dragging ? 'out' : collageContextValue.state.type === 'READY' ? 'in' : undefined } />
+      <motion.section className={ classNames(styles.container, { [ styles.animate ]: collageContextValue.state.type !== 'NONE' }) }
+                      inherit={ false }
                       initial={ initialVariants }
                       animate={ animateVariants }
                       exit={ exitVariants }
-                      onAnimationStart={ () => setAnimating(true) }
-                      onAnimationComplete={ () => setAnimating(false) }
-                      drag={ collageThumbnailCoords ? 'y' : false }
+                      onAnimationStart={ () => collageContextValue.startAnimating() }
+                      onAnimationComplete={ () => collageContextValue.stopAnimating() }
+                      drag={ collageContextValue.state.type === 'READY' ? 'y' : false }
+                      whileTap={ { cursor: "grabbing" } }
                       dragConstraints={ { top: 0, bottom: 0 } }
                       dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
                       dragElastic={ 0.5 }
-                      onDragEnd={ (_, { offset: { y } }) => Math.abs(y) > window.innerHeight / 3 && window.history.back() }>
+                      onDragStart={ () => setDragging(true) }
+                      onDragEnd={ (_, { offset: { y } }) => (setDragging(false), Math.abs(y) > window.innerHeight / 3 && window.history.back()) }>
         <Img fluid={ image }
              style={ { flex: 'auto', maxHeight: '100vh', pointerEvents: 'none' } }
              imgStyle={ { objectFit: 'contain' } }

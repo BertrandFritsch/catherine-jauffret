@@ -42,4 +42,8 @@
   display: inline-block;
   color: inherit;
   cursor: pointer;
+
+  &.collage-animating {
+    visibility: hidden;
+  }
 }

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useStaticQuery, graphql, PageProps } from 'gatsby';
 import { SiteTitleQuery } from '../../graphqlTypes';
 import { ANNU, isCollagePage, isCollagesPage } from '../helpers';
+import CollageAnimation from './CollageAnimation';
 import Footer from './footer';
 import Header from './header';
 import HeaderMobile from './headerMobile';
@@ -18,16 +19,17 @@ interface PageContextType {
   };
 }
 
-type Props = PageProps<object, PageContextType>
+type Props = PageProps<object, PageContextType>;
 
 export default function Layout({ pageContext, location, children }: Props) {
   const [ showOverlay, setShowOverlay ] = React.useState<'NO' | 'AUTO' | 'HOVER' | 'YES'>('AUTO');
-  const [ showMobileHeader, setShowMobileHeader ] = React.useState(typeof window !== 'undefined' && !window.matchMedia('(min-width: 768px)').matches);
+  const [ showMobileHeader, setShowMobileHeader ] = React.useState(true);
 
-  React.useEffect(
+  React.useLayoutEffect(
     () => {
       const resizeHandler = () => setShowMobileHeader(!window.matchMedia('(min-width: 768px)').matches);
       window.addEventListener('resize', resizeHandler);
+      resizeHandler();
 
       return () => window.removeEventListener('resize', resizeHandler);
     },
@@ -72,28 +74,30 @@ export default function Layout({ pageContext, location, children }: Props) {
           : <Header className={ styles.header } siteTitle={ data.site.siteMetadata?.title } overlay={ pageContext.layoutOverlay !== undefined } />
       }
 
-      {
-        collagesPageRef.current &&
-        <main key={ location.pathname } className={ styles.main }>{ collagesPageRef.current }</main>
-      }
-
-      <AnimatePresence>
+      <CollageAnimation>
         {
-          isCollagePage(location.pathname) &&
-          <motion.main key={ location.pathname }
-                       className={ classNames(styles.main, { [ styles.overlayMain ]: location.pathname === pageContext.layoutOverlay?.pathname }) }
-                       exit='none'>
-            { children }
-          </motion.main>
+          collagesPageRef.current &&
+          <main key='/collages' className={ styles.main }>{ collagesPageRef.current }</main>
         }
-      </AnimatePresence>
 
-      {
-        !location.pathname.match('^/collage') &&
-        <main key={ location.pathname } className={ styles.main }>
-          { children }
-        </main>
-      }
+        <AnimatePresence>
+          {
+            isCollagePage(location.pathname) &&
+            <motion.main key={ location.pathname }
+                         className={ classNames(styles.main, { [ styles.overlayMain ]: location.pathname === pageContext.layoutOverlay?.pathname }) }
+                         exit='none'>
+              { children }
+            </motion.main>
+          }
+        </AnimatePresence>
+
+        {
+          !isCollagePage(location.pathname) && !isCollagesPage(location.pathname) &&
+          <main key={ location.pathname } className={ styles.main }>
+            { children }
+          </main>
+        }
+      </CollageAnimation>
 
       <Footer className={ styles.footer }
               socialMedias={ { facebook: data.site.siteMetadata.socialMedias.facebook } }

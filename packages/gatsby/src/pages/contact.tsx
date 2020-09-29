@@ -83,16 +83,15 @@ export default function Contact() {
     }
   });
 
-  const submit = React.useMemo(
-    () =>
-      (record: Record) => {
-        const errors = validate(record);
-        if (errors) {
-          return errors;
-        }
-
-        return sendMessage('/contact', makeURLEncodedData({ ...record, 'form-name': 'contact' }));
+  const submit = React.useCallback(
+    (record: Record) => {
+      const errors = validate(record);
+      if (errors) {
+        return errors;
       }
+
+      return sendMessage('/contact', makeURLEncodedData({ ...record, 'form-name': 'contact' }));
+    }
     , []
   );
 
