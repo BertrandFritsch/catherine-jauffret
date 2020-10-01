@@ -18,7 +18,7 @@ export const query = graphql`
       collage {
         localFile {
           childImageSharp {
-            fluid(maxWidth: 1920, quality: 100) {
+            fluid(maxWidth: 1920) {
               ...GatsbyImageSharpFluid_withWebp
               ...GatsbyImageSharpFluidLimitPresentationSize
             }
@@ -72,6 +72,7 @@ export default function Collage({ data }: Props) {
     scale: 1,
     opacity: 1,
     transition: {
+      duration: .3,
       ease: 'easeIn',
       type: 'tween'
     }
@@ -85,6 +86,7 @@ export default function Collage({ data }: Props) {
           scale: [ null, animateValues.scale ],
           opacity: 1,
           transition: {
+            duration: .3,
             ease: 'easeOut',
             type: 'tween'
           }

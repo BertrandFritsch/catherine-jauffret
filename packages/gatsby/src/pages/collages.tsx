@@ -5,7 +5,7 @@ import { CollageContext } from '../components/CollageAnimation';
 import SEO from '../components/seo';
 import Img from 'gatsby-image';
 import { NNU } from '../helpers';
-import classNames from 'classnames';
+import { motion, Variants } from 'framer-motion';
 
 import * as collagesStyles from './collages.module.scss';
 
@@ -57,9 +57,24 @@ export default function Collages() {
     [ collageContext ]
   );
 
+  const collageVariants: Variants = {
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: .3
+      }
+    },
+    hidden: {
+      opacity: 0,
+      transition: {
+        duration: .1
+      }
+    }
+  }
+
   const shouldHideCollage = React.useCallback(
     (pathname: string) =>
-      collageContext.state.type !== 'NONE' && collageContext.state.type !== 'STARTING' && collageContext.state.pathname === pathname,
+      (collageContext.state.type === 'ANIMATING_IN' || collageContext.state.type === 'READY') && collageContext.state.pathname === pathname,
     [ collageContext ]
   );
 
@@ -78,9 +93,14 @@ export default function Collages() {
                       (node, i) => (
                         <section key={ i } className={ collagesStyles.node }>
                           <h2>{ node.title }</h2>
-                          <a data-href={ `/collage/${ node.slug }` } className={ classNames(collagesStyles.linkCollage, { [ collagesStyles.collageAnimating ]: shouldHideCollage(`/collage/${ node.slug }`) }) } onClick={ collageClickHandler }>
+                          <motion.a data-href={ `/collage/${ node.slug }` }
+                                    className={ collagesStyles.linkCollage }
+                                    variants={ collageVariants }
+                                    initial={ false }
+                                    animate={ !shouldHideCollage(`/collage/${ node.slug }`) ? 'visible' : 'hidden' }
+                                    onClick={ collageClickHandler }>
                             <Img style={ { display: 'block' } } fixed={ NNU(node.collage?.localFile?.childImageSharp?.fixed) } />
-                          </a>
+                          </motion.a>
                         </section>
                       )
                     )

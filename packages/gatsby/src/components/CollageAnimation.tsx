@@ -120,8 +120,8 @@ function reducer(state: State, transition: Transition): State {
 
         case 'ANIMATING_OUT':
           return state.animationCounter === 1
-                 ? { ...state, type: 'ENDING', animationCounter: 0 }
-                 : { ...state, animationCounter: state.animationCounter - 1 };
+            ? { ...state, type: 'ENDING', animationCounter: 0 }
+            : { ...state, animationCounter: state.animationCounter - 1 };
 
         case 'STARTING':
           throw new Error(`Collage animation transition error: ${ JSON.stringify({ state, transition }) }`);
@@ -180,7 +180,7 @@ export default function CollageAnimation({ children }: Props) {
 
         case 'ANIMATING_IN': {
           const sbWidth = window.innerWidth - document.documentElement.getBoundingClientRect().width;
-          document.documentElement.style.cssText = `-webkit-overflow-scrolling: auto; overflow: hidden; margin-right: ${ sbWidth }px`;
+          document.documentElement.style.cssText = `-webkit-overflow-scrolling: auto; overflow: hidden; margin-right: ${ sbWidth }px;`;
           break;
         }
 
