@@ -61,7 +61,7 @@ export default function Collages() {
     visible: {
       opacity: 1,
       transition: {
-        delay: .5,
+        delay: .2,
         duration: .1
       }
     },
