@@ -87,7 +87,7 @@ export default function Collage({ data }: Props) {
           opacity: 1,
           transition: {
             duration: .3,
-            ease: 'easeOut',
+            ease: 'linear',
             type: 'tween'
           }
         }
