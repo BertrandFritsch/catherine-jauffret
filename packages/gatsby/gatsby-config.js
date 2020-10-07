@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Catherine Jauffret`,
     description: `Collages de Catherine Jauffret`,
-    siteUrl: `https://catherinejauffret.com`,
+    siteUrl: `https://catherinejauffret.fr`,
     author: `Bertrand Fritsch`,
     socialMedias: {
       facebook: `https://www.facebook.com/catherine.jauffret1`
@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://catherinejauffret.com`
+        siteUrl: `https://catherinejauffret.fr`
       }
     },
     `gatsby-plugin-react-helmet`,
@@ -36,7 +36,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://catherinejauffret.com",
+        host: "https://catherinejauffret.fr",
         env: {
           development: {
             policy: [{ userAgent: "*", disallow: ["/"] }]
@@ -113,11 +113,7 @@ module.exports = {
         background_color: `#000`,
         theme_color: `#fff`,
         display: `standalone`,
-        icons: [
-          {
-            src: `/favicon.ico`
-          }
-        ]
+        icon: `src/images/Red-dingue.jpg`
       }
     },
     `gatsby-plugin-offline`,
