@@ -9421,9 +9421,9 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"gatsby@npm:^2.25.3":
-  version: 2.25.3
-  resolution: "gatsby@npm:2.25.3"
+"gatsby@npm:^2.25.4":
+  version: 2.25.4
+  resolution: "gatsby@npm:2.25.4"
   dependencies:
     "@babel/code-frame": ^7.10.4
     "@babel/core": ^7.11.6
@@ -9578,7 +9578,7 @@ fsevents@~2.1.2:
     react-dom: ^16.4.2
   bin:
     gatsby: ./cli.js
-  checksum: 2f097ca70472fb3cd8f4db2f5efe1b6997a5285a3fb8791bccdcb1271211b18455bf4e65e87cc989e89943494e88b59be40132a3373c6502d427bea5b60b177b
+  checksum: 1c4c3f730e73c18faf6665e2ad5f787a967431161ebec6a6bf2514444ea707eb99a4d7750cf8cb7903761ed27fc962c3d359631aecea7a9969b93caa5fdb5527
   languageName: node
   linkType: hard
 
@@ -9609,7 +9609,7 @@ fsevents@~2.1.2:
     fontsource-quicksand: ^3.0.3
     fontsource-raleway: ^3.0.9
     framer-motion: ^2.9.4
-    gatsby: ^2.25.3
+    gatsby: ^2.25.4
     gatsby-image: ^2.4.21
     gatsby-plugin-canonical-urls: ^2.3.13
     gatsby-plugin-graphql-codegen: ^2.7.1
