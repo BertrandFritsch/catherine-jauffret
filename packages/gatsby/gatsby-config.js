@@ -48,28 +48,6 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-google-fonts-v2`,
-      options: {
-        fonts: [
-          {
-            family: `Quicksand`,
-            variable: true,
-            weights: ["300..700"]
-          },
-          {
-            family: `Lora`,
-            variable: true,
-            weights: ["400..500", "400..500"]
-          },
-          {
-            family: `Raleway`,
-            variable: true,
-            weights: ["300..400", "300..400"]
-          }
-        ]
-      }
-    },
-    {
       resolve: `gatsby-plugin-sass`,
       options: {
         implementation: require('sass')
