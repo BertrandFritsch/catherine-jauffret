@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GuestbookQuery } from '../../graphqlTypes';
 import SEO from '../components/seo';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { NNU } from '../helpers';
 import { Button, MuiThemeProvider } from '@material-ui/core';
 import GuestbookForm from '../components/guestbookForm';
 import { theme } from '../components/theme';
@@ -49,7 +48,7 @@ export default function Guestbook() {
           name
           date
           website
-          comment { json }
+          comment { raw }
         }
       }
     }
@@ -96,7 +95,7 @@ export default function Guestbook() {
                       minute: '2-digit'
                     }) }</span>
                     <div className={ styles.comment }>
-                      { documentToReactComponents(NNU(node.comment).json) }
+                      { node.comment?.raw && documentToReactComponents(JSON.parse(node.comment.raw)) }
                     </div>
                   </section>
               )

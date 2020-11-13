@@ -100,7 +100,7 @@ module.exports = {
         workboxConfig: {
           runtimeCaching: [
             {
-              urlPattern: /(\.js$|\.css$|static\/|\/page-data\/sq\/d\/)/,
+              urlPattern: /(\.js$|\.css$|static\/)/,
               handler: `CacheFirst`,
             },
             {

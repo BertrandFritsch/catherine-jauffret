@@ -23,7 +23,7 @@ export default function IndexPage() {
             }
           }
         }
-        text { json }
+        text { raw }
         author
       }
     }
@@ -40,7 +40,7 @@ export default function IndexPage() {
              fixed={ data.contentfulPresentation.image.localFile.childImageSharp.fixed }
         />
         <h2>{ data.contentfulPresentation.title }</h2>
-        { documentToReactComponents(data.contentfulPresentation.text?.json) }
+        { data.contentfulPresentation.text?.raw && documentToReactComponents(JSON.parse(data.contentfulPresentation.text.raw)) }
         <h5>{ data.contentfulPresentation.author }</h5>
       </section>
     </>

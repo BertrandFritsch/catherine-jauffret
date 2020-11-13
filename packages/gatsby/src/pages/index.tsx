@@ -21,7 +21,7 @@ export default function IndexPage() {
             }
           }
         }
-        text { json }
+        text { raw }
         author
       }
     }
@@ -37,7 +37,7 @@ export default function IndexPage() {
         <Img className={ indexStyles.imagePlaceholder }
              fixed={ data.contentfulHomepage.image.localFile.childImageSharp.fixed }
         />
-        { documentToReactComponents(data.contentfulHomepage.text?.json) }
+        { data.contentfulHomepage.text?.raw && documentToReactComponents(JSON.parse(data.contentfulHomepage.text.raw)) }
         <h5>{ data.contentfulHomepage.author }</h5>
       </section>
     </>
