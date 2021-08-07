@@ -30,7 +30,7 @@ export default function SmallTextField({ error, errorText, errorType, showIcon, 
   )
 
   return (
-    <FormControl variant="outlined" error={ errorText !== undefined && errorType === 'SubmitError' } className={ styles.smallFieldRoot }>
+    <FormControl variant="outlined" error={ errorText !== undefined && errorType === 'SubmitError' }>
       <InputLabel>{ props.label }</InputLabel>
       <OutlinedInput
         inputRef={ inputRef }

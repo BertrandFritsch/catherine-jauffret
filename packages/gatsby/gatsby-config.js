@@ -66,7 +66,6 @@ module.exports = {
       options: {
         fileName: `./graphqlTypes.ts`,
         documentPaths: [
-          '../../.yarn/unplugged/gatsby-transformer-sharp*/**/*.js',
           './src/**/*.{ts,tsx}'
         ],
         codegenConfig: {
@@ -79,6 +78,7 @@ module.exports = {
         }
       }
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

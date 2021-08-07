@@ -1,32 +1,29 @@
 import { motion, TargetAndTransition, Variants } from 'framer-motion';
 import { graphql, PageProps } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import * as React from 'react';
 import { CollageQuery } from '../../graphqlTypes';
 import { CollageContext } from '../components/CollageAnimation';
 import SEO from '../components/seo';
-import { ANNU } from '../helpers';
+import { ANNU, NNU } from '../helpers';
 import classNames from 'classnames';
 
 import * as styles from './collage.module.scss';
 
-export const query = graphql`
-  query Collage($slug: String!) {
-    contentfulCollage(slug: { eq: $slug }) {
+export const query = graphql`query Collage($slug: String!) {
+  contentfulCollage(slug: {eq: $slug}) {
+    title
+    date
+    collage {
       title
-      date
-      collage {
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
-              ...GatsbyImageSharpFluidLimitPresentationSize
-            }
-          }
+      localFile {
+        childImageSharp {
+          gatsbyImageData(width: 1920, layout: CONSTRAINED)
         }
       }
     }
   }
+}
 `;
 
 interface Props extends PageProps {
@@ -34,8 +31,8 @@ interface Props extends PageProps {
 }
 
 export default function Collage({ data }: Props) {
-  ANNU(data.contentfulCollage?.collage?.localFile?.childImageSharp?.fluid);
-  const image = data.contentfulCollage?.collage?.localFile?.childImageSharp?.fluid;
+  ANNU(data.contentfulCollage?.collage?.localFile?.childImageSharp?.gatsbyImageData);
+  const image = data.contentfulCollage?.collage?.localFile?.childImageSharp?.gatsbyImageData;
 
   const [ dragging, setDragging ] = React.useState(false);
 
@@ -47,12 +44,13 @@ export default function Collage({ data }: Props) {
       if (collageThumbnailCoords) {
         ANNU(window);
         const screenAspectRatio = window.innerWidth / window.innerHeight;
+        const imageAspectRatio = image.width / image.height;
         return {
           x: (collageThumbnailCoords.left + collageThumbnailCoords.width / 2) - (window.innerWidth / 2),
           y: (collageThumbnailCoords.top + collageThumbnailCoords.height / 2) - (window.innerHeight / 2),
-          scale: image.aspectRatio > 1 && screenAspectRatio <= image.aspectRatio || image.aspectRatio <= 1 && screenAspectRatio <= image.aspectRatio
-                   ? collageThumbnailCoords.width / Math.min(window.innerWidth, image.maxWidth)
-                   : collageThumbnailCoords.height / Math.min(window.innerHeight, image.maxHeight)
+          scale: imageAspectRatio > 1 && screenAspectRatio <= imageAspectRatio || imageAspectRatio <= 1 && screenAspectRatio <= imageAspectRatio
+                   ? collageThumbnailCoords.width / Math.min(window.innerWidth, image.width)
+                   : collageThumbnailCoords.height / Math.min(window.innerHeight, image.height)
         };
       }
     },
@@ -105,7 +103,7 @@ export default function Collage({ data }: Props) {
 
   return (
     <>
-      <SEO title={ data.contentfulCollage.title } />
+      <SEO title={ NNU(data.contentfulCollage?.title) } />
       <motion.div className={ classNames(styles.backgroundLayer, { [ styles.animate ]: collageContextValue.state.type !== 'NONE' }) }
                   variants={ backgroundVariants }
                   initial={ false }
@@ -124,10 +122,11 @@ export default function Collage({ data }: Props) {
                       dragElastic={ 0.5 }
                       onDragStart={ () => setDragging(true) }
                       onDragEnd={ (_, { offset: { y } }) => (setDragging(false), Math.abs(y) > window.innerHeight / 3 && window.history.back()) }>
-        <Img fluid={ image }
-             style={ { flex: 'auto', maxHeight: '100vh', pointerEvents: 'none' } }
-             imgStyle={ { objectFit: 'contain' } }
-        />
+        <GatsbyImage
+          alt={NNU(data.contentfulCollage?.collage?.title)}
+          image={image}
+          style={ { flex: 'auto', maxHeight: '100vh', pointerEvents: 'none' } }
+          imgStyle={ { objectFit: 'contain' } } />
       </motion.section>
     </>
   );

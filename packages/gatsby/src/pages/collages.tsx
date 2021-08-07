@@ -3,35 +3,31 @@ import * as React from 'react';
 import { CollagesQuery } from '../../graphqlTypes';
 import { CollageContext } from '../components/CollageAnimation';
 import SEO from '../components/seo';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { NNU } from '../helpers';
 import { motion, Variants } from 'framer-motion';
 
 import * as collagesStyles from './collages.module.scss';
 
 export default function Collages() {
-  const data = useStaticQuery<CollagesQuery>(graphql`
-    query Collages {
-      allContentfulCollage(
-        sort: { fields: date, order: DESC }
-      ) {
-        nodes {
-          slug
-          title
-          date
-          collage {
-            localFile {
-              childImageSharp {
-                fixed(width: 320) {
-                  ...GatsbyImageSharpFixed_withWebp
-                }
-              }
-            }
+  const data = useStaticQuery<CollagesQuery>(graphql`query Collages {
+  allContentfulCollage(sort: {fields: date, order: DESC}) {
+    nodes {
+      slug
+      title
+      date
+      collage {
+        title
+        localFile {
+          childImageSharp {
+            gatsbyImageData(width: 320, layout: FIXED)
           }
         }
       }
     }
-  `);
+  }
+}
+`);
 
   const groups = Object.entries(
     data.allContentfulCollage.nodes.reduce<{ [ year: number ]: CollagesQuery[ 'allContentfulCollage' ][ 'nodes' ] }>(
@@ -100,7 +96,10 @@ export default function Collages() {
                                     initial={ false }
                                     animate={ !shouldHideCollage(`/collage/${ node.slug }`) ? 'visible' : 'hidden' }
                                     onClick={ collageClickHandler }>
-                            <Img style={ { display: 'block' } } fixed={ NNU(node.collage?.localFile?.childImageSharp?.fixed) } />
+                            <GatsbyImage
+                              alt={NNU(node.collage?.title)}
+                              image={NNU(node.collage?.localFile?.childImageSharp?.gatsbyImageData)}
+                              style={ { display: 'block' } } />
                           </motion.a>
                         </section>
                       )

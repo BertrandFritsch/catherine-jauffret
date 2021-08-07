@@ -19,6 +19,6 @@
     "preserveConstEnums": true,
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
-    "skipLibCheck": false
+    "skipLibCheck": true
   }
 }
