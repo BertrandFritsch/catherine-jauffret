@@ -16,7 +16,16 @@
           "stack-trace":  "*",
           "platform": "*",
           "css.escape": "*",
-          "anser": "*"
+          "anser": "*",
+          "deepmerge": "*"
+        }
+      },
+      "functions": {
+        "dependencies": {
+          "data-uri-to-buffer": "*",
+          "formdata-polyfill": "*",
+          "fetch-blob": "*",
+          "web-streams-polyfill": "*"
         }
       }
     }

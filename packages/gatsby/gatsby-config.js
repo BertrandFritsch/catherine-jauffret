@@ -58,7 +58,9 @@ module.exports = {
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        downloadLocal: true
+        downloadLocal: true,
+        pageLimit: 50,
+        assetDownloadWorkers: 10
       }
     },
     {
@@ -78,9 +80,10 @@ module.exports = {
         }
       }
     },
-    `gatsby-plugin-image`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-remove-fingerprints`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -31,7 +31,7 @@ interface Props extends PageProps {
 }
 
 export default function Collage({ data }: Props) {
-  ANNU(data.contentfulCollage?.collage?.localFile?.childImageSharp?.gatsbyImageData);
+  ANNU(data.contentfulCollage?.collage?.localFile?.childImageSharp?.gatsbyImageData, `Missing image of collage ${ data.contentfulCollage?.title }`);
   const image = data.contentfulCollage?.collage?.localFile?.childImageSharp?.gatsbyImageData;
 
   const [ dragging, setDragging ] = React.useState(false);

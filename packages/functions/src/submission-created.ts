@@ -84,7 +84,7 @@ export async function handler(event: APIGatewayProxyEvent) {
     console.log(e);
     return {
       statusCode: 500,
-      body: e.message
+      body: (e as Error).message
     };
   }
 }
