@@ -98,7 +98,7 @@ export default function Collages() {
                                     onClick={ collageClickHandler }>
                             <GatsbyImage
                               alt={NNU(node.collage?.title)}
-                              image={NNU(node.collage?.localFile?.childImageSharp?.gatsbyImageData)}
+                              image={NNU(node.collage?.localFile?.childImageSharp?.gatsbyImageData, `Missing image of collage ${ node.collage?.title }`)}
                               style={ { display: 'block' } } />
                           </motion.a>
                         </section>

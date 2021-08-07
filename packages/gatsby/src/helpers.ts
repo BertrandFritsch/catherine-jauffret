@@ -1,16 +1,22 @@
 export const noop = () => undefined;
 
-export function ANNU<T>(value: T | null | undefined): asserts value is T {
-  if (value === null || value === undefined) {
-    const message = 'Assertion error! Expected not null or undefined!';
-
+export function asserts(expr: boolean, message = 'Assertion failed!'): asserts expr {
+  if (!expr) {
     console.error(message);
     throw new Error(message);
   }
 }
 
-export function NNU<T>(value: T | null | undefined): T {
-  ANNU(value);
+/**
+ * Asserts that value is neither null, nor undefined
+ * @returns value or an exception
+ */
+export function ANNU<T>(value: T | null | undefined, message = 'Assertion error! Expected not null or undefined!'): asserts value is T {
+  asserts(value !== null && value !== undefined, message);
+}
+
+export function NNU<T>(value: T | null | undefined, message?: string): T {
+  ANNU(value, message);
   return value;
 }
 
