@@ -1,8 +1,8 @@
 @use 'variables.module';
 
-@import '~fontsource-quicksand/index.css';
-@import '~fontsource-lora/index.css';
-@import '~fontsource-raleway/index.css';
+@import '~@fontsource/quicksand/index.css';
+@import '~@fontsource/lora/index.css';
+@import '~@fontsource/raleway/index.css';
 
 html {
   scroll-behavior: smooth;

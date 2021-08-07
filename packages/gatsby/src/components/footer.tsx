@@ -49,7 +49,7 @@ export default function Footer({ className, socialMedias, additionalContent, ove
             </a>
           </li>
         </ul>
-        <p className={ styles.copyright }>Copyright &copy; { new Date().getFullYear() } - Catherine Jauffret</p>
+        <p>Copyright &copy; { new Date().getFullYear() } - Catherine Jauffret</p>
       </div>
     </motion.footer>
   );

@@ -1,14 +1,24 @@
 {
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "build": "yarn build:incremental && yarn functions:build"
-  },
-  "dependenciesMeta": {
-    "gatsby-transformer-sharp": {
-      "unplugged": true
+  "pnpm": {
+    "packageExtensions": {
+      "gatsby": {
+        "dependencies": {
+          "lodash": "*",
+          "mitt": "*",
+          "@gatsbyjs/reach-router": "*",
+          "gatsby-link": "*",
+          "gatsby-react-router-scroll": "*",
+          "query-string": "*",
+          "shallow-compare": "*",
+          "gatsby-legacy-polyfills": "*",
+          "event-source-polyfill": "*",
+          "stack-trace":  "*",
+          "platform": "*",
+          "css.escape": "*",
+          "anser": "*"
+        }
+      }
     }
   }
 }

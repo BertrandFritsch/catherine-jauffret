@@ -1,7 +1,7 @@
-import { createMuiTheme } from '@material-ui/core';
-import variables from './variables.module.scss';
+import { createTheme } from '@material-ui/core';
+import * as variables from './variables.module.scss';
 
-export const theme = createMuiTheme({
+export const theme = createTheme({
   palette: {
     type: 'dark',
     primary: {

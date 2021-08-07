@@ -1,45 +1,44 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import { HomepageQuery } from '../../graphqlTypes';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import SEO from '../components/seo';
-import { ANNU } from '../helpers';
+import { ANNU, NNU } from '../helpers';
 
 import * as indexStyles from './index.module.scss';
 
 export default function IndexPage() {
-  const data = useStaticQuery<HomepageQuery>(graphql`
-    query Homepage {
-      contentfulHomepage {
-        image {
-          localFile {
-            childImageSharp {
-              fixed(width: 320) {
-                ...GatsbyImageSharpFixed_withWebp
-              }
-            }
-          }
+  const data = useStaticQuery<HomepageQuery>(graphql`query Homepage {
+  contentfulHomepage {
+    image {
+      title
+      localFile {
+        childImageSharp {
+          gatsbyImageData(width: 320, layout: FIXED)
         }
-        text { raw }
-        author
       }
     }
-  `);
+    text {
+      raw
+    }
+    author
+  }
+}
+`);
 
   ANNU(data.contentfulHomepage);
-  ANNU(data.contentfulHomepage.image?.localFile?.childImageSharp?.fixed);
+  ANNU(data.contentfulHomepage.image?.localFile?.childImageSharp?.gatsbyImageData);
 
-  return (
-    <>
-      <SEO title='Accueil' />
-      <section className={ indexStyles.section }>
-        <Img className={ indexStyles.imagePlaceholder }
-             fixed={ data.contentfulHomepage.image.localFile.childImageSharp.fixed }
-        />
-        { data.contentfulHomepage.text?.raw && documentToReactComponents(JSON.parse(data.contentfulHomepage.text.raw)) }
-        <h5>{ data.contentfulHomepage.author }</h5>
-      </section>
-    </>
-  );
+  return <>
+    <SEO title='Accueil' />
+    <section className={ indexStyles.section }>
+      <GatsbyImage
+        alt={NNU(data.contentfulHomepage.image?.title)}
+        image={NNU(data.contentfulHomepage.image?.localFile?.childImageSharp?.gatsbyImageData)}
+        className={ indexStyles.imagePlaceholder } />
+      { data.contentfulHomepage.text?.raw && documentToReactComponents(JSON.parse(data.contentfulHomepage.text.raw)) }
+      <h5>{ data.contentfulHomepage.author }</h5>
+    </section>
+  </>;
 };
