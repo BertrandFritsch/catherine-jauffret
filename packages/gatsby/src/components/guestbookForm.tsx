@@ -171,7 +171,9 @@ export default function GuestbookForm({ isFormDisplayed }: Props) {
                                helperText={ meta.submitError } />
                 }
               </Field>
-              <input name='bot-field' hidden />
+              <p className={ styles.honeyPotField }>
+                <input name='bot-field' />
+              </p>
               <Button type='submit' variant='contained'>
                 <span>Envoyer</span>
               </Button>
