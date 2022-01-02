@@ -14,7 +14,7 @@ export default [
     ],
     output: {
       file: './dist/submission-created.js',
-      format: 'commonjs'
+      format: 'es'
     },
     external: [
       'node-fetch'
