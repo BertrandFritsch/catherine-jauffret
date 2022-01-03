@@ -1,0 +1,8 @@
+Statut 03/01/2022
+
+- Arrêt des travaux parce que la limite de temps des build a été atteinte
+- les fonctions ne fontionnent pas -- import cannot be in a module
+  --> tenter de renommer le fichier submission-created.js en submission-created.mjs
+  --> revenir en commonjs sur les fonctions et repasser en version 2 de node-fetch et suppression des dépendances de pnpm sur functions
+
+- Désactivation des builds automatiques : https://app.netlify.com/sites/catherine-jauffret/settings/deploys

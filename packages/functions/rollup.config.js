@@ -13,7 +13,7 @@ export default [
       typescript(),
     ],
     output: {
-      file: './dist/submission-created.js',
+      file: './dist/submission-created.mjs',
       format: 'es'
     },
     external: [
