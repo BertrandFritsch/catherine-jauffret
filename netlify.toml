@@ -5,5 +5,5 @@
     NODE_VERSION = "16"
     NPM_FLAGS="--prefix=./scripts/empty-project/"
 
-# [[plugins]]
-#     package = "@netlify/plugin-gatsby"
+[[plugins]]
+    package = "@netlify/plugin-gatsby"
