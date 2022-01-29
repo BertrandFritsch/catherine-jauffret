@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GuestbookQuery } from '../../graphqlTypes';
 import SEO from '../components/seo';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { Button, MuiThemeProvider } from '@material-ui/core';
+import { Button, ThemeProvider, StyledEngineProvider } from '@mui/material';
 import GuestbookForm from '../components/guestbookForm';
 import { theme } from '../components/theme';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
@@ -56,11 +56,11 @@ export default function Guestbook() {
 
   const [ displayForm, setDisplayForm ] = React.useState(false);
 
-  return (
-    <>
-      <SEO title="Livre d'Or" />
-      <section className={ styles.container }>
-        <MuiThemeProvider theme={ theme }>
+  return <>
+    <SEO title="Livre d'Or" />
+    <section className={ styles.container }>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={ theme }>
           <motion.section className={ styles.formSection } variants={ formVariants } initial='hidden' animate={ displayForm ? 'visible' : 'hidden' }>
             <GuestbookForm isFormDisplayed={ displayForm } />
           </motion.section>
@@ -111,8 +111,8 @@ export default function Guestbook() {
               </motion.section>
             }
           </AnimatePresence>
-        </MuiThemeProvider>
-      </section>
-    </>
-  );
+        </ThemeProvider>
+      </StyledEngineProvider>
+    </section>
+  </>;
 }

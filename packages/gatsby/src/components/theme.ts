@@ -1,9 +1,9 @@
-import { createTheme } from '@material-ui/core';
+import { createTheme } from '@mui/material';
 import * as variables from './variables.module.scss';
 
 export const theme = createTheme({
   palette: {
-    type: 'dark',
+    mode: 'dark',
     primary: {
       main: variables.textColor
     },

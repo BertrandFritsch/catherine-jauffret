@@ -1,4 +1,4 @@
-import { Button, TextField } from '@material-ui/core';
+import { Button, TextField } from '@mui/material';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import * as React from 'react';
 import { Field, Form } from 'react-final-form';
@@ -131,7 +131,7 @@ export default function GuestbookForm({ isFormDisplayed }: Props) {
       <Form<Record> onSubmit={ submit }>
         {
           ({ handleSubmit }) =>
-            <motion.form className={ styles.form } variants={ formVariants } animate={ submittedStatus.current === 'NONE' ? 'visible' : 'hidden' } onSubmit={ handleSubmit } name='guestbook' data-netlify='true' netlify-honeypot='bot-field'>
+            <motion.form className={ styles.form } variants={ formVariants } animate={ submittedStatus.current === 'NONE' ? 'visible' : 'hidden' } onSubmit={ handleSubmit } name='guestbook' data-netlify='true' netlify-honeypot='toggle-field'>
               <Field<string> name='name'>
                 {
                   ({ input, meta }) =>
@@ -166,13 +166,13 @@ export default function GuestbookForm({ isFormDisplayed }: Props) {
               <Field<string> name='comment'>
                 {
                   ({ input, meta }) =>
-                    <TextField className={ styles.message } variant='outlined' label='Votre message' { ...input } multiline rows={ 10 }
+                    <TextField className={ styles.message } label='Votre message' { ...input } multiline rows={ 10 }
                                error={ !meta.dirtySinceLastSubmit && meta.submitError !== undefined }
                                helperText={ meta.submitError } />
                 }
               </Field>
               <p className={ styles.honeyPotField }>
-                <input name='bot-field' />
+                <input name='toggle-field' />
               </p>
               <Button type='submit' variant='contained'>
                 <span>Envoyer</span>

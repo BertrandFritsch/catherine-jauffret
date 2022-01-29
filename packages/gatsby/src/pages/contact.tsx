@@ -1,4 +1,4 @@
-import { Button, MuiThemeProvider, TextField } from '@material-ui/core';
+import { Button, ThemeProvider, StyledEngineProvider, TextField } from '@mui/material';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import * as React from 'react';
 import { Field, Form } from 'react-final-form';
@@ -113,27 +113,27 @@ export default function Contact() {
       break;
   }
 
-  return (
-    <>
-      <SEO title='Contact' />
-      <section className={ styles.section }>
-        <AnimatePresence initial={ false } exitBeforeEnter>
-          <motion.p initial='initial' animate='visible' exit='exit' className={ styles.submittedStateMessage }>
-            {
-              submittedStatus.current === 'SUBMITTING' &&
-              <motion.span variants={ titleVariants }>Le message est en cours d'envoi...</motion.span>
-            }
-            {
-              submittedStatus.current === 'SUBMITTING_ERROR' &&
-              <motion.span variants={ titleVariants } style={ { color: theme.palette.error.main } }>Le message n'a malheureusement pas pu être envoyé.<br />Vous pouvez réessayer plus tard.</motion.span>
-            }
-            {
-              submittedStatus.current === 'SUBMITTED' &&
-              <motion.span variants={ titleVariants }>Merci pour votre message.<br />Je vous répondrai dès que possible.</motion.span>
-            }
-          </motion.p>
-        </AnimatePresence>
-        <MuiThemeProvider theme={ theme }>
+  return <>
+    <SEO title='Contact' />
+    <section className={ styles.section }>
+      <AnimatePresence initial={ false } exitBeforeEnter>
+        <motion.p initial='initial' animate='visible' exit='exit' className={ styles.submittedStateMessage }>
+          {
+            submittedStatus.current === 'SUBMITTING' &&
+            <motion.span variants={ titleVariants }>Le message est en cours d'envoi...</motion.span>
+          }
+          {
+            submittedStatus.current === 'SUBMITTING_ERROR' &&
+            <motion.span variants={ titleVariants } style={ { color: theme.palette.error.main } }>Le message n'a malheureusement pas pu être envoyé.<br />Vous pouvez réessayer plus tard.</motion.span>
+          }
+          {
+            submittedStatus.current === 'SUBMITTED' &&
+            <motion.span variants={ titleVariants }>Merci pour votre message.<br />Je vous répondrai dès que possible.</motion.span>
+          }
+        </motion.p>
+      </AnimatePresence>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={ theme }>
           <AnimatePresence>
             {
               submittedStatus.current === 'NONE' &&
@@ -178,7 +178,7 @@ export default function Contact() {
                       <Field<string> name='message'>
                         {
                           ({ input, meta }) =>
-                            <TextField className={ styles.message } variant='outlined' label='Votre message' { ...input } multiline rows={ 10 }
+                            <TextField className={ styles.message } label='Votre message' { ...input } multiline rows={ 10 }
                                        error={ !meta.dirtySinceLastSubmit && meta.submitError !== undefined }
                                        helperText={ meta.submitError } />
                         }
@@ -192,9 +192,9 @@ export default function Contact() {
               </Form>
             }
           </AnimatePresence>
-        </MuiThemeProvider>
-      </section>
-    </>
-  );
+        </ThemeProvider>
+      </StyledEngineProvider>
+    </section>
+  </>;
 }
 

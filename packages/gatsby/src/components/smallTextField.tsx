@@ -1,5 +1,5 @@
-import { FormControl, FormHelperText, InputAdornment, InputLabel, OutlinedInput, OutlinedInputProps, Tooltip, useTheme } from '@material-ui/core';
-import { Done, Error } from '@material-ui/icons';
+import { FormControl, FormHelperText, InputAdornment, InputLabel, OutlinedInput, OutlinedInputProps, Tooltip, useTheme } from '@mui/material';
+import { Done, Error } from '@mui/icons-material';
 import * as React from 'react';
 import { NNU } from '../helpers';
 
@@ -30,7 +30,7 @@ export default function SmallTextField({ error, errorText, errorType, showIcon, 
   )
 
   return (
-    <FormControl variant="outlined" error={ errorText !== undefined && errorType === 'SubmitError' }>
+    <FormControl error={ errorText !== undefined && errorType === 'SubmitError' }>
       <InputLabel>{ props.label }</InputLabel>
       <OutlinedInput
         inputRef={ inputRef }
@@ -43,7 +43,7 @@ export default function SmallTextField({ error, errorText, errorType, showIcon, 
             {
               errorText !== undefined
               ? <Tooltip title={ errorText }><Error color='error' /></Tooltip>
-              : <Done style={ { color: theme.palette.success[ theme.palette.type ] } } />
+              : <Done style={ { color: theme.palette.success[ theme.palette.mode ] } } />
             }
           </InputAdornment>
         }

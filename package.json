@@ -25,7 +25,8 @@
           "data-uri-to-buffer": "*",
           "formdata-polyfill": "*",
           "fetch-blob": "*",
-          "web-streams-polyfill": "*"
+          "web-streams-polyfill": "*",
+          "node-domexception": "*"
         }
       }
     }
