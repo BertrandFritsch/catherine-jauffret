@@ -1,9 +1,4 @@
 {
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "./typings/*"
-  ],
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
@@ -20,5 +15,9 @@
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true
-  }
+  },
+  "include": [
+    "src",
+    "typings"
+  ]
 }

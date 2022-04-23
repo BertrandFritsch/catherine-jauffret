@@ -1,7 +1,4 @@
 {
-  "include": [
-    "src/**/*"
-  ],
   "compilerOptions": {
     "noEmitOnError": true,
     "target": "ES2017",
@@ -14,5 +11,8 @@
     "noUnusedLocals": true,
     "noImplicitAny": true,
     "skipLibCheck": true
-  }
+  },
+  "include": [
+    "src"
+  ]
 }
