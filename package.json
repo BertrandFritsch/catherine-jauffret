@@ -1,32 +1,24 @@
 {
   "private": true,
   "pnpm": {
+    "overrides": {
+      "gatsby": "4.7.2"
+    },
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "graphql": "16"
+      },
+      "ignoreMissing": [
+        "@babel/core",
+        "webpack",
+        "sharp",
+        "babel-eslint"
+      ]
+    },
     "packageExtensions": {
       "gatsby": {
         "dependencies": {
-          "lodash": "*",
-          "mitt": "*",
-          "@gatsbyjs/reach-router": "*",
-          "gatsby-link": "*",
-          "gatsby-react-router-scroll": "*",
-          "query-string": "*",
-          "shallow-compare": "*",
-          "gatsby-legacy-polyfills": "*",
-          "event-source-polyfill": "*",
-          "stack-trace":  "*",
-          "platform": "*",
-          "css.escape": "*",
-          "anser": "*",
-          "deepmerge": "*"
-        }
-      },
-      "functions": {
-        "dependencies": {
-          "data-uri-to-buffer": "*",
-          "formdata-polyfill": "*",
-          "fetch-blob": "*",
-          "web-streams-polyfill": "*",
-          "node-domexception": "*"
+          "stack-trace": "*"
         }
       }
     }

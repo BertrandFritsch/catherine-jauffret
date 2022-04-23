@@ -2,8 +2,5 @@
     command = "bash ./scripts/netlify.sh"
 
 [build.environment]
-    NODE_VERSION = "16"
+    NODE_VERSION = "17"
     NPM_FLAGS="--prefix=./scripts/empty-project/"
-
-[[plugins]]
-    package = "@netlify/plugin-gatsby"

@@ -1,7 +1,3 @@
-require("dotenv").config({
-  path: `.env.${ process.env.NODE_ENV }`
-});
-
 module.exports = {
   siteMetadata: {
     title: `Catherine Jauffret`,
@@ -13,6 +9,7 @@ module.exports = {
     }
   },
   plugins: [
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-plugin-layout`,
       options: {
@@ -47,12 +44,7 @@ module.exports = {
         }
       }
     },
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        implementation: require('sass')
-      }
-    },
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
