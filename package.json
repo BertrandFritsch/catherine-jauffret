@@ -1,9 +1,6 @@
 {
   "private": true,
   "pnpm": {
-    "overrides": {
-      "gatsby": "4.7.2"
-    },
     "peerDependencyRules": {
       "allowedVersions": {
         "graphql": "16"
@@ -16,9 +13,29 @@
       ]
     },
     "packageExtensions": {
-      "gatsby": {
+      "gatsby-plugin-utils": {
         "dependencies": {
-          "stack-trace": "*"
+          "fastq": "*"
+        }
+      },
+      "babel-plugin-remove-graphql-queries": {
+        "dependencies": {
+          "@babel/types": "*"
+        }
+      },
+      "gatsby-plugin-netlify": {
+        "dependencies": {
+          "webpack": "*"
+        }
+      },
+      "gatsby-plugin-image": {
+        "dependencies": {
+          "semver": "*"
+        }
+      },
+      "gatsby-plugin-page-creator": {
+        "dependencies": {
+          "fs-extra": "*"
         }
       }
     }
