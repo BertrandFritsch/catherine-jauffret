@@ -1,0 +1,60 @@
+{
+	"private": true,
+	"name": "gatsby",
+	"description": "Collages de Catherine Jauffret",
+	"version": "0.1.0",
+	"author": "Bertrand Fritsch <bertrand.fritsch.in@gmail.com>",
+	"type": "module",
+	"license": "MIT",
+	"scripts": {
+		"build": "react-router build",
+		"dev": "react-router dev",
+		"start": "react-router-serve ./build/server/index.js",
+		"typecheck": "react-router typegen && tsc",
+		"format": "prettier --write .",
+		"lint": "eslint .",
+		"graphql:fetch-schema": "graphql-codegen --require dotenv/config --config gql-schemas-codegen-config.yml",
+		"graphql:generate-types": "graphql-codegen"
+	},
+	"dependencies": {
+		"@base-ui-components/react": "1.0.0-alpha.7",
+		"@contentful/rich-text-react-renderer": "^16.0.1",
+		"@contentful/rich-text-types": "^17.0.0",
+		"@fortawesome/free-brands-svg-icons": "^6.7.2",
+		"@fortawesome/react-fontawesome": "^0.2.2",
+		"@react-router/node": "^7.4.0",
+		"@react-router/serve": "^7.4.0",
+		"@unpic/react": "^1.0.1",
+		"classnames": "^2.5.1",
+		"framer-motion": "^12.5.0",
+		"graphql": "^16.10.0",
+		"hamburgers": "^1.2.1",
+		"isbot": "^5.1.25",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"react-router": "^7.4.0"
+	},
+	"devDependencies": {
+		"@epic-web/config": "^1.18.1",
+		"@graphql-codegen/cli": "^5.0.5",
+		"@graphql-codegen/client-preset": "^4.7.0",
+		"@graphql-codegen/introspection": "^4.0.3",
+		"@graphql-typed-document-node/core": "^3.2.0",
+		"@react-router/dev": "^7.4.0",
+		"@tailwindcss/vite": "^4.0.15",
+		"@types/react": "^19.0.12",
+		"@types/react-dom": "^19.0.4",
+		"dotenv": "^16.4.7",
+		"eslint": "^9.23.0",
+		"prettier": "^3.5.3",
+		"react-router-devtools": "^1.1.6",
+		"tailwindcss": "^4.0.15",
+		"typescript": "^5.8.2",
+		"vite": "^6.2.2",
+		"vite-tsconfig-paths": "^5.1.4"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/BertrandFritsch/catherine-jauffret.git"
+	}
+}

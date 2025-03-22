@@ -1,0 +1,42 @@
+@layer base {
+  @import 'hamburgers/dist/hamburgers.css';
+
+  .hamburger {
+    --hamburger-layer-width: 1.5rem;
+    --hamburger-layer-height: 2px;
+    --hamburger-layer-spacing: 6px;
+    padding: 1rem;
+  }
+
+  .hamburger .hamburger-box {
+    width: var(--hamburger-layer-width) !important;
+    height: calc(var(--hamburger-layer-height) * 3 + var(--hamburger-layer-spacing) * 2);
+  }
+
+  .hamburger .hamburger-inner,
+  .hamburger .hamburger-inner::before,
+  .hamburger .hamburger-inner::after {
+    background-color: var(--color-default-foreground);
+    width: var(--hamburger-layer-width);
+    height: var(--hamburger-layer-height);
+  }
+
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::before,
+  .hamburger.is-active .hamburger-inner::after {
+    background-color: var(--color-default-foreground);
+  }
+
+  .hamburger .hamburger-inner {
+    margin-top: calc(var(--hamburger-layer-height) / -2);
+  }
+
+  .hamburger .hamburger-inner::before {
+    top: calc((var(--hamburger-layer-height) + var(--hamburger-layer-spacing)) * -1);
+  }
+
+  .hamburger .hamburger-inner::after {
+    top: calc((var(--hamburger-layer-height) * 2 + var(--hamburger-layer-spacing) * 2) * -1);
+    bottom: calc((var(--hamburger-layer-height) + var(--hamburger-layer-spacing)) * -1);
+  }
+}

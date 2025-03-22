@@ -1,0 +1,61 @@
+@import './components/layout/headerMobile/hamburgers.css';
+@import 'tailwindcss';
+
+@theme {
+  /* Colors */
+  --color-base: #000000;
+  --color-hover: #ffffff;
+  --color-highlight: #b99128;
+  --color-message: #8c8c8c;
+  --color-default-foreground: #d9d9d9;
+  --color-root-background: #151515;
+  --color-overlay-background: #262626;
+  --color-background-transparent: rgba(0, 0, 0, 0);
+  --color-header-collapsed: #131313; /* darken(--color-root-background, 2%) */
+  --color-header-shadow: #404040; /* lighten(--color-root-background, 30%) */
+  
+  /* Fonts */
+  --font-quicksand: 'Quicksand', ui-sans-serif, system-ui, sans-serif;
+  --font-lora: 'Lora', sans-serif;
+  --font-raleway: 'Raleway', sans-serif;
+  
+  /* Spacing */
+  --spacing-header-mobile: 4.75rem;
+  --spacing-header-desktop: 12.25rem;
+  --spacing-mobile-menu: 18rem;
+  --size-burger-width: 1.5rem;
+  --size-burger-height: 2px;
+  
+  /* Border radius */
+  --rounded-menu-corner: 10rem;
+  
+  /* Shadows */
+  --shadow-header: 0 1px 30px -20px var(--color-header-shadow);
+  
+  /* Font sizes */
+  --text-header-desktop: 3rem;
+  --text-header-desktop-collapsed: 2rem;
+  --text-header-mobile: 1.5rem;
+  --font-size-small: 0.75rem;
+  --font-size-base: 1rem;
+  --font-size-large: 1.5rem;
+  --font-size-header-desktop: 3rem;
+  --font-size-header-collapsed: 2rem;
+  --font-size-social: 1.5rem;
+  
+  /* Background images */
+  --bg-overlay-top: linear-gradient(0deg, transparent, var(--color-overlay-background));
+  --bg-overlay-bottom: linear-gradient(0deg, var(--color-overlay-background), transparent);
+}
+
+html {
+	scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+	background-color: var(--color-root-background);
+	color: var(--color-default-foreground);
+	color-scheme: dark;
+	font-family: var(--font-quicksand);
+}
