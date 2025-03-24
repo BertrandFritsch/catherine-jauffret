@@ -73,7 +73,9 @@ jspm_packages/
 
 # others
 /schema.graphql
-collages/
 
 # remix
 .react-router
+
+# netlify
+.netlify
