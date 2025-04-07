@@ -27,13 +27,17 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en">
+		<html
+			lang="fr"
+			className="has-[.collage]:overflow-hidden has-[.collage]:pr-[var(--scrollbar-width)]"
+		>
 			<head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<Meta />
 				<Links />
 				<link rel="icon" href="/favicon.ico" />
+				<title>Collages</title>
 			</head>
 			<body className="isolate">
 				<Tooltip.Provider>{children}</Tooltip.Provider>

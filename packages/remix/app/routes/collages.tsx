@@ -1,13 +1,14 @@
-import { AnimatePresence } from 'framer-motion'
-import { useEffect } from 'react'
-import { Outlet, useLocation } from 'react-router'
+import { AnimatePresence } from 'motion/react'
+import { useLayoutEffect } from 'react'
+import { useLocation } from 'react-router'
 import { graphQLQuery } from '#app/shared/graphQLQuery'
 import { ANNU, asserts } from '#app/shared/utils'
 import { type Route } from './+types/collages'
+import { AnimatedOutlet } from './collages/animatedOutlet'
 import { isCollage, type Collage } from './collages/collage.types'
 import { CollageLink } from './collages/collageLink'
 import { getCollagesPage } from './collages/collages.graphql'
-import { useCollageAnimation } from './collages/useCollageAnimation'
+import { Title } from './shared/Title'
 
 export async function loader() {
 	const data = await graphQLQuery(getCollagesPage, { limit: 1000, skip: 0 })
@@ -52,25 +53,34 @@ export default function Collages({
 	loaderData: { groups },
 	params: { slug },
 }: Route.ComponentProps) {
-	const collageAnimation = useCollageAnimation()
-	const { state, showCollage } = collageAnimation
+	// const collageAnimation = useCollageAnimation()
+	// const { state, showCollage } = collageAnimation
 	const location = useLocation()
 
 	const animateCollage = location.state?.collagesImgBox !== undefined
 	const showCollagePage = slug !== undefined
 	const showCollagesPage = !showCollagePage || animateCollage
 
-	useEffect(() => {
-		if (state.type === 'NONE' && location.state?.collagesImgBox) {
-			showCollage(location.state.collagesImgBox)
+	// useEffect(() => {
+	// 	if (state.type === 'NONE' && location.state?.collagesImgBox) {
+	// 		showCollage(location.state.collagesImgBox)
+	// 	}
+	// }, [location.state?.collagesImgBox, showCollage, state])
+
+	useLayoutEffect(() => {
+		if (showCollagesPage) {
+			document.documentElement.style.setProperty(
+				'--scrollbar-width',
+				`${window.innerWidth - document.documentElement.getBoundingClientRect().width}px`,
+			)
 		}
-	}, [location.state?.collagesImgBox, showCollage, state])
+	}, [showCollagesPage])
 
 	return (
 		<>
 			{showCollagesPage && (
 				<>
-					<title>Collages</title>
+					<Title title="Collages" />
 					<section>
 						{groups.map((group) => (
 							<section key={group.year}>
@@ -89,10 +99,11 @@ export default function Collages({
 				</>
 			)}
 			<AnimatePresence>
-				{showCollagePage &&
-					(!animateCollage || collageAnimation.state.type !== 'NONE') && (
-						<Outlet context={collageAnimation} />
-					)}
+				{showCollagePage && (
+					/*(!animateCollage || collageAnimation.state.type !== 'NONE') &&*/ <AnimatedOutlet
+						key={slug} /*context={collageAnimation}*/
+					/>
+				)}
 			</AnimatePresence>
 		</>
 	)

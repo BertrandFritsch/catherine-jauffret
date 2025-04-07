@@ -1,7 +1,7 @@
 import classnames from 'classnames'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { useLayoutEffect, useState } from 'react'
-import { Outlet } from 'react-router'
+import { useMatch, Outlet } from 'react-router'
 import siteMetadata from '#app/assets/siteMetadata.json'
 import Footer from './layout/footer'
 import Header from './layout/header'
@@ -22,22 +22,13 @@ export default function Layout() {
 		return () => window.removeEventListener('resize', resizeHandler)
 	}, [])
 
-	const pageContext: {
-		layoutOverlay:
-			| {
-					pathname: string
-					title?: string
-			  }
-			| undefined
-	} = {
-		layoutOverlay: undefined,
-	}
+	const isCollagePage = useMatch('/collages/:slug') !== null
 
 	return (
 		<motion.div
 			className={classnames(
 				'flex min-h-screen w-full flex-col items-center justify-between',
-				{ 'z-[1]': pageContext.layoutOverlay },
+				{ 'z-[1]': isCollagePage },
 			)}
 			onHoverStart={() =>
 				setShowOverlay(showOverlay === 'AUTO' ? 'HOVER' : showOverlay)
@@ -51,7 +42,7 @@ export default function Layout() {
 				)
 			}
 			animate={
-				pageContext.layoutOverlay
+				isCollagePage
 					? showOverlay === 'HOVER' || showOverlay === 'YES'
 						? 'overlayHover'
 						: 'overlayHidden'
@@ -59,15 +50,12 @@ export default function Layout() {
 			}
 		>
 			{showMobileHeader ? (
-				<HeaderMobile
-					siteTitle={siteMetadata.title}
-					overlay={pageContext.layoutOverlay !== undefined}
-				/>
+				<HeaderMobile siteTitle={siteMetadata.title} overlay={isCollagePage} />
 			) : (
 				<Header
 					className="flex-none"
 					siteTitle={siteMetadata.title}
-					overlay={pageContext.layoutOverlay !== undefined}
+					overlay={isCollagePage}
 				/>
 			)}
 
@@ -80,12 +68,7 @@ export default function Layout() {
 				socialMedias={{
 					facebook: siteMetadata.socialMedias.facebook,
 				}}
-				additionalContent={
-					pageContext.layoutOverlay?.title && (
-						<h2>{pageContext.layoutOverlay?.title}</h2>
-					)
-				}
-				overlay={pageContext.layoutOverlay !== undefined}
+				overlay={isCollagePage}
 			/>
 		</motion.div>
 	)

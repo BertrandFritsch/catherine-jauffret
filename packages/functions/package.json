@@ -21,12 +21,12 @@
   "devDependencies": {
     "@rollup/plugin-typescript": "^12.1.2",
     "@types/aws-lambda": "^8.10.148",
-    "@types/node": "^22.13.13",
+    "@types/node": "^22.14.0",
     "node-fetch": "^3.3.2",
-    "rollup": "^4.37.0",
+    "rollup": "^4.39.0",
     "rollup-plugin-cleaner": "^1.0.0",
     "tslib": "^2.8.1",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   },
   "sideEffects": false
 }

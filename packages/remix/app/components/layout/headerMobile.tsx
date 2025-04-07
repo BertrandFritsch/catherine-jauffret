@@ -1,10 +1,5 @@
 import classnames from 'classnames'
-import {
-	AnimatePresence,
-	motion,
-	useScroll,
-	type Variants,
-} from 'framer-motion'
+import { AnimatePresence, motion, useScroll, type Variants } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
 
@@ -82,7 +77,7 @@ const backgroundLayerVariants: Variants = {
 export default function HeaderMobile({ siteTitle, overlay }: Props) {
 	const { scrollY } = useScroll()
 	const [isCollapsed, setIsCollapsed] = useState(scrollY.get() > 0)
-	useEffect(() => scrollY.on('change', (v) => setIsCollapsed(v > 0)), [])
+	useEffect(() => scrollY.on('change', (v) => setIsCollapsed(v > 0)), [scrollY])
 	const [isOpen, setIsOpen] = useState(false)
 
 	const buttonRef = useRef<HTMLButtonElement | null>(null)

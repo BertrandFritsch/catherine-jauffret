@@ -1,7 +1,8 @@
 import classNames from 'classnames'
-import { motion, useScroll, type Variants } from 'framer-motion'
+import { motion, useScroll } from 'motion/react'
 import { useLayoutEffect, useState } from 'react'
 import { NavLink } from 'react-router'
+import { opacityVariants } from './shared/opacityVariants'
 
 interface Props {
 	className?: string
@@ -13,27 +14,13 @@ const defaultProps: Partial<Props> = {
 	siteTitle: ``,
 }
 
-const headerVariants: Variants = {
-	overlayNone: {
-		opacity: 1,
-		pointerEvents: 'auto',
-	},
-
-	overlayHidden: {
-		opacity: 0,
-		pointerEvents: 'none',
-	},
-
-	overlayHover: {
-		opacity: 1,
-		pointerEvents: 'auto',
-	},
-}
-
 export default function Header({ className, siteTitle, overlay }: Props) {
 	const { scrollY } = useScroll()
 	const [isCollapsed, setIsCollapsed] = useState(scrollY.get() > 0)
-	useLayoutEffect(() => scrollY.on('change', (v) => setIsCollapsed(v > 0)), [])
+	useLayoutEffect(
+		() => scrollY.on('change', (v) => setIsCollapsed(v > 0)),
+		[scrollY],
+	)
 
 	return (
 		<header
@@ -49,7 +36,7 @@ export default function Header({ className, siteTitle, overlay }: Props) {
 					},
 				)}
 				layout
-				variants={headerVariants}
+				variants={opacityVariants}
 			>
 				<motion.h1
 					className={classNames(
