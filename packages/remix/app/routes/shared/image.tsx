@@ -2,6 +2,7 @@ import {
 	Image as UnpicImage,
 	type ImageProps as UnpicImageProps,
 } from '@unpic/react'
+import { motion } from 'motion/react'
 import { useCallback, useRef, type Ref } from 'react'
 import { ANNU } from '#app/shared/utils'
 import { type ImageAsset } from './image/image.types'
@@ -82,3 +83,5 @@ export function Image({
 		</div>
 	)
 }
+
+export const AnimatedImage = motion.create(Image)

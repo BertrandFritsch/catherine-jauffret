@@ -1,21 +1,17 @@
 import classnames from 'classnames'
 import {
 	motion,
+	useMotionValue,
+	useTransform,
 	type PanInfo,
 	type TargetAndTransition,
 	type Variants,
 } from 'motion/react'
-import { useLayoutEffect, useMemo, useRef, useState } from 'react'
-import {
-	useLocation,
-	useNavigate,
-	useNavigationType,
-	useOutletContext,
-} from 'react-router'
+import { useRef, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router'
 import { graphQLQuery } from '#app/shared/graphQLQuery'
 import { type Route } from './+types/collage'
 import { getCollagePage } from './collage/collage.graphql'
-import { type useCollageAnimation } from './collages/useCollageAnimation'
 import { Image } from './shared/image'
 import { isImageAsset } from './shared/image/image.types'
 import { Title } from './shared/Title'
@@ -39,21 +35,19 @@ export default function Collage({ loaderData }: Route.ComponentProps) {
 		current: { collage },
 	} = useRef(loaderData)
 	const location = useLocation()
-	const navigationType = useNavigationType()
 	const navigate = useNavigate()
-	// const collageAnimation: ReturnType<typeof useCollageAnimation> =
-	// 	useOutletContext()
-	const [dragging, setDragging] = useState(false)
+	const { current: collageThumbnailCoords } = useRef(
+		location.state?.collagesImgBox ?? null,
+	)
 
-	// const collageThumbnailCoords =
-	// 	collageAnimation.state.type !== 'NONE' ? collageAnimation.state.rect : null
-	const collageThumbnailCoords = location.state?.collagesImgBox ?? null
+	const yDrag = useMotionValue(0)
+	const opacity = useTransform(yDrag, [-400, 0, 400], [0, 1, 0])
 
 	const [loadingState, setLoadingState] = useState<
 		'none' | 'thumbnail' | 'loaded'
 	>(collageThumbnailCoords ? 'thumbnail' : 'none')
 
-	const loadingVariants = useMemo(() => {
+	const loadingVariants = (() => {
 		if (collageThumbnailCoords) {
 			const screenAspectRatio = window.innerWidth / window.innerHeight
 			const imageAspectRatio = collage.width / collage.height
@@ -86,46 +80,14 @@ export default function Collage({ loaderData }: Route.ComponentProps) {
 					y: 0,
 					scale: 1,
 				},
-			} satisfies Variants
+				exit: {
+					x: animateValues.x,
+					y: [null, animateValues.y],
+					scale: animateValues.scale,
+				},
+			} as const satisfies Variants
 		}
-	}, [collage.height, collage.width, collageThumbnailCoords])
-
-	// const initialVariants =
-	// 	animateValues &&
-	// 	({
-	// 		x: animateValues.x,
-	// 		y: animateValues.y,
-	// 		scale: animateValues.scale,
-	// 		opacity: 0,
-	// 	} satisfies TargetAndTransition)
-
-	// const animateVariants =
-	// 	animateValues &&
-	// 	({
-	// 		x: 0,
-	// 		y: 0,
-	// 		scale: 1,
-	// 		opacity: 1,
-	// 		transition: {
-	// 			duration: 0.5, // Increased duration for smoother animation
-	// 			ease: 'easeInOut', // Changed easing function for smoother animation
-	// 			type: 'tween',
-	// 		},
-	// 	} satisfies TargetAndTransition)
-
-	// const exitVariants =
-	// 	animateValues &&
-	// 	({
-	// 		x: [null, animateValues.x],
-	// 		y: [null, animateValues.y],
-	// 		scale: [null, animateValues.scale],
-	// 		opacity: 1,
-	// 		transition: {
-	// 			duration: 0.5, // Increased duration for smoother animation
-	// 			ease: 'easeInOut', // Changed easing function for smoother animation
-	// 			type: 'tween',
-	// 		},
-	// 	} satisfies TargetAndTransition)
+	})()
 
 	const backgroundVariants = {
 		thumbnail: {
@@ -141,61 +103,54 @@ export default function Collage({ loaderData }: Route.ComponentProps) {
 		<>
 			<Title title={collage.title} />
 			<motion.div
-				layoutFixed
-				className={classnames(
-					// {
-					// 	['opacity-0']: collageAnimation.state.type !== 'NONE',
-					// },
-					'bg-root-background pointer-events-none fixed top-0 left-0 h-screen w-screen',
-				)}
+				className="bg-root-background pointer-events-none fixed top-0 left-0 h-screen w-screen"
+				style={{ opacity }}
 				variants={backgroundVariants}
 				initial={false}
 				animate={loadingState}
 				exit="thumbnail"
-				transition={{
-					duration: 0.5,
-					ease: 'easeInOut',
-					type: 'tween',
-				}}
-				// animate={
-				// 	collageAnimation.state.type === 'ANIMATING_OUT' || dragging
-				// 		? 'out'
-				// 		: collageAnimation.state.type === 'READY'
-				// 			? 'in'
-				// 			: undefined
-				// }
 			/>
+			{collageThumbnailCoords && (
+				<div
+					className={classnames('bg-root-background fixed opacity-0', {
+						'opacity-100': loadingState === 'loaded',
+					})}
+					style={{
+						left: collageThumbnailCoords.left,
+						top: collageThumbnailCoords.top,
+						width: collageThumbnailCoords.width,
+						height: collageThumbnailCoords.height,
+					}}
+				/>
+			)}
 			<motion.section
 				className={classnames(
 					'collage',
 					'fixed top-0 left-0 flex h-screen w-screen items-center justify-center',
 				)}
+				style={{ y: yDrag }}
 				variants={loadingVariants}
 				initial={false}
 				animate={loadingState}
-				exit="thumbnail"
+				exit="exit"
 				transition={{
-					duration: 0.5,
+					duration: 0.6,
 					ease: 'easeInOut',
 					type: 'tween',
 				}}
-				// onAnimationStart={() => collageAnimation.startAnimating()}
-				// onAnimationComplete={() => collageAnimation.stopAnimating()}
-				// drag={collageAnimation.state.type === 'READY' ? 'y' : false}
-				// whileTap={{ cursor: 'grabbing' }}
-				// dragConstraints={{ top: 0, bottom: 0 }}
-				// dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-				// dragElastic={0.5}
-				// onDragStart={() => setDragging(true)}
-				// onDragEnd={(_: unknown, { offset: { y } }: PanInfo) => {
-				// 	setDragging(false)
-
-				// 	if (Math.abs(y) > window.innerHeight / 3) {
-				// 		void navigate(-1)
-				// 	}
-				// }}
+				drag={loadingVariants && loadingState === 'loaded' ? 'y' : false}
+				whileTap={{ cursor: 'grabbing' }}
+				dragConstraints={{ top: 0, bottom: 0 }}
+				dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+				dragElastic={0.5}
+				onDragEnd={(_: unknown, { offset: { y } }: PanInfo) => {
+					if (Math.abs(y) > window.innerHeight / 3) {
+						void navigate(-1)
+					}
+				}}
 			>
 				<Image
+					className="pointer-events-none"
 					image={collage}
 					onLoad={() => setLoadingState('loaded')}
 				/>

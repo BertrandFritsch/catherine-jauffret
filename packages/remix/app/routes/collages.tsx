@@ -53,28 +53,18 @@ export default function Collages({
 	loaderData: { groups },
 	params: { slug },
 }: Route.ComponentProps) {
-	// const collageAnimation = useCollageAnimation()
-	// const { state, showCollage } = collageAnimation
 	const location = useLocation()
 
 	const animateCollage = location.state?.collagesImgBox !== undefined
 	const showCollagePage = slug !== undefined
 	const showCollagesPage = !showCollagePage || animateCollage
 
-	// useEffect(() => {
-	// 	if (state.type === 'NONE' && location.state?.collagesImgBox) {
-	// 		showCollage(location.state.collagesImgBox)
-	// 	}
-	// }, [location.state?.collagesImgBox, showCollage, state])
-
 	useLayoutEffect(() => {
-		if (showCollagesPage) {
-			document.documentElement.style.setProperty(
-				'--scrollbar-width',
-				`${window.innerWidth - document.documentElement.getBoundingClientRect().width}px`,
-			)
-		}
-	}, [showCollagesPage])
+		document.documentElement.style.setProperty(
+			'--scrollbar-width',
+			`${window.innerWidth - document.documentElement.getBoundingClientRect().width}px`,
+		)
+	}, [])
 
 	return (
 		<>
@@ -99,11 +89,7 @@ export default function Collages({
 				</>
 			)}
 			<AnimatePresence>
-				{showCollagePage && (
-					/*(!animateCollage || collageAnimation.state.type !== 'NONE') &&*/ <AnimatedOutlet
-						key={slug} /*context={collageAnimation}*/
-					/>
-				)}
+				{showCollagePage && <AnimatedOutlet key={slug} />}
 			</AnimatePresence>
 		</>
 	)
