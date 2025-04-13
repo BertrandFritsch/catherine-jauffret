@@ -1,9 +1,14 @@
 import { type Config } from '@react-router/dev/config'
 
 export default {
-	// Config options...
-	basename: '/',
-	// Server-side render by default, to enable SPA mode set this to `false`
 	ssr: true,
-	prerender: true,
+
+	/**
+	 * As of today, netlify don't support prerendering
+	 * The netlify plugin -- @netlify/vite-plugin-react-router -- cannot be used.
+	 * Prefender all the routes in the app and deploy the app to a static host.
+	 */
+	async prerender({ getStaticPaths}) {
+		return getStaticPaths()
+	},
 } satisfies Config
