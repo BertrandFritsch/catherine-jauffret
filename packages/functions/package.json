@@ -21,7 +21,7 @@
   "devDependencies": {
     "@rollup/plugin-typescript": "^12.1.2",
     "@types/aws-lambda": "^8.10.149",
-    "@types/node": "^22.14.1",
+    "@types/node": "^22.15.2",
     "node-fetch": "^3.3.2",
     "rollup": "^4.40.0",
     "rollup-plugin-cleaner": "^1.0.0",

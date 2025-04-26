@@ -77,7 +77,7 @@ export default function Header({ className, siteTitle, overlay }: Props) {
 							Présentation
 						</NavLink>
 					</li>
-					{/* <li>
+					<li>
 						<NavLink
 							to="/collages"
 							className="hover:text-hover ml-4 text-inherit uppercase no-underline [&.active]:border-b-2 [&.active]:border-solid"
@@ -85,7 +85,7 @@ export default function Header({ className, siteTitle, overlay }: Props) {
 						>
 							Collages
 						</NavLink>
-					</li> */}
+					</li>
 					<li>
 						<NavLink
 							to="/cv"
