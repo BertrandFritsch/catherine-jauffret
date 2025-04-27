@@ -1,4 +1,4 @@
-import { graphql } from '#app/types/graphql'
+import { graphql } from '../../types/graphql'
 
 export const getCollagesPage = graphql(`
   query collages($limit: Int, $skip: Int) {

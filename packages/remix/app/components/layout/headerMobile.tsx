@@ -182,7 +182,7 @@ export default function HeaderMobile({ siteTitle, overlay }: Props) {
 					)}
 				</AnimatePresence>
 				<motion.h1
-					className="text-hover z-[1] mx-4 flex-auto py-6 text-center text-2xl text-[length:var(--text-header-mobile)] font-bold whitespace-nowrap uppercase"
+					className="text-hover z-1 mx-4 flex-auto py-6 text-center text-2xl text-[length:var(--text-header-mobile)] font-bold whitespace-nowrap uppercase"
 					variants={headerVariants}
 					initial={false}
 					animate={isCollapsed ? 'collapsed' : 'expanded'}

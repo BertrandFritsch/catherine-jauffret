@@ -29,7 +29,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<html
 			lang="fr"
-			className="has-[.collage]:overflow-hidden has-[.collage]:pr-[var(--scrollbar-width)]"
+			className="has-[.zoomed-collage]:overflow-hidden has-[.zoomed-collage]:pr-[var(--scrollbar-width)]"
 		>
 			<head>
 				<meta charSet="utf-8" />
