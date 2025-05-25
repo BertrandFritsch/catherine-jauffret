@@ -1,0 +1,45 @@
+import classnames from 'classnames'
+import {
+  type UseFormRegisterReturn,
+  type FieldValue,
+  type FieldValues,
+  type FieldError,
+} from 'react-hook-form'
+
+type InputFieldProps<TFieldValues extends FieldValues> = {
+  label: string
+  error: FieldError | undefined
+  errorMessage: string
+  registerOptions: UseFormRegisterReturn<FieldValue<TFieldValues>>
+}
+
+export function InputField({
+  label,
+  error,
+  errorMessage,
+  registerOptions,
+}: InputFieldProps<FieldValues>) {
+  return (
+    <fieldset
+      className={classnames(
+        'relative rounded-sm text-sm border-1 border-solid border-[#7f7f7f] focus-within:border-[var(--color-default-foreground)] w-[320px]',
+        {
+          'border-yellow-500 focus-within:border-yellow-500 text-yellow-500':
+            error,
+        },
+      )}
+    >
+      <legend className="mx-2 px-2">{label}</legend>
+      <input
+        className="p-4 border-none outline-none w-full"
+        type="text"
+        {...registerOptions}
+      />
+      {error && (
+        <span className="absolute top-full left-0 text-xs mt-1">
+          {error.message || errorMessage}
+        </span>
+      )}
+    </fieldset>
+  )
+}
