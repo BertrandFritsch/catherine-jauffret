@@ -50,9 +50,9 @@ export default function CV({ loaderData }: Route.ComponentProps) {
   return (
     <>
       <Title title="CV" />
-      <section className="max-w-[680px] text-sm">
+      <section className="max-w-[680px] text-sm [@media(max-width:500px)]:flex [@media(max-width:500px)]:flex-col">
         <FadeInImage
-          className="float-left mr-8 mb-4"
+          className="float-left mr-8 mb-4 [@media(max-width:500px)]:mb-4 [@media(max-width:500px)]:mx-0 [@media(max-width:500px)]:self-center"
           image={cvItem.image}
           breakpoints={[320]}
         />

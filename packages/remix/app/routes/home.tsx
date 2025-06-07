@@ -38,10 +38,10 @@ export default function Home({ loaderData }: Route.ComponentProps) {
   return (
     <>
       <Title title="Accueil" />
-      <section className="max-w-[680px] text-sm">
+      <section className="max-w-[680px] text-sm [@media(max-width:500px)]:flex [@media(max-width:500px)]:flex-col">
         <FadeInImage
           image={homepageItem.image}
-          className="float-left mr-8 mb-4"
+          className="float-left mr-8 mb-4 [@media(max-width:500px)]:my-4 [@media(max-width:500px)]:mx-0 [@media(max-width:500px)]:self-center"
           breakpoints={[320]}
         />
         {documentToReactComponents(homepageItem.text.json)}

@@ -48,10 +48,10 @@ export default function Presentation({ loaderData }: Route.ComponentProps) {
   return (
     <>
       <Title title="Présentation" />
-      <section className="max-w-[680px] text-sm">
+      <section className="max-w-[680px] text-sm [@media(max-width:500px)]:flex [@media(max-width:500px)]:flex-col">
         <FadeInImage
           image={presentationItem.image}
-          className="float-left mr-8 mb-4"
+          className="float-left mr-8 mb-4 [@media(max-width:500px)]:mb-4 [@media(max-width:500px)]:mx-0 [@media(max-width:500px)]:self-center"
           breakpoints={[320]}
         />
         <h2 className="my-4 text-2xl font-bold">{presentationItem.title}</h2>

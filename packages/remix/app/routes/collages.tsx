@@ -71,7 +71,7 @@ export default function Collages({
         {groups.map((group) => (
           <section key={group.year}>
             <h3 className="border-b-1 pb-2 text-right text-xl font-bold">{`Collages ${group.year}`}</h3>
-            <section className="grid grid-cols-[repeat(3,320px)] content-start justify-start gap-8 px-1 py-4">
+            <section className="grid grid-cols-[repeat(3,320px)] [@media(max-width:1056px)]:grid-cols-[repeat(2,320px)] [@media(max-width:704px)]:grid-cols-[repeat(1,320px)] content-start justify-start gap-8 px-1 py-4">
               {group.items.map((item) => (
                 <motion.section
                   key={item.slug}
