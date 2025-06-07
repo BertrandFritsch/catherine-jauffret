@@ -7,7 +7,7 @@ import { useCallback, useRef, type Ref } from 'react'
 import { ANNU } from '#app/shared/utils'
 import { type ImageAsset } from './image/image.types'
 
-type ImageProps = Pick<UnpicImageProps, 'breakpoints' | 'operations'> & {
+export type ImageProps = Pick<UnpicImageProps, 'breakpoints' | 'operations'> & {
   ref?: Ref<HTMLImageElement | null>
   className?: string
   image: ImageAsset
@@ -48,10 +48,15 @@ export function Image({
     [ref],
   )
 
+  const imageHeight = breakpoints?.[0]
+    ? Math.round((image.height / image.width) * breakpoints[0])
+    : undefined
+
   return (
     <div
       className={className}
       style={{
+        height: `${imageHeight}px`,
         width: breakpoints?.[0],
       }}
     >
