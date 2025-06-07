@@ -7,6 +7,7 @@ import {
 } from 'react-hook-form'
 
 type InputFieldProps<TFieldValues extends FieldValues> = {
+  autoFocus?: boolean
   label: string
   error: FieldError | undefined
   errorMessage: string
@@ -14,6 +15,7 @@ type InputFieldProps<TFieldValues extends FieldValues> = {
 }
 
 export function InputField({
+  autoFocus = false,
   label,
   error,
   errorMessage,
@@ -32,6 +34,7 @@ export function InputField({
       <legend className="mx-2 px-2">{label}</legend>
       <input
         className="p-4 border-none outline-none w-full"
+        autoFocus={autoFocus}
         type="text"
         {...registerOptions}
       />

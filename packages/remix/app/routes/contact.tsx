@@ -33,9 +33,10 @@ export default function Contact() {
         body: new URLSearchParams({ ...data, 'form-name': 'contact' }),
       }).then((response) => {
         if (!response.ok) {
-          throw new Error('Network response was not ok')
+          throw new Error(
+            'an error occurred while sending the contact message!',
+          )
         }
-        return response.json()
       })
     },
     onError: (error) => {
@@ -85,6 +86,7 @@ export default function Contact() {
             dès que possible
           </p>
           <InputField
+            autoFocus
             error={errors.name}
             errorMessage="Laissez-moi votre nom"
             label="Votre nom"

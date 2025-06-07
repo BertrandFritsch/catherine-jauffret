@@ -2,7 +2,7 @@ import { motion } from 'motion/react'
 import { useLayoutEffect } from 'react'
 import { useCollageContext } from '#app/components/layout/collageContext'
 import { graphQLQuery } from '#app/shared/graphQLQuery'
-import { ANNU } from '#app/shared/utils'
+import { ANNU, asserts } from '#app/shared/utils'
 import { type Route } from './+types/collages'
 import { isCollage, type Collage } from './collages/collage.types'
 import { getCollagesPage } from './collages/collages.graphql'
@@ -15,6 +15,11 @@ export async function loader() {
   ANNU(
     data.collageCollection,
     'The data for the collages page has not been provided!',
+  )
+
+  asserts(
+    data.collageCollection.total < 1000,
+    'Number of collages exceeds 1000! Time to paginate!',
   )
 
   const collages = data.collageCollection.items

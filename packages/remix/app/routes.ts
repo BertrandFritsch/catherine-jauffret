@@ -13,5 +13,6 @@ export default [
     route('/collages', './routes/collages.tsx'),
     route('/collage/:slug', './routes/collage.tsx'),
     route('/contact', './routes/contact.tsx'),
+    route('/guestbook', './routes/guestbook.tsx'),
   ]),
 ] as const satisfies RouteConfig

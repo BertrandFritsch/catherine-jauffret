@@ -17,6 +17,7 @@ type Documents = {
     "\n  query collage($slug: String!) {\n    collageCollection(where: { slug: $slug }, limit: 1) {\n      items {\n        slug\n        title\n        date\n        collage {\n          ...Image\n        }\n      }\n    }\n  }\n": typeof types.CollageDocument,
     "\n  query collages($limit: Int, $skip: Int) {\n    collageCollection(limit: $limit, skip: $skip, order: [date_DESC]) {\n      total\n      items {\n        title\n        slug\n        date\n        collage {\n          ...Image\n        }\n      }\n    }\n  }\n": typeof types.CollagesDocument,
     "\n  query cv {\n    cvCollection(limit: 1) {\n      items {\n        author\n        title\n        text {\n          json\n        }\n        image {\n          ...Image\n        }\n      }\n    }\n  }\n": typeof types.CvDocument,
+    "\n  query guestbook {\n    goldenBookCollection(limit: 1000, order: date_DESC) {\n      total\n      items {\n        name\n        date\n        website\n        comment {\n          json\n        }\n      }\n    }\n  }\n": typeof types.GuestbookDocument,
     "\n  query homepage {\n    homepageCollection(limit: 1) {\n      items {\n        author\n        text {\n          json\n        }\n        image {\n          ...Image\n        }\n      }\n    }\n  }\n": typeof types.HomepageDocument,
     "\n  query presentation {\n    presentationCollection(limit: 1) {\n      items {\n        author\n        title\n        text {\n          json\n        }\n        image {\n          ...Image\n        }\n      }\n    }\n  }\n": typeof types.PresentationDocument,
     "\n  fragment Image on Asset {\n    title\n    url\n    width\n    height\n  }\n": typeof types.ImageFragmentDoc,
@@ -25,6 +26,7 @@ const documents: Documents = {
     "\n  query collage($slug: String!) {\n    collageCollection(where: { slug: $slug }, limit: 1) {\n      items {\n        slug\n        title\n        date\n        collage {\n          ...Image\n        }\n      }\n    }\n  }\n": types.CollageDocument,
     "\n  query collages($limit: Int, $skip: Int) {\n    collageCollection(limit: $limit, skip: $skip, order: [date_DESC]) {\n      total\n      items {\n        title\n        slug\n        date\n        collage {\n          ...Image\n        }\n      }\n    }\n  }\n": types.CollagesDocument,
     "\n  query cv {\n    cvCollection(limit: 1) {\n      items {\n        author\n        title\n        text {\n          json\n        }\n        image {\n          ...Image\n        }\n      }\n    }\n  }\n": types.CvDocument,
+    "\n  query guestbook {\n    goldenBookCollection(limit: 1000, order: date_DESC) {\n      total\n      items {\n        name\n        date\n        website\n        comment {\n          json\n        }\n      }\n    }\n  }\n": types.GuestbookDocument,
     "\n  query homepage {\n    homepageCollection(limit: 1) {\n      items {\n        author\n        text {\n          json\n        }\n        image {\n          ...Image\n        }\n      }\n    }\n  }\n": types.HomepageDocument,
     "\n  query presentation {\n    presentationCollection(limit: 1) {\n      items {\n        author\n        title\n        text {\n          json\n        }\n        image {\n          ...Image\n        }\n      }\n    }\n  }\n": types.PresentationDocument,
     "\n  fragment Image on Asset {\n    title\n    url\n    width\n    height\n  }\n": types.ImageFragmentDoc,
@@ -56,6 +58,10 @@ export function graphql(source: "\n  query collages($limit: Int, $skip: Int) {\n
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(source: "\n  query cv {\n    cvCollection(limit: 1) {\n      items {\n        author\n        title\n        text {\n          json\n        }\n        image {\n          ...Image\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  query cv {\n    cvCollection(limit: 1) {\n      items {\n        author\n        title\n        text {\n          json\n        }\n        image {\n          ...Image\n        }\n      }\n    }\n  }\n"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n  query guestbook {\n    goldenBookCollection(limit: 1000, order: date_DESC) {\n      total\n      items {\n        name\n        date\n        website\n        comment {\n          json\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  query guestbook {\n    goldenBookCollection(limit: 1000, order: date_DESC) {\n      total\n      items {\n        name\n        date\n        website\n        comment {\n          json\n        }\n      }\n    }\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
