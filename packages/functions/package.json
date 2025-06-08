@@ -5,9 +5,7 @@
   "type": "module",
   "version": "0.1.0",
   "author": "Bertrand Fritsch <bertrand.fritsch.in@gmail.com>",
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": [],
   "license": "MIT",
   "scripts": {
     "functions:build": "rollup -c --environment NODE_ENV:production",
