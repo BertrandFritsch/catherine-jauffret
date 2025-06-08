@@ -2,28 +2,12 @@ import classnames from 'classnames'
 import { AnimatePresence, motion, useScroll, type Variants } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
+import { useCollageContext } from './collageContext'
+import { opacityVariants } from './shared/opacityVariants'
 
 interface Props {
   className?: string
   siteTitle: string
-  overlay: boolean
-}
-
-const overlayVariants: Variants = {
-  overlayNone: {
-    opacity: 1,
-    pointerEvents: 'auto',
-  },
-
-  overlayHidden: {
-    opacity: 0,
-    pointerEvents: 'none',
-  },
-
-  overlayHover: {
-    opacity: 1,
-    pointerEvents: 'auto',
-  },
 }
 
 const headerVariants: Variants = {
@@ -70,7 +54,8 @@ const backgroundLayerVariants: Variants = {
   },
 }
 
-export default function HeaderMobile({ siteTitle, overlay }: Props) {
+export default function HeaderMobile({ siteTitle }: Props) {
+  const { activeCollage } = useCollageContext()
   const { scrollY } = useScroll()
   const [isCollapsed, setIsCollapsed] = useState(scrollY.get() > 0)
   useEffect(() => scrollY.on('change', (v) => setIsCollapsed(v > 0)), [scrollY])
@@ -101,14 +86,15 @@ export default function HeaderMobile({ siteTitle, overlay }: Props) {
   }, [isOpen])
 
   return (
-    <header
-      className="mt-[var(--spacing-header-mobile)] self-stretch"
+    <motion.header
+      className="mt-[var(--spacing-header-mobile)] self-stretch z-3"
       onPointerUp={() => setIsOpen(false)}
+      variants={opacityVariants}
     >
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed top-0 left-0 w-screen h-screen bg-[var(--color-root-background)] z-2"
+            className="fixed top-0 left-0 w-screen h-screen bg-[var(--color-root-background)]"
             variants={backgroundLayerVariants}
             initial="collapsed"
             animate="expanded"
@@ -117,11 +103,13 @@ export default function HeaderMobile({ siteTitle, overlay }: Props) {
         )}
       </AnimatePresence>
       <motion.div
-        className={classnames(
-          'fixed top-0 right-0 left-0 z-2 flex bg-[var(--color-root-background)]',
-          { 'bg-[var(--bg-overlay-top)]': overlay },
-        )}
-        variants={overlayVariants}
+        className="fixed top-0 right-0 left-0 flex"
+        initial={false}
+        animate={
+          activeCollage === null
+            ? { backgroundColor: 'var(--color-root-background)' }
+            : { backgroundColor: 'var(--bg-overlay-top)' }
+        }
       >
         <AnimatePresence>
           {isOpen && (
@@ -202,6 +190,6 @@ export default function HeaderMobile({ siteTitle, overlay }: Props) {
       <h2 className="font-lora my-0 mb-6 text-center text-2xl font-normal italic">
         Dé-coupage
       </h2>
-    </header>
+    </motion.header>
   )
 }

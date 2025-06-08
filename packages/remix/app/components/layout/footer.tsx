@@ -23,7 +23,7 @@ export default function Footer({
     <footer className={classnames(className, 'flex justify-center')}>
       <motion.div
         className={classnames('flex flex-col items-center', {
-          'fixed bottom-0 z-1 bg-[var(--bg-overlay-bottom)]':
+          'fixed bottom-0 z-2 bg-[var(--bg-overlay-bottom)]':
             activeCollageDescription,
         })}
         variants={opacityVariants}

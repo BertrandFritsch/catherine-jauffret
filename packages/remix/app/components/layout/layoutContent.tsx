@@ -26,13 +26,16 @@ export default function LayoutContent() {
         'flex min-h-screen w-full flex-col items-center justify-between',
         { 'z-1': activeCollage !== null },
       )}
-      animate={showLayoutOverlay ? 'overlayHover' : 'overlayHidden'}
+      animate={
+        activeCollage === null
+          ? 'overlayNone'
+          : showLayoutOverlay
+            ? 'overlayHover'
+            : 'overlayHidden'
+      }
     >
       {showMobileHeader ? (
-        <HeaderMobile
-          siteTitle={siteMetadata.title}
-          overlay={activeCollage !== null}
-        />
+        <HeaderMobile siteTitle={siteMetadata.title} />
       ) : (
         <Header className="flex-none" siteTitle={siteMetadata.title} />
       )}

@@ -43,12 +43,13 @@ export const ZoomableCollage = memo(function ZoomableCollage({
   }, [setZoomingOut, zoomingOut])
 
   const [imageState, setImageState] = useState<'loading' | 'thumbnail'>(
-    'loading',
+    'thumbnail',
   )
 
   const imageVariants = {
     loading: {
       opacity: 0,
+      transition: { duration: 0 },
     },
     thumbnail: {
       opacity: 1,
@@ -56,15 +57,21 @@ export const ZoomableCollage = memo(function ZoomableCollage({
       y: [null, 0],
     },
     zoomed: () => {
-      const reducingRatio =
-        Math.max(item.collage.width - window.innerWidth, 0) >=
-        Math.max(item.collage.height - window.innerHeight, 0)
-          ? Math.min(window.innerWidth / item.collage.width, 1)
-          : Math.min(window.innerHeight / item.collage.height, 1)
+      const reducingRatio = Math.min(
+        window.innerWidth / item.collage.width,
+        window.innerHeight / item.collage.height,
+        1,
+      )
       return {
         opacity: 1,
-        x: window.innerWidth / 2 - (item.collage.width * reducingRatio) / 2,
-        y: window.innerHeight / 2 - (item.collage.height * reducingRatio) / 2,
+        x: Math.max(
+          (window.innerWidth - item.collage.width * reducingRatio) / 2,
+          0,
+        ),
+        y: Math.max(
+          (window.innerHeight - item.collage.height * reducingRatio) / 2,
+          0,
+        ),
       }
     },
   } as const satisfies Variants
@@ -107,12 +114,11 @@ export const ZoomableCollage = memo(function ZoomableCollage({
       >
         <motion.div
           className={classnames('cursor-pointer', {
-            'opacity-0': imageState === 'loading',
             'fixed top-0 left-0': zoomed,
             'zoomed-collage': zoomed || zoomingOut,
           })}
           variants={imageVariants}
-          initial={false}
+          initial={{ opacity: 1 }}
           animate={zoomed ? 'zoomed' : imageState}
           transition={{
             duration: COLLAGE_TRANSITION_DURATION / 1000,
@@ -125,8 +131,8 @@ export const ZoomableCollage = memo(function ZoomableCollage({
             className="pointer-events-none"
             image={item.collage}
             layout
-            onLoad={() => {
-              setImageState('thumbnail')
+            onLoaded={(_: unknown, loaded: boolean) => {
+              setImageState(loaded ? 'thumbnail' : 'loading')
             }}
             transition={{
               duration: COLLAGE_TRANSITION_DURATION / 1000,

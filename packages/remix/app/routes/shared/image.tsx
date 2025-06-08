@@ -11,7 +11,7 @@ export type ImageProps = Pick<UnpicImageProps, 'breakpoints' | 'operations'> & {
   ref?: Ref<HTMLImageElement | null>
   className?: string
   image: ImageAsset
-  onLoad?: (image: HTMLImageElement) => void
+  onLoaded?: (image: HTMLImageElement, loaded: boolean) => void
 }
 
 export function Image({
@@ -19,11 +19,11 @@ export function Image({
   className,
   breakpoints,
   image,
-  onLoad,
+  onLoaded,
 }: ImageProps) {
   ANNU(image.url, `The URL of the image ${image.title} is missing`)
-  const onLoadRef = useRef(onLoad)
-  onLoadRef.current = onLoad
+  const onLoadedRef = useRef(onLoaded)
+  onLoadedRef.current = onLoaded
 
   const imageRef = useCallback(
     (img: HTMLImageElement | null) => {
@@ -35,14 +35,14 @@ export function Image({
         }
       }
 
-      const onLoad = onLoadRef.current
+      const onLoaded = onLoadedRef.current
 
-      if (img && onLoad) {
-        if (img.complete) {
-          onLoad(img)
-        } else {
-          img.addEventListener('load', () => onLoad(img))
+      if (img && onLoaded) {
+        if (!img.complete) {
+          img.addEventListener('load', () => onLoaded(img, true))
         }
+
+        onLoaded(img, img.complete)
       }
     },
     [ref],

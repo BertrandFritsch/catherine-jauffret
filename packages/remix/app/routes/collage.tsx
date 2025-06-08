@@ -1,11 +1,11 @@
 import { motion } from 'motion/react'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useCollageContext } from '#app/components/layout/collageContext'
 import { graphQLQuery } from '#app/shared/graphQLQuery'
 import { type Route } from './+types/collage'
 import { getCollagePage } from './collage/collage.graphql'
 import { isCollage } from './collages/collage.types'
-import { Image } from './shared/image'
+import { FadeInImage } from './shared/fadeInImage'
 import { Title } from './shared/Title'
 
 export async function loader({ params }: Route.LoaderArgs) {
@@ -27,8 +27,6 @@ export default function Collage({
 }: Route.ComponentProps) {
   const { onActiveCollageChange, onToggleLayoutOverlayChange } =
     useCollageContext()
-  const [imageLoaded, setImageLoaded] = useState(false)
-
   useEffect(() => {
     onActiveCollageChange({ slug: collage.slug, title: collage.title })
 
@@ -41,17 +39,12 @@ export default function Collage({
     <>
       <Title title={collage.title} />
       <motion.section
-        className="fixed top-0 left-0 flex h-screen w-screen items-center justify-center opacity-0"
-        animate={{ opacity: imageLoaded ? 1 : 0 }}
+        className="fixed top-0 left-0 flex h-screen w-screen items-center justify-center"
         onTap={() => {
           onToggleLayoutOverlayChange()
         }}
       >
-        <Image
-          className="pointer-events-none"
-          image={collage.collage}
-          onLoad={() => setImageLoaded(true)}
-        />
+        <FadeInImage className="pointer-events-none" image={collage.collage} />
       </motion.section>
     </>
   )
