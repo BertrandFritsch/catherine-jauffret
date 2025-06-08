@@ -1,43 +1,23 @@
 {
   "private": true,
+  "packageManager": "pnpm@10.8.0",
   "pnpm": {
-    "peerDependencyRules": {
-      "allowedVersions": {
-        "graphql": "16"
-      },
-      "ignoreMissing": [
-        "@babel/core",
-        "webpack",
-        "sharp",
-        "babel-eslint"
-      ]
-    },
     "packageExtensions": {
-      "gatsby-plugin-utils": {
-        "dependencies": {
-          "fastq": "*"
+      "@react-router/dev": {
+        "peerDependencies": {
+          "isbot": "*"
         }
       },
-      "babel-plugin-remove-graphql-queries": {
-        "dependencies": {
-          "@babel/types": "*"
-        }
-      },
-      "gatsby-plugin-netlify": {
-        "dependencies": {
-          "webpack": "*"
-        }
-      },
-      "gatsby-plugin-image": {
-        "dependencies": {
-          "semver": "*"
-        }
-      },
-      "gatsby-plugin-page-creator": {
-        "dependencies": {
-          "fs-extra": "*"
+      "@epic-web/config": {
+        "peerDependencies": {
+          "react": "*",
+          "typescript": "*"
         }
       }
-    }
+    },
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "unrs-resolver"
+    ]
   }
 }

@@ -1,6 +1,6 @@
 [build]
     command = "bash ./scripts/netlify.sh"
+    publish = "./packages/remix/build/client"
 
 [build.environment]
-    NODE_VERSION = "17"
     NPM_FLAGS="--prefix=./scripts/empty-project/"

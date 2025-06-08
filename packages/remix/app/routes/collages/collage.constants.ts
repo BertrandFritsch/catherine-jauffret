@@ -1,0 +1,1 @@
+export const COLLAGE_TRANSITION_DURATION = 600

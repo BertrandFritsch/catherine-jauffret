@@ -1,0 +1,22 @@
+schema: schemas/gql-contentful-schema.json
+include:
+  - app/**/*.graphql.ts
+extensions:
+  codegen:
+    generates:
+      app/types/graphql/:
+        documents: app/**/*.graphql.ts
+        preset: client
+        presetConfig:
+          fragmentMasking: false
+        config:
+          avoidOptionals:
+            field: true
+            inputValue: false
+            object: false
+            defaultValue: true
+          scalars:
+            Date: string
+            DateTime: string
+            JSONString: string
+            Long: string
